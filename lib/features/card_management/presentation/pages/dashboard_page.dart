@@ -4,7 +4,7 @@ import 'package:Enter/features/card_management/presentation/widgets/card_page_wi
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-// TODO: Fix dirty code, UI and some minor issues (no time)
+// TODO: Fix quickly written dirty code, UI and some minor issues (no time)
 
 class Dashboard extends StatefulWidget {
   final UserData userData;
@@ -30,9 +30,7 @@ class _DashboardState extends State<Dashboard> {
     for (var i = 0; i < userDataCreditCardsListCopy.length && i < 3; i++) {
       fixedLengthStackCards.add(
         CardData(
-          color: userDataCreditCardsListCopy.length == i
-              ? Colors.green
-              : Colors.green.withOpacity(0.7),
+          color: Colors.green,
           creditCardData: userDataCreditCardsListCopy[i],
         ),
       );
@@ -65,7 +63,7 @@ class _DashboardState extends State<Dashboard> {
           fixedLengthStackCards.insert(
             0,
             CardData(
-              color: Colors.green.withOpacity(0.7),
+              color: Colors.green,
               creditCardData: userDataCreditCardsListCopy[tracker],
             ),
           );
@@ -114,10 +112,25 @@ class _DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/card_background.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     width: dynamicLengthStackCards[i].tapToggle ? 220 : 180,
                     height: 300,
-                    child: CardInfo(
-                        cardStackType: dynamicLengthStackCards, cardIndex: i),
+                    child: Stack(
+                      children: [
+                        CardInfo(
+                            cardStackType: dynamicLengthStackCards,
+                            cardIndex: i),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Image.asset('assets/images/visa_mark.png'))
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -145,11 +158,27 @@ class _DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Container(
-                    width: 220 - (fixedLengthStackCards.length - i - 1) * 20.0,
-                    height: 50.h,
-                    child: CardInfo(
-                        cardStackType: fixedLengthStackCards, cardIndex: i),
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage("assets/images/card_background.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        width:
+                            220 - (fixedLengthStackCards.length - i - 1) * 20.0,
+                        height: 50.h,
+                        child: CardInfo(
+                            cardStackType: fixedLengthStackCards, cardIndex: i),
+                      ),
+                      Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Image.asset('assets/images/visa_mark.png'))
+                    ],
                   ),
                 ),
               ),

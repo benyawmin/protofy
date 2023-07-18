@@ -23,12 +23,12 @@ void main() {
           ibanNumber: 'ibanNumber')
     ];
     late LoginBloc loginBloc;
-    late MockGetAuthToken mockGetAuthToken;
+    late MockGetAuthData mockGetAuthToken;
     late MockInputEmailValidation mockEmailValidation;
     late MockInputPasswordValidation mockPasswordValidation;
 
     setUp(() {
-      mockGetAuthToken = MockGetAuthToken();
+      mockGetAuthToken = MockGetAuthData();
       mockEmailValidation = MockInputEmailValidation();
       mockPasswordValidation = MockInputPasswordValidation();
       loginBloc = LoginBloc(

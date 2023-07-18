@@ -15,12 +15,15 @@ class LoginControls extends StatefulWidget {
 }
 
 class _LoginControlsState extends State<LoginControls> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: 'benyamin@email.com');
+  final passwordController =
+      TextEditingController(text: 'pasd3q21esE#QD123ewdasDA');
   late final Function(String) onEmailChanged;
   late final Function(String) onPasswordChanged;
-  late String email;
-  late String password;
+  // late
+  String email = 'benyamin@email.com';
+  // late
+  String password = 'pasd3q21esE#QD123ewdasDA';
 
   @override
   Widget build(BuildContext context) {
