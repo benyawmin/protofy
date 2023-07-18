@@ -4,7 +4,7 @@ import 'package:Enter/features/card_management/presentation/widgets/card_page_wi
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-// TODO: Fix dirty code and some minor issues
+// TODO: Fix dirty code, UI and some minor issues (no time)
 
 class Dashboard extends StatefulWidget {
   final UserData userData;
@@ -30,7 +30,9 @@ class _DashboardState extends State<Dashboard> {
     for (var i = 0; i < userDataCreditCardsListCopy.length && i < 3; i++) {
       fixedLengthStackCards.add(
         CardData(
-          color: Colors.green.withOpacity(0.7),
+          color: userDataCreditCardsListCopy.length == i
+              ? Colors.green
+              : Colors.green.withOpacity(0.7),
           creditCardData: userDataCreditCardsListCopy[i],
         ),
       );
@@ -97,69 +99,64 @@ class _DashboardState extends State<Dashboard> {
 
   Expanded dynamicLengthStack() {
     return Expanded(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              for (int i = 0; i < dynamicLengthStackCards.length; i++)
-                Positioned(
-                  top: 35.h,
-                  child: GestureDetector(
-                    onTap: () => _handleCardTap(dynamicLengthStackCards[i]),
-
-                    child: Card(
-                      elevation: 8,
-                      color: dynamicLengthStackCards[i].color,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Container(
-                        width:
-                            dynamicLengthStackCards[i].tapToggle ? 220 : 180,
-                        height: 300,
-                        child: CardInfo(
-                            cardStackType: dynamicLengthStackCards,
-                            cardIndex: i),
-                      ),
-                    ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          for (int i = 0; i < dynamicLengthStackCards.length; i++)
+            Positioned(
+              top: 35.h,
+              child: GestureDetector(
+                onTap: () => _handleCardTap(dynamicLengthStackCards[i]),
+                child: Card(
+                  elevation: 8,
+                  color: dynamicLengthStackCards[i].color,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    width: dynamicLengthStackCards[i].tapToggle ? 220 : 180,
+                    height: 300,
+                    child: CardInfo(
+                        cardStackType: dynamicLengthStackCards, cardIndex: i),
                   ),
                 ),
-            ],
-          ),
-        );
+              ),
+            ),
+        ],
+      ),
+    );
   }
 
   Expanded fixedLengthStack() {
     return Expanded(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              for (int i = 0; i < fixedLengthStackCards.length; i++)
-                Positioned(
-                  top: fixedLengthStackCards[i].tapToggle
-                      ? 260.0 + i * 30.0
-                      : 30.0 + i * 20.0,
-                  child: GestureDetector(
-                    onTap: () => _handleCardTap(fixedLengthStackCards[i]),
-                    child: Card(
-                      elevation: 8,
-                      color: fixedLengthStackCards[i].color,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Container(
-                        width: 220 -
-                            (fixedLengthStackCards.length - i - 1) * 20.0,
-                        height: 50.h,
-                        child: CardInfo(
-                            cardStackType: fixedLengthStackCards,
-                            cardIndex: i),
-                      ),
-                    ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          for (int i = 0; i < fixedLengthStackCards.length; i++)
+            Positioned(
+              top: fixedLengthStackCards[i].tapToggle
+                  ? 260.0 + i * 30.0
+                  : 30.0 + i * 20.0,
+              child: GestureDetector(
+                onTap: () => _handleCardTap(fixedLengthStackCards[i]),
+                child: Card(
+                  elevation: 8,
+                  color: fixedLengthStackCards[i].color,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Container(
+                    width: 220 - (fixedLengthStackCards.length - i - 1) * 20.0,
+                    height: 50.h,
+                    child: CardInfo(
+                        cardStackType: fixedLengthStackCards, cardIndex: i),
                   ),
                 ),
-            ],
-          ),
-        );
+              ),
+            ),
+        ],
+      ),
+    );
   }
 }
 

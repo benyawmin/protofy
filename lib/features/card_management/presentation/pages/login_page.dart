@@ -23,7 +23,6 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   SizedBox(height: 10.h),
-                  // Top half
                   BlocBuilder<LoginBloc, LoginState>(
                     builder: (context, state) {
                       if (state is AuthenticationInitial) {
