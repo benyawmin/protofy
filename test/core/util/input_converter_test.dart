@@ -1,5 +1,6 @@
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
-import 'package:clean_architecture_tdd_course/core/util/input_converter.dart';
+
+import 'package:Enter/core/error/failures.dart';
+import 'package:Enter/core/util/input_converter.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 

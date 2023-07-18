@@ -1,4 +1,4 @@
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/widgets/login_page_widgets/main_widget.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/main_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

@@ -1,12 +1,12 @@
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/pages/dashboard_page.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/widgets/login_page_widgets/loading.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/widgets/login_page_widgets/login_error.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/widgets/login_page_widgets/main_widget.dart';
+import 'package:Enter/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
+import 'package:Enter/features/card_management/presentation/pages/dashboard_page.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/loading.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/login_error.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/main_widget.dart';
+import 'package:Enter/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:clean_architecture_tdd_course/injection_container.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatelessWidget {

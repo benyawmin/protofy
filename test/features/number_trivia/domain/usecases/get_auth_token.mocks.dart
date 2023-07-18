@@ -5,10 +5,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:clean_architecture_tdd_course/core/error/failures.dart' as _i5;
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart'
+import 'package:Enter/core/error/failures.dart' as _i5;
+import 'package:Enter/features/card_management/domain/entities/user_data.dart'
     as _i6;
-import 'package:clean_architecture_tdd_course/features/card_management/domain/repositories/auth_repository.dart'
+import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart'
     as _i3;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;

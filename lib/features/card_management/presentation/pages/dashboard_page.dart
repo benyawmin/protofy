@@ -1,6 +1,6 @@
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/credit_card.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/widgets/card_page_widgets/card_info.dart';
+import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
+import 'package:Enter/features/card_management/domain/entities/user_data.dart';
+import 'package:Enter/features/card_management/presentation/widgets/card_page_widgets/card_info.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

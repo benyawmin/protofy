@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:clean_architecture_tdd_course/core/error/exceptions.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/fake_server.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/models/user_data_model.dart';
+import 'package:Enter/core/error/exceptions.dart';
+import 'package:Enter/features/card_management/data/datasources/fake_server.dart';
+import 'package:Enter/features/card_management/data/models/user_data_model.dart';
+
 
 abstract class RemoteDataSource {
   /// Call the Api endpoint

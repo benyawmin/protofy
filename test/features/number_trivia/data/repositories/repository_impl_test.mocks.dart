@@ -5,13 +5,13 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:clean_architecture_tdd_course/core/network/network_info.dart'
+import 'package:Enter/core/network/network_info.dart'
     as _i6;
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/local_data_source.dart'
+import 'package:Enter/features/card_management/data/datasources/local_data_source.dart'
     as _i5;
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/remote_data_source.dart'
+import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart'
     as _i3;
-import 'package:clean_architecture_tdd_course/features/card_management/data/models/user_data_model.dart'
+import 'package:Enter/features/card_management/data/models/user_data_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 

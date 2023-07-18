@@ -1,4 +1,4 @@
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/fake_server.dart';
+import 'package:Enter/features/card_management/data/datasources/fake_server.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

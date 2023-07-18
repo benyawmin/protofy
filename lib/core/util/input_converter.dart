@@ -1,4 +1,4 @@
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
+import 'package:Enter/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
 //! The trick in this code is that if the conditions for a correct email and
@@ -19,11 +19,6 @@ class InputEmailValidation {
     } on FormatException {
       return Left(InvalidInputFailure());
     }
-    // try {
-    //   return Right(email);
-    // } on FormatException {
-    //   return Left(InvalidInputFailure());
-    // }
   }
 }
 
@@ -40,10 +35,5 @@ class InputPasswordValidation {
     } on FormatException {
       return Left(InvalidInputFailure());
     }
-    // try {
-    //   return Right(password);
-    // } on FormatException {
-    //   return Left(InvalidInputFailure());
-    // }
   }
 }

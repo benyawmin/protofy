@@ -1,4 +1,4 @@
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/credit_card.dart';
+import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
 import 'package:equatable/equatable.dart';
 
 class UserData extends Equatable {

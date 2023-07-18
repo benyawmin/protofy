@@ -1,12 +1,12 @@
-import 'package:clean_architecture_tdd_course/core/error/exceptions.dart';
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
-import 'package:clean_architecture_tdd_course/core/network/network_info.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/local_data_source.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/remote_data_source.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/models/user_data_model.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/credit_card.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/repositories/auth_repository.dart';
+import 'package:Enter/core/error/exceptions.dart';
+import 'package:Enter/core/error/failures.dart';
+import 'package:Enter/core/network/network_info.dart';
+import 'package:Enter/features/card_management/data/datasources/local_data_source.dart';
+import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart';
+import 'package:Enter/features/card_management/data/models/user_data_model.dart';
+import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
+import 'package:Enter/features/card_management/domain/entities/user_data.dart';
+import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
 typedef Future<UserDataModel> _TokenPicker();

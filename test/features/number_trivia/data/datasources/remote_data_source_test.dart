@@ -1,6 +1,6 @@
+import 'package:Enter/core/error/exceptions.dart';
+import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:clean_architecture_tdd_course/core/error/exceptions.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/datasources/remote_data_source.dart';
 
 void main() {
   late RemoteDataSource remoteDataSource;

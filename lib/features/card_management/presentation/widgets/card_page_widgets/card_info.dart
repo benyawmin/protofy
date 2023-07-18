@@ -1,4 +1,4 @@
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/pages/dashboard_page.dart';
+import 'package:Enter/features/card_management/presentation/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
 class CardInfo extends StatelessWidget {

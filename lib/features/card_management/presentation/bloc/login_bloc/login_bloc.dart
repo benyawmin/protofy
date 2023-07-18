@@ -1,8 +1,9 @@
+import 'package:Enter/core/error/failures.dart';
+import 'package:Enter/core/util/input_converter.dart';
+import 'package:Enter/features/card_management/domain/entities/user_data.dart';
+import 'package:Enter/features/card_management/domain/usecases/get_auth_data.dart';
 import 'package:bloc/bloc.dart';
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
-import 'package:clean_architecture_tdd_course/core/util/input_converter.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/usecases/get_auth_data.dart';
+
 import 'package:equatable/equatable.dart';
 
 part 'login_event.dart';

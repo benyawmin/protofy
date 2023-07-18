@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:clean_architecture_tdd_course/core/error/exceptions.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/models/user_data_model.dart';
+import 'package:Enter/core/error/exceptions.dart';
+import 'package:Enter/features/card_management/data/models/user_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 abstract class LocalDataSource {

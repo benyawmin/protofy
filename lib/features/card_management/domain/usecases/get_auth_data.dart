@@ -1,7 +1,8 @@
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
-import 'package:clean_architecture_tdd_course/core/usecases/usecase.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/repositories/auth_repository.dart';
+
+import 'package:Enter/core/error/failures.dart';
+import 'package:Enter/core/usecases/usecase.dart';
+import 'package:Enter/features/card_management/domain/entities/user_data.dart';
+import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

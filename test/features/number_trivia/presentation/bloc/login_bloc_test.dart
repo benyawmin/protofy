@@ -1,11 +1,10 @@
+import 'package:Enter/core/error/failures.dart';
+import 'package:Enter/core/util/input_converter.dart';
+import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
+import 'package:Enter/features/card_management/domain/entities/user_data.dart';
+import 'package:Enter/features/card_management/domain/usecases/get_auth_data.dart';
+import 'package:Enter/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:clean_architecture_tdd_course/core/error/failures.dart';
-import 'package:clean_architecture_tdd_course/core/util/input_converter.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/data/models/user_data_model.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/credit_card.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/entities/user_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/domain/usecases/get_auth_data.dart';
-import 'package:clean_architecture_tdd_course/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
