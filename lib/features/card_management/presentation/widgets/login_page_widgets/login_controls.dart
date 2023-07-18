@@ -1,4 +1,6 @@
 import 'package:Enter/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/email_text_field.dart';
+import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -13,71 +15,34 @@ class LoginControls extends StatefulWidget {
 }
 
 class _LoginControlsState extends State<LoginControls> {
-  // TODO
-  // Remove the default values
-  final emailController = TextEditingController(text: 'benyamin@email.com');
-  final passwordController =
-      TextEditingController(text: 'pasd3q21esE#QD123ewdasDA');
-  // late
-  String email = 'benyamin@email.com';
-  // late
-  String password = 'pasd3q21esE#QD123ewdasDA';
-  bool _passwordVisible = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  late final Function(String) onEmailChanged;
+  late final Function(String) onPasswordChanged;
+  late String email;
+  late String password;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        TextField(
-          controller: emailController,
-          decoration: InputDecoration(
-              filled: true,
-              fillColor: Color(0xFFFFFFFF),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFA3A5A9), width: 1),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              hintText: 'Email',
-              hintStyle: TextStyle(color: Color(0xFF74777F))),
-          onChanged: (value) {
-            email = value;
-          },
-        ),
+        EmailTextField(
+            emailController: emailController,
+            onEmailChanged: (value) {
+              setState(() {
+                email = value;
+              });
+            }),
         SizedBox(
           height: 4.h,
         ),
-        TextField(
-          controller: passwordController,
-          obscureText: !_passwordVisible,
-          decoration: InputDecoration(
-              suffixIcon: IconButton(
-                icon: _passwordVisible
-                    ? Icon(
-                        Icons.visibility_outlined,
-                        color: Color(0xFF74777F),
-                      )
-                    : Icon(
-                        Icons.visibility_off_outlined,
-                        color: Color(0xFF74777F),
-                      ),
-                onPressed: () {
-                  setState(() {
-                    _passwordVisible = !_passwordVisible;
-                  });
-                },
-              ),
-              filled: true,
-              fillColor: Color(0xFFFFFFFF),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFA3A5A9), width: 1),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              hintText: 'Passwort',
-              hintStyle: TextStyle(color: Color(0xFF74777F))),
-          onChanged: (value) {
-            password = value;
-          },
-        ),
+        PasswordTextField(
+            passwordController: passwordController,
+            onPasswordChanged: (value) {
+              setState(() {
+                password = value;
+              });
+            }),
         SizedBox(height: 20.h),
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: emailController,
@@ -125,12 +90,6 @@ class _LoginControlsState extends State<LoginControls> {
         ),
       ],
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _passwordVisible = false;
   }
 
   void dispatchAuth() {

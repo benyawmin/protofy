@@ -25,6 +25,9 @@ void main() {
           .thenAnswer((_) => tHasConnectionFuture);
       // act
       final result = networkInfo.isConnected;
+
+      // assert
+      expect(result, tHasConnectionFuture);
     });
   });
 }
