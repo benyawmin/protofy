@@ -9,6 +9,3 @@ for the rest of the code If I could write it. I would use the card management bl
 kIsWeb boolean could also be used to separate web and mobile widgets as the condition and
 customize the widgets based on platform and the condition (mobile platforms can also be detected using the same
 approach with the devicetype condition).
-
-I prefer to write clean scalable and maintainable code which takes more time rather than a quick dirty code.
-but in the end, the needs of project will define this. I can do both. 
