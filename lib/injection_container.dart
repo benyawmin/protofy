@@ -21,14 +21,14 @@ Future<void> init() async {
       inputEmailValidation: sl(),
       inputPasswordValidation: sl()));
 
-  // Use cases
+  //* Use cases
   sl.registerLazySingleton(() => GetAuthData(sl()));
 
-  // Repository
+  //* Repository
   sl.registerLazySingleton<AuthRepository>(() => RepositoryImpl(
       remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
 
-  // Data sources
+  //* Data sources
   sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
 
   sl.registerLazySingleton<LocalDataSource>(
