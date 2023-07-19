@@ -9,7 +9,6 @@ class FakeServerImpl implements FakeServer {
     // Server delay to process the request
     await Future.delayed(Duration(seconds: 1));
 
-    // Replace this logic with your actual authentication logic
     if (username == 'benyamin@email.com' &&
         password == 'pasd3q21esE#QD123ewdasDA') {
       return Response(
