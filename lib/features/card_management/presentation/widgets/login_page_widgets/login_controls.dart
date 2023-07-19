@@ -53,41 +53,27 @@ class _LoginControlsState extends State<LoginControls> {
             return ValueListenableBuilder<TextEditingValue>(
                 valueListenable: passwordController,
                 builder: (context, value, child) {
-                  return emailController.text.isNotEmpty &&
-                          passwordController.text.isNotEmpty
-                      ? SizedBox(
-                          width: 100.w,
-                          height: 8.h,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14),
-                                  ),
-                                  backgroundColor: Color(0xFF181D29),
-                                  disabledForegroundColor: Color(0xFFE1E1E4)),
-                              child: Text(
-                                'Login',
-                                style: TextStyle(color: Color(0xFFF5F5F7)),
-                              ),
-                              onPressed: () {
+                  return SizedBox(
+                    width: 100.w,
+                    height: 8.h,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            backgroundColor: Color(0xFF181D29),
+                            disabledForegroundColor: Color(0xFFE1E1E4)),
+                        child: Text(
+                          'Login',
+                          style: TextStyle(color: Color(0xFFF5F5F7)),
+                        ),
+                        onPressed: emailController.text.isNotEmpty &&
+                                passwordController.text.isNotEmpty
+                            ? () {
                                 dispatchAuth();
-                              }),
-                        )
-                      : SizedBox(
-                          width: 100.w,
-                          height: 8.h,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(14),
-                                  ),
-                                  disabledForegroundColor: Color(0xFFE1E1E4)),
-                              child: Text(
-                                'Login',
-                                style: TextStyle(color: Color(0xFFA3A5A9)),
-                              ),
-                              onPressed: null),
-                        );
+                              }
+                            : null),
+                  );
                 });
           },
         ),
