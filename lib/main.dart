@@ -1,9 +1,12 @@
-import 'package:Goodbytz/features/card_management/presentation/pages/sleep_page.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/presentation/pages/pickup_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'injection_container.dart' as di;
 import 'package:sizer/sizer.dart';
 
 void main() async {
+  debugPaintPointersEnabled = true;
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   runApp(MyApp());
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           title: 'Goodbytz',
-          home: SleepPage(),
+          home: PickupPage(orderData: OrderData(dishes: [], orderId: '2')),
         );
       },
     );

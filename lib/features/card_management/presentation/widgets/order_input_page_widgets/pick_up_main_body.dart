@@ -12,7 +12,7 @@ class PickupMainBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(fit: BoxFit.fitHeight, 'images/top_banner.png'),
+        Image.asset(fit: BoxFit.fill, 'images/top_banner.png'),
         SizedBox(
           height: 15.h,
         ),
@@ -23,7 +23,7 @@ class PickupMainBody extends StatelessWidget {
               fontSize: 12.sp,
             ),
             SizedBox(
-              height: 2.h,
+              height: 10.h,
             ),
             LoginControls()
           ]),

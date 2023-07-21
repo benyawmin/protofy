@@ -10,30 +10,21 @@ class LoginError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        PickupMainBody(),
         Positioned(
           top: 20.h,
+          left: 2.w,
+          right: 2.w,
           child: Container(
-            width: 100.w,
-            height: 8.h,
-            decoration: BoxDecoration(
-              color: Color(0xFFF9DEDC),
-              borderRadius: BorderRadius.all(Radius.circular(18)),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(children: [
-                SizedBox(
-                  width: 2.w,
-                ),
-                Icon(
-                  Icons.error_outline,
-                  color: Color(0xFFD93838),
-                ),
-                SizedBox(
-                  width: 2.w,
-                ),
-                // TODO: Customize the error text based on the error
-                Flexible(
+              height: 6.h,
+              decoration: BoxDecoration(
+                color: Color(0xFFF9DEDC),
+                borderRadius: BorderRadius.all(Radius.circular(18)),
+              ),
+              child:
+                  // TODO: Customize the error text based on the error
+                  Flexible(
+                child: Center(
                   child: Text(
                     '$message',
                     style: TextStyle(
@@ -42,12 +33,9 @@ class LoginError extends StatelessWidget {
                         fontSize: 8.sp,
                         fontWeight: FontWeight.w500),
                   ),
-                )
-              ]),
-            ),
-          ),
+                ),
+              )),
         ),
-        PickupMainBody()
       ],
     );
   }
