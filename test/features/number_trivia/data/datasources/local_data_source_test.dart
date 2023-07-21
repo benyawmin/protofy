@@ -1,13 +1,11 @@
 import 'dart:convert';
 
-import 'package:Enter/core/error/exceptions.dart';
-import 'package:Enter/features/card_management/data/datasources/local_data_source.dart';
-import 'package:Enter/features/card_management/data/models/user_data_model.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/local_data_source.dart';
+import 'package:Goodbytz/features/card_management/data/models/order_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
 
 import 'local_data_source_test.mocks.dart';
 
@@ -37,7 +35,7 @@ void main() {
         'cards': cards.map((card) => card.toJson()).toList(),
       });
       final expectedData =
-          UserDataModel(token: 'REQUESTED_TOKEN', cards: cards);
+          OrderDataModel(token: 'REQUESTED_TOKEN', cards: cards);
 
       when(mockSecureStorage.read(key: anyNamed('key')))
           .thenAnswer((_) => Future.value(tokenJson));
@@ -71,7 +69,7 @@ void main() {
     test('should cache the auth CACHED_AUTH_TOKEN', () async {
       // arrange
       final tokenToCache =
-          UserDataModel(token: 'REQUESTED_TOKEN', cards: cards);
+          OrderDataModel(token: 'REQUESTED_TOKEN', cards: cards);
       // act
       await localDataSource.cacheCards(tokenToCache);
       // assert

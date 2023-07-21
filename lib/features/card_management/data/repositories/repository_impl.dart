@@ -1,15 +1,14 @@
-import 'package:Enter/core/error/exceptions.dart';
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/network/network_info.dart';
-import 'package:Enter/features/card_management/data/datasources/local_data_source.dart';
-import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart';
-import 'package:Enter/features/card_management/data/models/user_data_model.dart';
-import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
-import 'package:Enter/features/card_management/domain/entities/user_data.dart';
-import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart';
+import 'package:Goodbytz/core/error/exceptions.dart';
+import 'package:Goodbytz/core/error/failures.dart';
+import 'package:Goodbytz/core/network/network_info.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/local_data_source.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/remote_data_source.dart';
+import 'package:Goodbytz/features/card_management/data/models/order_data_model.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
-typedef Future<UserDataModel> _TokenPicker();
+typedef Future<OrderDataModel> _TokenPicker();
 
 class RepositoryImpl implements AuthRepository {
   final RemoteDataSource remoteDataSource;
@@ -23,31 +22,25 @@ class RepositoryImpl implements AuthRepository {
   });
 
   @override
-  Future<Either<Failure, UserData>> authentication(
-      {required String email, required String password}) async {
+  Future<Either<Failure, OrderData>> authentication(
+      {required String orderId}) async {
     return await _getToken(() {
-      return remoteDataSource.getAuthToken(email, password);
+      return remoteDataSource.getAuthToken(orderId);
     });
   }
 
-  Future<Either<Failure, UserData>> _getToken(
+  Future<Either<Failure, OrderData>> _getToken(
     _TokenPicker tokenPicker,
   ) async {
     if (await networkInfo.isConnected) {
       try {
-        final remoteCredentials = await tokenPicker();
-        final creditCards = remoteCredentials.cards
-            .map((card) => CreditCard(
-                  name: card.name,
-                  phoneNumber: card.phoneNumber,
-                  email: card.email,
-                  ibanNumber: card.ibanNumber,
-                ))
+        final remoteOrderData = await tokenPicker();
+        final dishes = remoteOrderData.dishes
+            .map((dish) => DishModel(boxNumber: dish.boxNumber))
             .toList();
-        localDataSource.cacheCards(UserDataModel(
-            token: remoteCredentials.token, cards: remoteCredentials.cards));
-        return Right(
-            UserData(token: remoteCredentials.token, cards: creditCards));
+        localDataSource.cacheCards(
+            OrderDataModel(orderId: remoteOrderData.orderId, dishes: dishes));
+        return Right(OrderData(orderId: remoteOrderData.orderId, dishes: dishes));
       } on ServerException {
         return Left(ServerFailure());
       }

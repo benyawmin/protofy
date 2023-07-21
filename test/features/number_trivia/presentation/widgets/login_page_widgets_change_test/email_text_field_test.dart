@@ -1,4 +1,4 @@
-import 'package:Enter/features/card_management/presentation/widgets/login_page_widgets/email_text_field.dart';
+import 'package:Goodbytz/features/card_management/presentation/widgets/order_input_page_widgets/order_id_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -18,9 +18,9 @@ void main() {
         changedEmail = email;
       }
 
-      final widget = EmailTextField(
-        emailController: emailController,
-        onEmailChanged: onEmailChanged,
+      final widget = OrderIdTextField(
+        orderIdTextController: emailController,
+        onOrderIdTextChanged: onEmailChanged,
       );
 
       await tester.pumpWidget(MaterialApp(home: Scaffold(body: widget)));

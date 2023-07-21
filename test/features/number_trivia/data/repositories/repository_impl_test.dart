@@ -1,13 +1,10 @@
-import 'package:Enter/core/error/exceptions.dart';
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/network/network_info.dart';
-import 'package:Enter/features/card_management/data/datasources/local_data_source.dart';
-import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart';
-import 'package:Enter/features/card_management/data/models/user_data_model.dart';
-import 'package:Enter/features/card_management/data/repositories/repository_impl.dart';
-import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
-import 'package:Enter/features/card_management/domain/entities/user_data.dart';
-import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart';
+import 'package:Goodbytz/core/network/network_info.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/local_data_source.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/remote_data_source.dart';
+import 'package:Goodbytz/features/card_management/data/models/order_data_model.dart';
+import 'package:Goodbytz/features/card_management/data/repositories/repository_impl.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/domain/repositories/auth_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:dartz/dartz.dart';
@@ -42,13 +39,7 @@ void main() {
         () async {
       // arrange
       // TODO: remove duplcation
-      final List<CreditCard> cards = [
-        CreditCard(
-            name: 'name',
-            phoneNumber: 'phoneNumber',
-            email: 'email',
-            ibanNumber: 'ibanNumber')
-      ];
+      final List<DishModel> cards = [DishModel(boxNumber: '0')];
       final List<CreditCardModel> cardsModel = [
         CreditCardModel(
             name: 'name',
@@ -56,8 +47,8 @@ void main() {
             email: 'email',
             ibanNumber: 'ibanNumber')
       ];
-      final expectedUserAuth = UserData(token: 'token', cards: cards);
-      final remoteToken = UserDataModel(token: 'token', cards: cardsModel);
+      final expectedUserAuth = OrderData(orderId: 'token', dishes: cards);
+      final remoteToken = OrderDataModel(token: 'token', cards: cardsModel);
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
       when(mockRemoteDataSource.getAuthToken(email, password))
           .thenAnswer((_) async => remoteToken);
@@ -66,8 +57,7 @@ void main() {
 
       // act
       final result = await repository.authentication(
-        email: email,
-        password: password,
+        orderId: 'benyamin_jafari_2000',
       );
 
       // assert

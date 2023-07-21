@@ -1,7 +1,7 @@
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/util/input_converter.dart';
-import 'package:Enter/features/card_management/domain/entities/user_data.dart';
-import 'package:Enter/features/card_management/domain/usecases/get_auth_data.dart';
+import 'package:Goodbytz/core/error/failures.dart';
+import 'package:Goodbytz/core/util/input_converter.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/domain/usecases/get_auth_data.dart';
 import 'package:bloc/bloc.dart';
 
 import 'package:equatable/equatable.dart';
@@ -9,54 +9,43 @@ import 'package:equatable/equatable.dart';
 part 'login_event.dart';
 part 'login_state.dart';
 
-const String SERVER_FAILURE_MESSAGE = 'Server Failure';
+const String SERVER_FAILURE_MESSAGE = 'Order does not exist';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
-const String INVALID_INPUT_FAILURE_MESSAGE =
-    'Invalid Input - The number must be a positive integer or zero';
+const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  final GetAuthData getAuthToken;
-  final InputEmailValidation inputEmailValidation;
-  final InputPasswordValidation inputPasswordValidation;
+  final GetOrderData getOrderData;
+  final InputEmailValidation inputOderIdValidation;
 
-  LoginBloc(
-      {required this.getAuthToken,
-      required this.inputEmailValidation,
-      required this.inputPasswordValidation})
-      : super(AuthenticationInitial()) {
+  LoginBloc({
+    required this.getOrderData,
+    required this.inputOderIdValidation,
+  }) : super(AuthenticationInitial()) {
     on<AuthenticationRequest>((event, emit) async {
       emit(AuthenticationInProgress());
 
-      final emailInputEither = inputEmailValidation.emailValidator(event.email);
-      final passwordInputEither =
-          inputPasswordValidation.passwordValidator(event.password);
-      bool isEmailValid = false;
-      bool isPassWordValid = false;
-      String correctEmail = '';
-      String correctPassword = '';
+      final orderIdEither =
+          inputOderIdValidation.orderIdValidatior(event.orderId);
 
-      await emailInputEither.fold(
+      bool isOrderIdValid = false;
+      String correctOrderId = '';
+
+      await orderIdEither.fold(
           (failure) async =>
               emit(AuthenticationError(message: INVALID_INPUT_FAILURE_MESSAGE)),
-          (email) async {
-        isEmailValid = true;
-        correctEmail = email;
+          (orderId) async {
+        isOrderIdValid = true;
+        correctOrderId = orderId;
       });
 
-      await passwordInputEither.fold(
-          (failure) async =>
-              emit(AuthenticationError(message: INVALID_INPUT_FAILURE_MESSAGE)),
-          (password) async {
-        isPassWordValid = true;
-        correctPassword = password;
-      });
-      if (isEmailValid && isPassWordValid) {
-        final failureOrEmail = await getAuthToken(
-            Params(email: correctEmail, password: correctPassword));
-        await failureOrEmail.fold(
+      if (isOrderIdValid) {
+        final failureOrOrderId =
+            await getOrderData(Params(orderId: correctOrderId));
+        await failureOrOrderId.fold(
             (failure) async => emit(
                 AuthenticationError(message: _mapFailureToMessage(failure))),
-            (userData) async => emit(AuthenticationSuccess(userData: userData)));
+            (orderData) async =>
+                emit(AuthenticationSuccess(orderData: orderData)));
       }
     });
   }

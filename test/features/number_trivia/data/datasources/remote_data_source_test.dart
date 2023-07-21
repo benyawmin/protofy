@@ -1,5 +1,5 @@
-import 'package:Enter/core/error/exceptions.dart';
-import 'package:Enter/features/card_management/data/datasources/remote_data_source.dart';
+import 'package:Goodbytz/core/error/exceptions.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/remote_data_source.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

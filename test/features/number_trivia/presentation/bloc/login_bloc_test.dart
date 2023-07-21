@@ -1,9 +1,9 @@
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/util/input_converter.dart';
-import 'package:Enter/features/card_management/domain/entities/credit_card.dart';
-import 'package:Enter/features/card_management/domain/entities/user_data.dart';
-import 'package:Enter/features/card_management/domain/usecases/get_auth_data.dart';
-import 'package:Enter/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
+import 'package:Goodbytz/core/error/failures.dart';
+import 'package:Goodbytz/core/util/input_converter.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/dishes.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/domain/usecases/get_auth_data.dart';
+import 'package:Goodbytz/features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,16 +12,10 @@ import 'package:mockito/mockito.dart';
 
 import 'login_bloc_test.mocks.dart';
 
-@GenerateMocks([GetAuthData, InputEmailValidation, InputPasswordValidation])
+@GenerateMocks([GetOrderData, InputEmailValidation])
 void main() {
   group('LoginBloc', () {
-    final List<CreditCard> cards = [
-      CreditCard(
-          name: 'name',
-          phoneNumber: 'phoneNumber',
-          email: 'email',
-          ibanNumber: 'ibanNumber')
-    ];
+    final List<DishEntity> cards = [DishEntity(boxNumber: '0')];
     late LoginBloc loginBloc;
     late MockGetAuthData mockGetAuthToken;
     late MockInputEmailValidation mockEmailValidation;
@@ -32,9 +26,8 @@ void main() {
       mockEmailValidation = MockInputEmailValidation();
       mockPasswordValidation = MockInputPasswordValidation();
       loginBloc = LoginBloc(
-        getAuthToken: mockGetAuthToken,
-        inputEmailValidation: mockEmailValidation,
-        inputPasswordValidation: mockPasswordValidation,
+        getOrderData: mockGetAuthToken,
+        inputOderIdValidation: mockEmailValidation,
       );
     });
 
@@ -49,14 +42,13 @@ void main() {
     blocTest<LoginBloc, LoginState>(
       'emits [AuthenticationInProgress, AuthenticationError] when input validation fails',
       build: () {
-        when(mockEmailValidation.emailValidator(any))
+        when(mockEmailValidation.orderIdValidatior(any))
             .thenReturn(Left(InvalidInputFailure()));
         when(mockPasswordValidation.passwordValidator(any))
             .thenReturn(Left(InvalidInputFailure()));
         return loginBloc;
       },
-      act: (bloc) => bloc.add(AuthenticationRequest(
-          email: 'incorrect_email', password: 'incorrect_password')),
+      act: (bloc) => bloc.add(AuthenticationRequest(orderId: '0')),
       expect: () => [
         AuthenticationInProgress(),
         AuthenticationError(message: INVALID_INPUT_FAILURE_MESSAGE),
@@ -66,7 +58,7 @@ void main() {
     blocTest<LoginBloc, LoginState>(
       'emits [AuthenticationInProgress, AuthenticationError] when authentication fails',
       build: () {
-        when(mockEmailValidation.emailValidator(any))
+        when(mockEmailValidation.orderIdValidatior(any))
             .thenReturn(Right('correct_email'));
         when(mockPasswordValidation.passwordValidator(any))
             .thenReturn(Right('correct_password'));
@@ -75,7 +67,7 @@ void main() {
         return loginBloc;
       },
       act: (bloc) => bloc.add(AuthenticationRequest(
-          email: 'correct_email', password: 'correct_password')),
+          orderId: '0')),
       expect: () => [
         AuthenticationInProgress(),
         AuthenticationError(message: SERVER_FAILURE_MESSAGE),
@@ -85,20 +77,20 @@ void main() {
     blocTest<LoginBloc, LoginState>(
       'emits [AuthenticationInProgress, AuthenticationSuccess] when authentication succeeds',
       build: () {
-        when(mockEmailValidation.emailValidator(any))
+        when(mockEmailValidation.orderIdValidatior(any))
             .thenReturn(Right('correct_email'));
         when(mockPasswordValidation.passwordValidator(any))
             .thenReturn(Right('correct_password'));
         when(mockGetAuthToken.call(any)).thenAnswer(
-            (_) async => Right(UserData(token: 'token', cards: cards)));
+            (_) async => Right(OrderData(orderId: 'token', dishes: cards)));
         return loginBloc;
       },
       act: (bloc) => bloc.add(AuthenticationRequest(
-          email: 'correct_email', password: 'correct_password')),
+          orderId: '0')),
       expect: () => [
         AuthenticationInProgress(),
         AuthenticationSuccess(
-            userData: UserData(token: 'token', cards: cards)),
+            orderData: OrderData(orderId: 'token', dishes: cards)),
       ],
     );
   });

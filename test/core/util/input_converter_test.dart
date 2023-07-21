@@ -1,16 +1,13 @@
-
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/util/input_converter.dart';
+import 'package:Goodbytz/core/error/failures.dart';
+import 'package:Goodbytz/core/util/input_converter.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   late InputEmailValidation inputEmailValidation;
-  late InputPasswordValidation inputPasswordValidation;
 
   setUp(() {
     inputEmailValidation = InputEmailValidation();
-    inputPasswordValidation = InputPasswordValidation();
   });
 
   group('Input email validation', () {
@@ -19,7 +16,7 @@ void main() {
       // arrange
       final email = 'benyamin@email.com';
       // act
-      final result = inputEmailValidation.emailValidator(email);
+      final result = inputEmailValidation.orderIdValidatior(email);
       // assert
       expect(result, Right('benyamin@email.com'));
     });
@@ -30,31 +27,7 @@ void main() {
       // arrange
       final email = 'benyamin';
       // act
-      final result = inputEmailValidation.emailValidator(email);
-      // assert
-      expect(result, Left(InvalidInputFailure()));
-    });
-  });
-
-  group('Input password validation', () {
-    test(
-        'Should return the password as a string when the password format is correct',
-        () {
-      // arrange
-      final password = 'Benyam!n2000';
-      // act
-      final result = inputPasswordValidation.passwordValidator(password);
-      // assert
-      expect(result, Right('Benyam!n2000'));
-    });
-
-    test(
-        'Should return [Left(InvalidInputFailure())] when the password format is NOT correct',
-        () {
-      // arrange
-      final email = 'benyamin';
-      // act
-      final result = inputEmailValidation.emailValidator(email);
+      final result = inputEmailValidation.orderIdValidatior(email);
       // assert
       expect(result, Left(InvalidInputFailure()));
     });

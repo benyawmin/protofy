@@ -6,13 +6,13 @@
 import 'dart:async' as _i5;
 
 import 'package:dartz/dartz.dart' as _i3;
-import 'package:Enter/core/error/failures.dart' as _i6;
-import 'package:Enter/core/util/input_converter.dart' as _i8;
-import 'package:Enter/features/card_management/domain/entities/user_data.dart'
+import 'package:Goodbytz/core/error/failures.dart' as _i6;
+import 'package:Goodbytz/core/util/input_converter.dart' as _i8;
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart'
     as _i7;
-import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart'
+import 'package:Goodbytz/features/card_management/domain/repositories/auth_repository.dart'
     as _i2;
-import 'package:Enter/features/card_management/domain/usecases/get_auth_data.dart'
+import 'package:Goodbytz/features/card_management/domain/usecases/get_auth_data.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -51,7 +51,7 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
 /// A class which mocks [GetAuthData].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetAuthData extends _i1.Mock implements _i4.GetAuthData {
+class MockGetAuthData extends _i1.Mock implements _i4.GetOrderData {
   MockGetAuthData() {
     _i1.throwOnMissingStub(this);
   }
@@ -65,21 +65,21 @@ class MockGetAuthData extends _i1.Mock implements _i4.GetAuthData {
         ),
       ) as _i2.AuthRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, _i7.UserData>> call(_i4.Params? params) =>
+  _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>> call(_i4.Params? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,
           [params],
         ),
-        returnValue: _i5.Future<_i3.Either<_i6.Failure, _i7.UserData>>.value(
-            _FakeEither_1<_i6.Failure, _i7.UserData>(
+        returnValue: _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>>.value(
+            _FakeEither_1<_i6.Failure, _i7.OrderData>(
           this,
           Invocation.method(
             #call,
             [params],
           ),
         )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.UserData>>);
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>>);
 }
 
 /// A class which mocks [InputEmailValidation].
@@ -92,7 +92,7 @@ class MockInputEmailValidation extends _i1.Mock
   }
 
   @override
-  _i3.Either<_i6.Failure, String> emailValidator(String? email) =>
+  _i3.Either<_i6.Failure, String> orderIdValidatior(String? email) =>
       (super.noSuchMethod(
         Invocation.method(
           #emailValidator,

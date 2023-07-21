@@ -1,4 +1,4 @@
-import 'package:Enter/core/error/failures.dart';
+import 'package:Goodbytz/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

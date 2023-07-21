@@ -8,11 +8,10 @@ abstract class LoginEvent extends Equatable {
 }
 
 class AuthenticationRequest extends LoginEvent {
-  final String email;
-  final String password;
+  final String orderId;
 
-  AuthenticationRequest({required this.email, required this.password});
+  AuthenticationRequest({required this.orderId});
 
   @override
-  List<Object> get props => [email, password];
+  List<Object> get props => [orderId];
 }

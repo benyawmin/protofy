@@ -1,30 +1,27 @@
-
-import 'package:Enter/core/error/failures.dart';
-import 'package:Enter/core/usecases/usecase.dart';
-import 'package:Enter/features/card_management/domain/entities/user_data.dart';
-import 'package:Enter/features/card_management/domain/repositories/auth_repository.dart';
+import 'package:Goodbytz/core/error/failures.dart';
+import 'package:Goodbytz/core/usecases/usecase.dart';
+import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
+import 'package:Goodbytz/features/card_management/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-class GetAuthData implements UseCase<UserData, Params> {
+class GetOrderData implements UseCase<OrderData, Params> {
   final AuthRepository repository;
 
-  GetAuthData(this.repository);
+  GetOrderData(this.repository);
 
   @override
   // Callable class was used here (call should be the name of the function)
-  Future<Either<Failure, UserData>> call(Params params) async {
-    return await repository.authentication(
-        email: params.email, password: params.password);
+  Future<Either<Failure, OrderData>> call(Params params) async {
+    return await repository.authentication(orderId: params.orderId);
   }
 }
 
 class Params extends Equatable {
-  final String email;
-  final String password;
+  final String orderId;
 
-  Params({required this.email, required this.password});
+  Params({required this.orderId});
 
   @override
-  List<Object?> get props => [email, password];
+  List<Object?> get props => [orderId];
 }

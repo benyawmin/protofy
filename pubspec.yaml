@@ -1,4 +1,4 @@
-name: Enter 
+name: Goodbytz 
 description: TDD Clean architecture technical test
 
 version: 1.0.0+1
@@ -29,6 +29,7 @@ dependencies:
   bloc_test: ^9.1.3
   # IO
   universal_io: ^2.2.2
+  google_fonts: ^5.1.0
   
 
 dev_dependencies:

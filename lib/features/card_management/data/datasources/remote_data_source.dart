@@ -1,29 +1,27 @@
 import 'dart:convert';
 
-import 'package:Enter/core/error/exceptions.dart';
-import 'package:Enter/features/card_management/data/datasources/fake_server.dart';
-import 'package:Enter/features/card_management/data/models/user_data_model.dart';
-
+import 'package:Goodbytz/core/error/exceptions.dart';
+import 'package:Goodbytz/features/card_management/data/datasources/fake_server.dart';
+import 'package:Goodbytz/features/card_management/data/models/order_data_model.dart';
 
 abstract class RemoteDataSource {
   /// Call the Api endpoint
   /// Throw exception [ServerException] for all error codes
-  Future<UserDataModel> getAuthToken(String email, String password);
+  Future<OrderDataModel> getAuthToken(String orderId);
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
   RemoteDataSourceImpl();
   @override
-  Future<UserDataModel> getAuthToken(String email, String password) =>
-      _authRequest('http://sampleApi.com/', email, password);
+  Future<OrderDataModel> getAuthToken(String orderId) =>
+      _authRequest('http://sampleApi.com/', orderId);
 
-  Future<UserDataModel> _authRequest(
-      String url, String email, String password) async {
+  Future<OrderDataModel> _authRequest(String url, String orderId) async {
     final fakeServer = FakeServerImpl();
-    final response = await fakeServer.auth(email, password);
+    final response = await fakeServer.auth(orderId);
 
     if (response.statusCode == 200) {
-      return UserDataModel.fromJson(json.decode(response.body));
+      return OrderDataModel.fromJson(json.decode(response.body));
     } else {
       throw ServerException();
     }

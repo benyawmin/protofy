@@ -9,7 +9,11 @@ class Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Center(
-        child: CircularProgressIndicator(),
+        child: Image.asset(
+          "images/food_loader.gif",
+          height: 125.0,
+          width: 125.0,
+        ),
       ),
     );
   }

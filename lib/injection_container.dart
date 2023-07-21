@@ -1,4 +1,5 @@
-import 'package:Enter/core/util/input_converter.dart';
+import 'package:Goodbytz/core/util/input_converter.dart';
+import 'package:Goodbytz/features/card_management/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
@@ -15,14 +16,13 @@ import 'features/card_management/presentation/bloc/login_bloc/login_bloc.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  //! Features - Card Management
-  sl.registerFactory(() => LoginBloc(
-      getAuthToken: sl(),
-      inputEmailValidation: sl(),
-      inputPasswordValidation: sl()));
+  //! Features - Goodbytz
+  sl.registerFactory(
+      () => LoginBloc(getOrderData: sl(), inputOderIdValidation: sl()));
+  sl.registerFactory(() => OrderPickupBloc());
 
   //* Use cases
-  sl.registerLazySingleton(() => GetAuthData(sl()));
+  sl.registerLazySingleton(() => GetOrderData(sl()));
 
   //* Repository
   sl.registerLazySingleton<AuthRepository>(() => RepositoryImpl(
@@ -35,7 +35,6 @@ Future<void> init() async {
       () => LocalDataSourceImpl(secureStorage: sl()));
   //! Core
   sl.registerLazySingleton(() => InputEmailValidation());
-  sl.registerLazySingleton(() => InputPasswordValidation());
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 
   //! External

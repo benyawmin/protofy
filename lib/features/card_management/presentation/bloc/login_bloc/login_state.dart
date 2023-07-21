@@ -12,12 +12,12 @@ class AuthenticationInitial extends LoginState {}
 class AuthenticationInProgress extends LoginState {}
 
 class AuthenticationSuccess extends LoginState {
-  final UserData userData;
+  final OrderData orderData;
 
-  AuthenticationSuccess({required this.userData});
+  AuthenticationSuccess({required this.orderData});
 
   @override
-  List<Object> get props => [userData];
+  List<Object> get props => [orderData];
 }
 
 class AuthenticationError extends LoginState {

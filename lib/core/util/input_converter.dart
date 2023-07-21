@@ -1,37 +1,20 @@
-import 'package:Enter/core/error/failures.dart';
+import 'package:Goodbytz/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
-//! The trick in this code is that if the conditions for a correct email and
-//! password format, which were met during registration, are not met during
-//! login, we reject the login without even connecting to the server
+//! The trick in this code is that if the criteria for a correct orderId
+//! format are not met, we reject the Pick up without even connecting to the server
 //! which helps reduce the server load a lot
 class InputEmailValidation {
-  Either<Failure, String> emailValidator(String email) {
+  Either<Failure, String> orderIdValidatior(String orderId) {
     try {
-      //! Email should meet the following regex conditions
-      final bool validEmailFormat = RegExp(
-              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-          .hasMatch(email);
+      //! OrderId should meet the following regex conditions
+      // Order ID format should be NAME_NAME_NUMBER
+      final bool validEmailFormat =
+          RegExp(r"^[a-zA-Z]+_[a-zA-Z]+_\d+$").hasMatch(orderId);
       if (!validEmailFormat)
         throw FormatException();
       else
-        return Right(email);
-    } on FormatException {
-      return Left(InvalidInputFailure());
-    }
-  }
-}
-
-class InputPasswordValidation {
-  Either<Failure, String> passwordValidator(String password) {
-    try {
-      //! Password should meet the regex conditions
-      RegExp regex = RegExp(
-          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
-      if (!regex.hasMatch(password)) {
-        throw FormatException();
-      } else
-        return Right(password);
+        return Right(orderId);
     } on FormatException {
       return Left(InvalidInputFailure());
     }
