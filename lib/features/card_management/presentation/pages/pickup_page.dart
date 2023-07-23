@@ -1,7 +1,9 @@
 import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
 import 'package:Goodbytz/features/card_management/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
+import 'package:Goodbytz/features/card_management/presentation/core/helper/gridview_helper.dart';
 import 'package:Goodbytz/features/card_management/presentation/core/widgets/blink_animation.dart';
 import 'package:Goodbytz/features/card_management/presentation/core/widgets/logo_text.dart';
+import 'package:Goodbytz/features/card_management/presentation/widgets/pickup_page_widgets/gridview_section.dart';
 import 'package:Goodbytz/features/card_management/presentation/widgets/pickup_page_widgets/pickup_page_widgets.dart';
 import 'package:Goodbytz/injection_container.dart';
 import 'package:flutter/material.dart';
@@ -44,40 +46,7 @@ class PickupPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                width: 40.w,
-                                height: 20.h,
-                                child: GridView.count(
-                                  mainAxisSpacing: 5,
-                                  crossAxisSpacing: 5,
-                                  crossAxisCount: 3,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  children: List.generate(6, (index) {
-                                    debugPrint(index.toString());
-                                    debugPrint(orderData.dishes.toString());
-                                    return Column(
-                                      children: [
-                                        (index < 3
-                                                ? orderData.dishes
-                                                    .contains(index)
-                                                : orderData.dishes
-                                                    .contains(index + 3))
-                                            ? BlinkAnimation(
-                                                child: Image.asset(
-                                                    'icons/pot_green.png'))
-                                            : Image.asset('icons/pot.png'),
-                                        Text(
-                                          index < 3
-                                              ? index.toString()
-                                              : (index + 3).toString(),
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      ],
-                                    );
-                                  }),
-                                ),
-                              ),
+                              GridViewSection(orderData: orderData),
                               MiddleGridDivider(),
                               SizedBox(
                                 width: 2.w,
@@ -93,25 +62,8 @@ class PickupPage extends StatelessWidget {
                                   physics: NeverScrollableScrollPhysics(),
                                   children: List.generate(6, (index) {
                                     return Column(
-                                      children: [
-                                        (index < 3
-                                                ? orderData.dishes
-                                                    .contains(index + 3)
-                                                : orderData.dishes
-                                                    .contains(index + 6))
-                                            ? BlinkAnimation(
-                                                child: Image.asset(
-                                                    'icons/pot_green.png'))
-                                            : Image.asset('icons/pot.png'),
-                                        Text(
-                                          index < 3
-                                              ? (3 + index).toString()
-                                              : (6 + index).toString(),
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      ],
-                                    );
+                                        children:
+                                            logicBuilder(index, 1, orderData));
                                   }),
                                 ),
                               ),
@@ -121,8 +73,8 @@ class PickupPage extends StatelessWidget {
                         SizedBox(
                           height: 8.h,
                         ),
-                        Text('Order ID:'),
-                        Text('benyamin_jafari_2000'),
+                        const Text('Order ID:'),
+                        const Text('benyamin_jafari_2000'),
                         Spacer(),
                         Container(
                           decoration: BoxDecoration(
