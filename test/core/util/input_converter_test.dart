@@ -4,30 +4,30 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  late InputEmailValidation inputEmailValidation;
+  late InputOrderIDValidation inputEmailValidation;
 
   setUp(() {
-    inputEmailValidation = InputEmailValidation();
+    inputEmailValidation = InputOrderIDValidation();
   });
 
   group('Input email validation', () {
     test('Should return the email as a string when the email format is correct',
         () {
       // arrange
-      final email = 'benyamin@email.com';
+      final orderID = 'benyamin_jafari_2000';
       // act
-      final result = inputEmailValidation.orderIdValidatior(email);
+      final result = inputEmailValidation.orderIdValidatior(orderID);
       // assert
-      expect(result, Right('benyamin@email.com'));
+      expect(result, Right('benyamin_jafari_2000'));
     });
 
     test(
         'Should return [Left(InvalidInputFailure())] when the email format is NOT correct',
         () {
       // arrange
-      final email = 'benyamin';
+      final orderID = 'benyamin';
       // act
-      final result = inputEmailValidation.orderIdValidatior(email);
+      final result = inputEmailValidation.orderIdValidatior(orderID);
       // assert
       expect(result, Left(InvalidInputFailure()));
     });

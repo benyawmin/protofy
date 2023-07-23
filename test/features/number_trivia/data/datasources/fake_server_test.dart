@@ -1,4 +1,4 @@
-import 'package:Goodbytz/features/card_management/data/datasources/fake_server.dart';
+import 'package:Goodbytz/features/order_pickup/data/datasources/fake_server.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -10,16 +10,16 @@ void main() {
     });
 
     test(
-        'Should return the authentication token for the correct email and password',
+        'Should return the order data for the correct order id',
         () async {
       // arrange
-      final String correctEmail = 'benyamin@email.com';
-      final String serverCorrectResponse =
-          '{ "token": "REQUESTED_TOKEN", "cards" : [ { "name": "Julia Adams", "email": "Julia@email.com", "phoneNumber": "+49 761 123 4567", "ibanNumber": "DE89 3704 0044 0532 0130 00" }, { "name": "John Adams", "email": "John@email.com", "phoneNumber": "+49 721 123 4567", "ibanNumber": "DE39 3704 0044 0532 0330 00" }, { "name": "Fred Evans", "email": "fred@email.com", "phoneNumber": "+49 725 123 4567", "ibanNumber": "DE39 3702 0044 0532 0134 00" }, { "name": "Jason Muster", "email": "jason@email.com", "phoneNumber": "+49 761 123 4587", "ibanNumber": "DE89 3704 0084 0532 0130 00" } ] }';
+      const String orderID = 'benyamin_jafari_2000';
+      const String serverCorrectResponse =
+          '{ "order_id": "benyamin_jafari_2000", "dishes": [ 0, 2, 6 ] }';
       // act
 
-      final response = await apiFakeServer.auth(
-        correctEmail,
+      final response = await apiFakeServer.getOrderDataFromApi(
+        orderID,
       );
       // assert
       expect(response.statusCode, 200);
@@ -28,7 +28,7 @@ void main() {
 
     test('should return a 404 error for the wrong email and password input',
         () async {
-      final response = await apiFakeServer.auth('dsa');
+      final response = await apiFakeServer.getOrderDataFromApi('dsa');
 
       expect(response.statusCode, 404);
       expect(response.body, '{}');

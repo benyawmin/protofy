@@ -3,12 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
+import 'dart:async' as _i4;
 
-import 'package:Goodbytz/core/network/network_info.dart' as _i5;
-import 'package:Goodbytz/features/card_management/data/datasources/local_data_source.dart'
-    as _i4;
-import 'package:Goodbytz/features/card_management/data/datasources/remote_data_source.dart'
+import 'package:Goodbytz/core/network/network_info.dart' as _i6;
+import 'package:Goodbytz/features/order_pickup/data/datasources/local_data_source.dart'
+    as _i5;
+import 'package:Goodbytz/features/order_pickup/data/datasources/remote_data_source.dart'
+    as _i3;
+import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -23,62 +25,87 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeOrderDataModel_0 extends _i1.SmartFake
+    implements _i2.OrderDataModel {
+  _FakeOrderDataModel_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [RemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRemoteDataSource extends _i1.Mock implements _i2.RemoteDataSource {
+class MockRemoteDataSource extends _i1.Mock implements _i3.RemoteDataSource {
   MockRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<dynamic> getAuthToken(String? orderId) => (super.noSuchMethod(
+  _i4.Future<_i2.OrderDataModel> getOrderData(String? orderId) =>
+      (super.noSuchMethod(
         Invocation.method(
-          #getAuthToken,
+          #getOrderData,
           [orderId],
         ),
-        returnValue: _i3.Future<dynamic>.value(),
-      ) as _i3.Future<dynamic>);
+        returnValue: _i4.Future<_i2.OrderDataModel>.value(_FakeOrderDataModel_0(
+          this,
+          Invocation.method(
+            #getOrderData,
+            [orderId],
+          ),
+        )),
+      ) as _i4.Future<_i2.OrderDataModel>);
 }
 
 /// A class which mocks [LocalDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLocalDataSource extends _i1.Mock implements _i4.LocalDataSource {
+class MockLocalDataSource extends _i1.Mock implements _i5.LocalDataSource {
   MockLocalDataSource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<dynamic> getCredentials() => (super.noSuchMethod(
+  _i4.Future<_i2.OrderDataModel> getCachedOrderData() => (super.noSuchMethod(
         Invocation.method(
-          #getCredentials,
+          #getCachedOrderData,
           [],
         ),
-        returnValue: _i3.Future<dynamic>.value(),
-      ) as _i3.Future<dynamic>);
+        returnValue: _i4.Future<_i2.OrderDataModel>.value(_FakeOrderDataModel_0(
+          this,
+          Invocation.method(
+            #getCachedOrderData,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.OrderDataModel>);
   @override
-  _i3.Future<void> cacheCards(dynamic tokenToCache) => (super.noSuchMethod(
+  _i4.Future<void> cacheOrderData(_i2.OrderDataModel? tokenToCache) =>
+      (super.noSuchMethod(
         Invocation.method(
-          #cacheCards,
+          #cacheOrderData,
           [tokenToCache],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }
 
 /// A class which mocks [NetworkInfo].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkInfo extends _i1.Mock implements _i5.NetworkInfo {
+class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
   MockNetworkInfo() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<bool> get isConnected => (super.noSuchMethod(
+  _i4.Future<bool> get isConnected => (super.noSuchMethod(
         Invocation.getter(#isConnected),
-        returnValue: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
 }
