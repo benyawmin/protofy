@@ -1,6 +1,8 @@
 import 'package:Goodbytz/features/card_management/domain/entities/order_data.dart';
 import 'package:Goodbytz/features/card_management/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
+import 'package:Goodbytz/features/card_management/presentation/core/widgets/blink_animation.dart';
 import 'package:Goodbytz/features/card_management/presentation/core/widgets/logo_text.dart';
+import 'package:Goodbytz/features/card_management/presentation/widgets/pickup_page_widgets/middle_grid_divider.dart';
 import 'package:Goodbytz/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,16 +49,25 @@ class PickupPage extends StatelessWidget {
                             child: GridView.count(
                               mainAxisSpacing: 5,
                               crossAxisSpacing: 5,
-                              // Create a grid with 2 columns. If you change the scrollDirection to
-                              // horizontal, this would produce 2 rows.
                               crossAxisCount: 3,
-                              // Generate 100 Widgets that display their index in the List
+                              physics: NeverScrollableScrollPhysics(),
                               children: List.generate(6, (index) {
+                                debugPrint(index.toString());
+                                debugPrint(orderData.dishes.toString());
                                 return Column(
                                   children: [
-                                    Image.asset('icons/pot.png'),
+                                    (index < 3
+                                            ? orderData.dishes.contains(index)
+                                            : orderData.dishes
+                                                .contains(index + 3))
+                                        ? BlinkAnimation(
+                                            child: Image.asset(
+                                                'icons/pot_green.png'))
+                                        : Image.asset('icons/pot.png'),
                                     Text(
-                                      index.toString(),
+                                      index < 3
+                                          ? index.toString()
+                                          : (index + 3).toString(),
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                     )
@@ -65,39 +76,35 @@ class PickupPage extends StatelessWidget {
                               }),
                             ),
                           ),
-                          Container(
-                            width: 8.w,
-                            height: 18.h,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDADADA),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
+                          MiddleGridDivider(),
+                          SizedBox(
+                            width: 2.w,
                           ),
-                          SizedBox(width: 2.w,),
-                          Container(
-                            width: 8.w,
-                            height: 18.h,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDADADA),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
+                          MiddleGridDivider(),
                           SizedBox(
                             width: 40.w,
                             height: 20.h,
                             child: GridView.count(
                               mainAxisSpacing: 5,
                               crossAxisSpacing: 5,
-                              // Create a grid with 2 columns. If you change the scrollDirection to
-                              // horizontal, this would produce 2 rows.
                               crossAxisCount: 3,
-                              // Generate 100 Widgets that display their index in the List
+                              physics: NeverScrollableScrollPhysics(),
                               children: List.generate(6, (index) {
                                 return Column(
                                   children: [
-                                    Image.asset('icons/pot.png'),
+                                    (index < 3
+                                            ? orderData.dishes
+                                                .contains(index + 3)
+                                            : orderData.dishes
+                                                .contains(index + 6))
+                                        ? BlinkAnimation(
+                                            child: Image.asset(
+                                                'icons/pot_green.png'))
+                                        : Image.asset('icons/pot.png'),
                                     Text(
-                                      index.toString(),
+                                      index < 3
+                                          ? (3 + index).toString()
+                                          : (6 + index).toString(),
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                     )
@@ -109,223 +116,9 @@ class PickupPage extends StatelessWidget {
                         ],
                       ),
                     )
-
-                    // Center(
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.center,
-                    //     children: [
-                    //       Column(
-                    //         children: [
-                    //           Row(
-                    //             children: [
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '0',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '1',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '2',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //             ],
-                    //           ),
-                    //           SizedBox(
-                    //             height: 7.h,
-                    //           ),
-                    //           Row(
-                    //             children: [
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '3',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '4',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '5',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //             ],
-                    //           ),
-                    //         ],
-                    //       ),
-                    //       SizedBox(
-                    //         width: 4.w,
-                    //       ),
-                    //       Row(
-                    //         children: [
-                    //           Container(
-                    //             width: 8.w,
-                    //             height: 24.h,
-                    //             decoration: BoxDecoration(
-                    //               color: Color(0xFFDADADA),
-                    //               borderRadius: BorderRadius.circular(10),
-                    //             ),
-                    //           ),
-                    //           SizedBox(
-                    //             width: 2.h,
-                    //           ),
-                    //           Container(
-                    //             width: 8.w,
-                    //             height: 24.h,
-                    //             decoration: BoxDecoration(
-                    //               color: Color(0xFFDADADA),
-                    //               borderRadius: BorderRadius.circular(10),
-                    //             ),
-                    //           ),
-                    //         ],
-                    //       ),
-                    //       SizedBox(
-                    //         width: 4.w,
-                    //       ),
-                    //       Column(
-                    //         children: [
-                    //           Row(
-                    //             children: [
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '6',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '7',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '8',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //             ],
-                    //           ),
-                    //           SizedBox(
-                    //             height: 7.h,
-                    //           ),
-                    //           Row(
-                    //             children: [
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '9',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '10',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //               SizedBox(
-                    //                 width: 2.h,
-                    //               ),
-                    //               Column(
-                    //                 children: [
-                    //                   Image.asset('icons/pot.png'),
-                    //                   Text(
-                    //                     '11',
-                    //                     style: TextStyle(
-                    //                         fontWeight: FontWeight.bold),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //             ],
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                   ],
                 );
-              }
-              // return Text(
-              //     '${orderData.orderId} ${orderData.dishes[0].boxNumber}');
-              else
+              } else
                 return SizedBox.shrink();
             },
           ),

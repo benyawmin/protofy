@@ -35,12 +35,12 @@ class RepositoryImpl implements AuthRepository {
     if (await networkInfo.isConnected) {
       try {
         final remoteOrderData = await tokenPicker();
-        final dishes = remoteOrderData.dishes
-            .map((dish) => DishModel(boxNumber: dish.boxNumber))
-            .toList();
+        final dishes = remoteOrderData.dishes;
+
         localDataSource.cacheCards(
             OrderDataModel(orderId: remoteOrderData.orderId, dishes: dishes));
-        return Right(OrderData(orderId: remoteOrderData.orderId, dishes: dishes));
+        return Right(
+            OrderData(orderId: remoteOrderData.orderId, dishes: dishes));
       } on ServerException {
         return Left(ServerFailure());
       }

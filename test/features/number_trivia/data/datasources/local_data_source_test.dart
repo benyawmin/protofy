@@ -22,17 +22,15 @@ void main() {
   group('getCachedAuthToken', () {
     test('should return cached user data if it exists', () async {
       // arrange
-      final List<CreditCardModel> cards = [
-        CreditCardModel(
-          name: 'name',
-          phoneNumber: 'phoneNumber',
-          email: 'email',
-          ibanNumber: 'ibanNumber',
+      final List<OrderDataModel> orderData = [
+        OrderDataModel(
+          orderId: 'id',
+          dishes: [0, 2, 6]
         )
       ];
       final tokenJson = json.encode({
-        'token': 'REQUESTED_TOKEN',
-        'cards': cards.map((card) => card.toJson()).toList(),
+        'token': 'id',
+        'cards': dishes.map((card) => card.toJson()).toList(),
       });
       final expectedData =
           OrderDataModel(token: 'REQUESTED_TOKEN', cards: cards);

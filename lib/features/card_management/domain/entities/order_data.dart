@@ -1,9 +1,8 @@
-import 'package:Goodbytz/features/card_management/data/models/order_data_model.dart';
 import 'package:equatable/equatable.dart';
 
 class OrderData extends Equatable {
   final String orderId;
-  final List<DishModel> dishes;
+  final List<int> dishes;
 
   OrderData({required this.orderId, required this.dishes});
 
