@@ -3,11 +3,7 @@ import 'package:Goodbytz/features/card_management/presentation/widgets/order_inp
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class PickupMainBody extends StatelessWidget {
-  const PickupMainBody({
-    super.key,
-  });
-
+class OrderMainBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -22,13 +22,16 @@ class _LoginControlsState extends State<LoginControls> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        OrderIdTextField(
-            orderIdTextController: orderIdTextController,
-            onOrderIdTextChanged: (value) {
-              setState(() {
-                orderId = value;
-              });
-            }),
+        SizedBox(
+          height: 8.h,
+          child: OrderIdTextField(
+              orderIdTextController: orderIdTextController,
+              onOrderIdTextChanged: (value) {
+                setState(() {
+                  orderId = value;
+                });
+              }),
+        ),
         SizedBox(
           height: 4.h,
         ),

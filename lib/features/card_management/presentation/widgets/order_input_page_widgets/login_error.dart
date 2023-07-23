@@ -1,16 +1,16 @@
-import 'package:Goodbytz/features/card_management/presentation/widgets/order_input_page_widgets/pick_up_main_body.dart';
+import 'package:Goodbytz/features/card_management/presentation/widgets/order_input_page_widgets/order_main_body.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginError extends StatelessWidget {
   final String message;
-  const LoginError({super.key, required this.message});
+  const LoginError({required this.message});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        PickupMainBody(),
+        OrderMainBody(),
         Positioned(
           top: 20.h,
           left: 2.w,

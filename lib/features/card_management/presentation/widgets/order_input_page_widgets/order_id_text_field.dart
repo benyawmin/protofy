@@ -5,8 +5,7 @@ class OrderIdTextField extends StatefulWidget {
   final Function(String) onOrderIdTextChanged;
 
   const OrderIdTextField(
-      {super.key,
-      required this.orderIdTextController,
+      {required this.orderIdTextController,
       required this.onOrderIdTextChanged});
 
   @override
