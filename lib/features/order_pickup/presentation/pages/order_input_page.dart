@@ -30,11 +30,16 @@ class OrderInputPage extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [OrderMainBody(), Loading()]);
                   } else if (state is OrderIDAuthenticationSuccess) {
+                    // Animated fade in transition to the next page
                     SchedulerBinding.instance.addPostFrameCallback((_) {
-                      Navigator.of(context)
-                          .push(animatedTransitionRoute(PickupPage(
-                        orderData: state.orderData,
-                      )));
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                            transitionsBuilder: (_, a, __, c) =>
+                                FadeTransition(opacity: a, child: c),
+                            transitionDuration: const Duration(seconds: 1),
+                            pageBuilder: (_, __, ___) =>
+                                PickupPage(orderData: state.orderData)),
+                      );
                     });
                   } else if (state is OrderIDAuthenticationError) {
                     return OrderInputError(message: state.message);
