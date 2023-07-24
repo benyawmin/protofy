@@ -23,7 +23,8 @@ class _OrderIdTextFieldState extends State<OrderIdTextField> {
             filled: true,
             fillColor: const Color(0xFFFFFFFF),
             border: OutlineInputBorder(
-              borderSide: BorderSide(color: ThemeData().primaryColor, width: 1),
+              borderSide:
+                  BorderSide(color: Theme.of(context).primaryColor, width: 1),
               borderRadius: BorderRadius.circular(18),
             ),
             hintText: 'Order ID',

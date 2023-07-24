@@ -2,6 +2,7 @@ import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/countdown.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/logo_text.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/slider_banner.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/pickup_page_widgets.dart';
 import 'package:Goodbytz/injection_container.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class PickupPage extends StatelessWidget {
                     Column(
                       children: [
                         //*** Top banner ***//
-                        Image.asset(fit: BoxFit.fill, 'images/top_banner.png'),
+                        const SliderBanner(),
                         SizedBox(
                           height: 15.h,
                         ),
@@ -76,9 +77,9 @@ class PickupPage extends StatelessWidget {
                           'Order ID:',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        const Text(
-                          'benyamin_jafari_2000',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        Text(
+                          orderData.orderID,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
 
