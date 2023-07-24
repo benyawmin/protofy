@@ -12,7 +12,7 @@ class FakeServerImpl implements FakeServer {
 
     if (orderId == 'benyamin_jafari_2000') {
       return Response(
-          '{ "order_id": "benyamin_jafari_2000", "dishes": [ 9, 2, 6 ] }', 200);
+          '{ "order_id": "benyamin_jafari_2000", "dishes": [ 0, 2, 6 ] }', 200);
     } else {
       return Response('{}', 404);
     }
