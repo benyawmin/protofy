@@ -44,7 +44,7 @@ class PickupPage extends StatelessWidget {
                           ]),
                         ),
                         CountDownTimer(
-                            secondsRemaining: 10, whenTimeExpires: (() {})),
+                            secondsRemaining: 120, whenTimeExpires: (() {})),
 
                         //*** Blueprint of the pots ***//
                         Center(

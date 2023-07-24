@@ -46,7 +46,7 @@ void main() {
       when(mockRemoteDataSource.getOrderData(orderID))
           .thenAnswer((_) async => remoteToken);
       when(mockLocalDataSource.cacheOrderData(remoteToken))
-          .thenAnswer((_) async => null);
+          .thenAnswer((_) async {});
 
       // act
       final result = await repository.checkOrderID(

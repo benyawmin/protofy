@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:Goodbytz/core/error/failures.dart';
 import 'package:Goodbytz/core/util/input_converter.dart';
 import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
@@ -10,7 +12,7 @@ part 'order_input_event.dart';
 part 'order_input_state.dart';
 
 // Setting messages for each failure type
-const String SERVER_FAILURE_MESSAGE = 'Entered Order ID does not exist';
+const String SERVER_FAILURE_MESSAGE = 'Wrong Order ID';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 

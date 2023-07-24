@@ -5,6 +5,7 @@ class OrderDataModel extends Equatable {
   late final String orderId;
   late final List<int> dishes;
 
+  // ignore: prefer_const_constructors_in_immutables
   OrderDataModel({
     required this.orderId,
     required this.dishes,

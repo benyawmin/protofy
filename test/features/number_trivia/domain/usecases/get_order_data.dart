@@ -22,7 +22,7 @@ void main() {
   group('call', () {
     final List<int> dishes = [0, 2, 6];
     const orderID = 'benyamin_jafari_2000';
-    final params = Params(orderId: orderID);
+    const params = Params(orderId: orderID);
     final userAuth = OrderData(orderID: 'token', dishes: dishes);
 
     test('should return UserAuth from the repository', () async {

@@ -27,7 +27,7 @@ void main() {
         "order_id": "id",
         "dishes": [0, 2, 6]
       });
-      final expectedData = OrderDataModel(orderId: 'id', dishes: [0, 2, 6]);
+      final expectedData = OrderDataModel(orderId: 'id', dishes: const [0, 2, 6]);
 
       when(mockSecureStorage.read(key: anyNamed('key')))
           .thenAnswer((_) => Future.value(tokenJson));
@@ -53,7 +53,8 @@ void main() {
   group('cacheOrderData', () {
     test('should cache the orderData', () async {
       // arrange
-      final tokenToCache = OrderDataModel(orderId: 'id', dishes: [0, 2, 6]);
+      final tokenToCache =
+          OrderDataModel(orderId: 'id', dishes: const [0, 2, 6]);
       // act
       await localDataSource.cacheOrderData(tokenToCache);
       // assert

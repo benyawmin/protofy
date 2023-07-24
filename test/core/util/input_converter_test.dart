@@ -14,18 +14,18 @@ void main() {
     test('Should return the email as a string when the email format is correct',
         () {
       // arrange
-      final orderID = 'benyamin_jafari_2000';
+      const orderID = 'benyamin_jafari_2000';
       // act
       final result = inputEmailValidation.orderIdValidatior(orderID);
       // assert
-      expect(result, Right('benyamin_jafari_2000'));
+      expect(result, const Right('benyamin_jafari_2000'));
     });
 
     test(
         'Should return [Left(InvalidInputFailure())] when the email format is NOT correct',
         () {
       // arrange
-      final orderID = 'benyamin';
+      const orderID = 'benyamin';
       // act
       final result = inputEmailValidation.orderIdValidatior(orderID);
       // assert

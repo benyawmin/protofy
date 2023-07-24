@@ -13,6 +13,7 @@ abstract class LocalDataSource {
   Future<void> cacheOrderData(OrderDataModel tokenToCache);
 }
 
+// ignore: constant_identifier_names
 const CACHED_ORDER_DATA = 'CACHED_USER_DATA';
 
 class LocalDataSourceImpl implements LocalDataSource {
