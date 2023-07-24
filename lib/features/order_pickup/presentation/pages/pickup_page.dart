@@ -43,25 +43,37 @@ class PickupPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              GridViewSection(orderData: orderData),
+                              GridViewSection(
+                                orderData: orderData,
+                                section: 0,
+                              ),
                               const MiddleGridDivider(),
                               SizedBox(
                                 width: 2.w,
                               ),
                               const MiddleGridDivider(),
-                              GridViewSection(orderData: orderData)
+                              GridViewSection(
+                                orderData: orderData,
+                                section: 1,
+                              )
                             ],
                           ),
                         ),
                         SizedBox(
                           height: 8.h,
                         ),
-                        const Text('Order ID:'),
-                        const Text('benyamin_jafari_2000'),
+                        const Text(
+                          'Order ID:',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        const Text(
+                          'benyamin_jafari_2000',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         const Spacer(),
                         Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xFF1D563E),
+                            color: Theme.of(context).primaryColor,
                             borderRadius: containerRadius(),
                           ),
                           child: Padding(

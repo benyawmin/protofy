@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
-class LoginControls extends StatefulWidget {
-  const LoginControls({super.key});
-
+class OrderControls extends StatefulWidget {
+  const OrderControls({super.key});
 
   @override
-  LoginControlsState createState() => LoginControlsState();
+  OrderControlsState createState() => OrderControlsState();
 }
 
-class LoginControlsState extends State<LoginControls> {
+class OrderControlsState extends State<OrderControls> {
   final orderIdTextController = TextEditingController();
   late final Function(String) onOrderIdTextChanged;
   late String orderId = '';
@@ -46,16 +45,19 @@ class LoginControlsState extends State<LoginControls> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       ),
-                      backgroundColor: const Color(0xFF1E5229),
+                      backgroundColor: Theme.of(context).primaryColor,
                       disabledForegroundColor: const Color(0xFFE1E1E4)),
                   onPressed: orderIdTextController.text.isNotEmpty
                       ? () {
                           dispatchAuth();
                         }
                       : null,
-                  child: const Text(
+                  child: Text(
                     'Pick up order',
-                    style: TextStyle(color: Color(0xFFF5F5F7)),
+                    style: TextStyle(
+                      fontSize: 8.sp,
+                      color: const Color(0xFFF5F5F7),
+                    ),
                   )),
             );
           },

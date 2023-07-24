@@ -9,7 +9,7 @@ import 'package:equatable/equatable.dart';
 part 'order_input_event.dart';
 part 'order_input_state.dart';
 
-const String SERVER_FAILURE_MESSAGE = 'Order does not exist';
+const String SERVER_FAILURE_MESSAGE = 'Entered Order ID does not exist';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 

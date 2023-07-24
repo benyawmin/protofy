@@ -10,7 +10,7 @@ class LoginError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        OrderMainBody(),
+        const OrderMainBody(),
         Positioned(
           top: 20.h,
           left: 2.w,
@@ -21,16 +21,13 @@ class LoginError extends StatelessWidget {
                 color: Color(0xFFF9DEDC),
                 borderRadius: BorderRadius.all(Radius.circular(18)),
               ),
-              child: Flexible(
-                child: Center(
-                  child: Text(
-                    message,
-                    style: TextStyle(
-                        color: const Color(0xFF464A54),
-                        fontFamily: 'Poppins',
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
+              child: Center(
+                child: Text(
+                  message,
+                  style: TextStyle(
+                      color: const Color(0xFF464A54),
+                      fontSize: 8.sp,
+                      fontWeight: FontWeight.w500),
                 ),
               )),
         ),

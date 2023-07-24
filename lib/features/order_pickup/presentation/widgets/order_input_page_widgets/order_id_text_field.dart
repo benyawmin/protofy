@@ -5,7 +5,8 @@ class OrderIdTextField extends StatefulWidget {
   final Function(String) onOrderIdTextChanged;
 
   const OrderIdTextField(
-      {super.key, required this.orderIdTextController,
+      {super.key,
+      required this.orderIdTextController,
       required this.onOrderIdTextChanged});
 
   @override
@@ -21,7 +22,7 @@ class _OrderIdTextFieldState extends State<OrderIdTextField> {
             filled: true,
             fillColor: const Color(0xFFFFFFFF),
             border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFF1E5229), width: 1),
+              borderSide: BorderSide(color: ThemeData().primaryColor, width: 1),
               borderRadius: BorderRadius.circular(18),
             ),
             hintText: 'Order ID',

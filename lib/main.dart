@@ -1,7 +1,7 @@
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/pages/pickup_page.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/pages/sleep_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'injection_container.dart' as di;
 import 'package:sizer/sizer.dart';
 
@@ -20,11 +20,14 @@ class MyApp extends StatelessWidget {
     //! Using Sizer to make the app responsive
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return const MaterialApp(
+        return MaterialApp(
+          theme: ThemeData(
+              textTheme: GoogleFonts.openSansTextTheme(
+                Theme.of(context).textTheme,
+              ),
+              primaryColor: const Color(0xFF1E5229)),
           title: 'Goodbytz',
-          home: PickupPage(
-              orderData: OrderData(
-                  dishes: [0, 2, 5], orderId: 'benyamin_jafari_2000')),
+          home: const SleepPage(),
         );
       },
     );

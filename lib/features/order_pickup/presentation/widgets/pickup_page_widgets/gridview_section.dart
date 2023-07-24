@@ -5,8 +5,10 @@ import 'package:sizer/sizer.dart';
 
 class GridViewSection extends StatelessWidget {
   final OrderData orderData;
+  final int section;
 
-  const GridViewSection({super.key, required this.orderData});
+  const GridViewSection(
+      {super.key, required this.orderData, required this.section});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,7 @@ class GridViewSection extends StatelessWidget {
         crossAxisCount: 3,
         physics: const NeverScrollableScrollPhysics(),
         children: List.generate(6, (index) {
-          debugPrint(index.toString());
-          debugPrint(orderData.dishes.toString());
-          return Column(children: logicBuilder(index, 0, orderData));
+          return Column(children: logicBuilder(index, section, orderData));
         }),
       ),
     );

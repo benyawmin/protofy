@@ -1,11 +1,10 @@
-import 'package:Goodbytz/features/order_pickup/presentation/pages/order_input_page.dart';
 import 'package:flutter/material.dart';
 
-// Animated sleep page to input order id page transition
-Route sleepTransitionRoute() {
+// Animated transition router
+Route animatedTransitionRoute(Widget transitionWidget) {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => OrderInputPage(),
-    transitionDuration: const Duration(milliseconds: 500),
+    pageBuilder: (context, animation, secondaryAnimation) => transitionWidget,
+    transitionDuration: const Duration(seconds: 1),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(0.0, 1.0);
       const end = Offset.zero;
