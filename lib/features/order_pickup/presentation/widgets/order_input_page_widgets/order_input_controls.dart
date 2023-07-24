@@ -68,8 +68,8 @@ class OrderControlsState extends State<OrderControls> {
 
   void dispatchAuth() {
     orderIdTextController.clear();
-    BlocProvider.of<LoginBloc>(context)
-        .add(AuthenticationRequest(orderId: orderId));
+    BlocProvider.of<OrderInputBloc>(context)
+        .add(OrderIDAuthenticationRequest(orderId: orderId));
   }
 
   @override

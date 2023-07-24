@@ -5,6 +5,7 @@ import 'package:Goodbytz/features/order_pickup/domain/repositories/order_reposit
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
+// Providing the data gotten from outside to the app
 class GetOrderData implements UseCase<OrderData, Params> {
   final OrderRepository repository;
 
@@ -20,7 +21,7 @@ class GetOrderData implements UseCase<OrderData, Params> {
 class Params extends Equatable {
   final String orderId;
 
-  Params({required this.orderId});
+  const Params({required this.orderId});
 
   @override
   List<Object?> get props => [orderId];

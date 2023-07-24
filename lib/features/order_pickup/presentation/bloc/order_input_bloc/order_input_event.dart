@@ -1,16 +1,16 @@
 part of 'order_input_bloc.dart';
 
-abstract class LoginEvent extends Equatable {
-  const LoginEvent();
+abstract class OrderInputEvent extends Equatable {
+  const OrderInputEvent();
 
   @override
   List<Object> get props => [];
 }
 
-class AuthenticationRequest extends LoginEvent {
+class OrderIDAuthenticationRequest extends OrderInputEvent {
   final String orderId;
 
-  const AuthenticationRequest({required this.orderId});
+  const OrderIDAuthenticationRequest({required this.orderId});
 
   @override
   List<Object> get props => [orderId];

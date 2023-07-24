@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 // Choosing which pot icons should be blinking (meaning which boxes have
 //ready food in them)
-List<Widget> logicBuilder(int index, int section, OrderData orderData) {
+List<Widget> griviewUILogicBuilder(
+    int index, int section, OrderData orderData) {
   List<Widget> lb = [];
   // show green pot when the food is ready
   Widget blinkingPot =

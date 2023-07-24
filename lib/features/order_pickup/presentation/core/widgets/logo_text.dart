@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Logo text format of the GOODBYTZ
 class LogoText extends StatelessWidget {
   final double fontSize;
   const LogoText({super.key, required this.fontSize});

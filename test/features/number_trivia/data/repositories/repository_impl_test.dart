@@ -40,7 +40,7 @@ void main() {
     test('should return OrderData when the device is connected to the network',
         () async {
       // arrange
-      final expectedUserAuth = OrderData(orderId: orderID, dishes: dishes);
+      final expectedUserAuth = OrderData(orderID: orderID, dishes: dishes);
       final remoteToken = OrderDataModel(orderId: orderID, dishes: dishes);
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
       when(mockRemoteDataSource.getOrderData(orderID))

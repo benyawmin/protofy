@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Order ID text field
 class OrderIdTextField extends StatefulWidget {
   final TextEditingController orderIdTextController;
   final Function(String) onOrderIdTextChanged;

@@ -2,9 +2,10 @@ import 'package:Goodbytz/features/order_pickup/presentation/widgets/order_input_
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class LoginError extends StatelessWidget {
+//* Shows error if there was an error after the order input
+class OrderInputError extends StatelessWidget {
   final String message;
-  const LoginError({super.key, required this.message});
+  const OrderInputError({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

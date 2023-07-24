@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 
+//! Any widget passed to this widget will blink
 class BlinkAnimation extends StatefulWidget {
   final Widget child;
 
@@ -26,6 +26,7 @@ class _BlinkAnimationState extends State<BlinkAnimation>
 
   @override
   Widget build(BuildContext context) {
+    // Fade in and out
     return FadeTransition(opacity: animation, child: widget.child);
   }
 

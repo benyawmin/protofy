@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// Show the loading for app
 class Loading extends StatelessWidget {
   const Loading({super.key});
 

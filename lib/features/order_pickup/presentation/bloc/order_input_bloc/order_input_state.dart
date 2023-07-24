@@ -1,29 +1,29 @@
 part of 'order_input_bloc.dart';
 
-abstract class LoginState extends Equatable {
-  const LoginState();
+abstract class OrderInputState extends Equatable {
+  const OrderInputState();
 
   @override
   List<Object> get props => [];
 }
 
-class AuthenticationInitial extends LoginState {}
+class OrderIDAuthenticationInitial extends OrderInputState {}
 
-class AuthenticationInProgress extends LoginState {}
+class OrderIDAuthenticationInProgress extends OrderInputState {}
 
-class AuthenticationSuccess extends LoginState {
+class OrderIDAuthenticationSuccess extends OrderInputState {
   final OrderData orderData;
 
-  const AuthenticationSuccess({required this.orderData});
+  const OrderIDAuthenticationSuccess({required this.orderData});
 
   @override
   List<Object> get props => [orderData];
 }
 
-class AuthenticationError extends LoginState {
+class OrderIDAuthenticationError extends OrderInputState {
   final String message;
 
-  const AuthenticationError({required this.message});
+  const OrderIDAuthenticationError({required this.message});
 
   @override
   List<Object> get props => [message];

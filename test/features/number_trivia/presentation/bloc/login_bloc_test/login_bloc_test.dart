@@ -15,14 +15,14 @@ import 'login_bloc_test.mocks.dart';
 void main() {
   group('LoginBloc', () {
     final List<int> dishes = [0, 2, 6];
-    late LoginBloc loginBloc;
+    late OrderInputBloc loginBloc;
     late MockGetOrderData mockGetAuthToken;
     late MockInputOrderIDValidation mockInputOrderIDValidation;
 
     setUp(() {
       mockGetAuthToken = MockGetOrderData();
       mockInputOrderIDValidation = MockInputOrderIDValidation();
-      loginBloc = LoginBloc(
+      loginBloc = OrderInputBloc(
         getOrderData: mockGetAuthToken,
         inputOderIdValidation: mockInputOrderIDValidation,
       );
@@ -33,24 +33,25 @@ void main() {
     });
 
     test('initial state should be AuthenticationInitial', () {
-      expect(loginBloc.state, AuthenticationInitial());
+      expect(loginBloc.state, OrderIDAuthenticationInitial());
     });
 
-    blocTest<LoginBloc, LoginState>(
+    blocTest<OrderInputBloc, OrderInputState>(
       'emits [AuthenticationInProgress, AuthenticationError] when input validation fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
             .thenReturn(Left(InvalidInputFailure()));
         return loginBloc;
       },
-      act: (bloc) => bloc.add(const AuthenticationRequest(orderId: '0')),
+      act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        AuthenticationInProgress(),
-        const AuthenticationError(message: INVALID_INPUT_FAILURE_MESSAGE),
+        OrderIDAuthenticationInProgress(),
+        const OrderIDAuthenticationError(
+            message: INVALID_INPUT_FAILURE_MESSAGE),
       ],
     );
 
-    blocTest<LoginBloc, LoginState>(
+    blocTest<OrderInputBloc, OrderInputState>(
       'emits [AuthenticationInProgress, AuthenticationError] when authentication fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -59,27 +60,27 @@ void main() {
             .thenAnswer((_) async => Left(ServerFailure()));
         return loginBloc;
       },
-      act: (bloc) => bloc.add(const AuthenticationRequest(orderId: '0')),
+      act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        AuthenticationInProgress(),
-        const AuthenticationError(message: SERVER_FAILURE_MESSAGE),
+        OrderIDAuthenticationInProgress(),
+        const OrderIDAuthenticationError(message: SERVER_FAILURE_MESSAGE),
       ],
     );
 
-    blocTest<LoginBloc, LoginState>(
+    blocTest<OrderInputBloc, OrderInputState>(
       'emits [AuthenticationInProgress, AuthenticationSuccess] when authentication succeeds',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
             .thenReturn(const Right('correct_email'));
         when(mockGetAuthToken.call(any)).thenAnswer(
-            (_) async => Right(OrderData(orderId: 'token', dishes: dishes)));
+            (_) async => Right(OrderData(orderID: 'token', dishes: dishes)));
         return loginBloc;
       },
-      act: (bloc) => bloc.add(const AuthenticationRequest(orderId: '0')),
+      act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        AuthenticationInProgress(),
-        AuthenticationSuccess(
-            orderData: OrderData(orderId: 'token', dishes: dishes)),
+        OrderIDAuthenticationInProgress(),
+        OrderIDAuthenticationSuccess(
+            orderData: OrderData(orderID: 'token', dishes: dishes)),
       ],
     );
   });

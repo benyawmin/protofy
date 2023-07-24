@@ -2,6 +2,7 @@ import 'package:Goodbytz/features/order_pickup/presentation/core/routes/sleep_tr
 import 'package:Goodbytz/features/order_pickup/presentation/pages/order_input_page.dart';
 import 'package:flutter/material.dart';
 
+// Sleep page when the application is waiting for the user tap
 class SleepPage extends StatelessWidget {
   const SleepPage({super.key});
 
@@ -16,5 +17,3 @@ class SleepPage extends StatelessWidget {
         ));
   }
 }
-
-// TODO: Change the fonts

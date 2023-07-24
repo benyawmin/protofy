@@ -8,10 +8,10 @@ void main() {
   test('logicBuilder', () {
     // Create a sample OrderData object with some dishes
     OrderData orderData =
-        const OrderData(dishes: [0, 2, 6], orderId: 'benyamin_jafari_2000');
+        const OrderData(dishes: [0, 2, 6], orderID: 'benyamin_jafari_2000');
 
     // Test section 0
-    List<Widget> resultSection0 = logicBuilder(0, 0, orderData);
+    List<Widget> resultSection0 = griviewUILogicBuilder(0, 0, orderData);
     // Check if there are two widgets in the result list
     expect(resultSection0.length, 2);
     // Check if the first widget is BlinkAnimation
@@ -20,7 +20,7 @@ void main() {
     expect(resultSection0[1], isInstanceOf<Text>());
 
     // Test section 1
-    List<Widget> resultSection1 = logicBuilder(4, 1, orderData);
+    List<Widget> resultSection1 = griviewUILogicBuilder(4, 1, orderData);
     expect(resultSection1.length, 2);
     expect(resultSection1[0], isInstanceOf<Image>());
     expect(resultSection1[1], isInstanceOf<Text>());

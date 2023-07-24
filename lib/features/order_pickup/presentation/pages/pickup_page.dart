@@ -25,10 +25,13 @@ class PickupPage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
+                        //*** Top banner ***//
                         Image.asset(fit: BoxFit.fill, 'images/top_banner.png'),
                         SizedBox(
                           height: 15.h,
                         ),
+
+                        //*** Logo Text ***//
                         Padding(
                           padding: EdgeInsets.all(2.h),
                           child: Column(children: [
@@ -42,6 +45,8 @@ class PickupPage extends StatelessWidget {
                         ),
                         CountDownTimer(
                             secondsRemaining: 10, whenTimeExpires: (() {})),
+
+                        //*** Blueprint of the pots ***//
                         Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -65,6 +70,8 @@ class PickupPage extends StatelessWidget {
                         SizedBox(
                           height: 8.h,
                         ),
+
+                        //*** Showing the order ID ***//
                         const Text(
                           'Order ID:',
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -74,6 +81,8 @@ class PickupPage extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
+
+                        //*** Notificatio to take the food boxes ***//
                         Container(
                           decoration: BoxDecoration(
                             color: Theme.of(context).primaryColor,
@@ -112,6 +121,7 @@ class PickupPage extends StatelessWidget {
         ));
   }
 
+  // Rounded Container shape radius builder
   BorderRadius containerRadius() {
     return BorderRadius.only(
         topRight: Radius.circular(2.h),

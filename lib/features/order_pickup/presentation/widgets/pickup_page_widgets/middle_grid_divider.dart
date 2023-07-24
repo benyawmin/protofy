@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// Middle grey containers between the two grids
 class MiddleGridDivider extends StatelessWidget {
   const MiddleGridDivider({super.key});
 

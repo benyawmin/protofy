@@ -18,7 +18,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   //! Features - Goodbytz
   sl.registerFactory(
-      () => LoginBloc(getOrderData: sl(), inputOderIdValidation: sl()));
+      () => OrderInputBloc(getOrderData: sl(), inputOderIdValidation: sl()));
   sl.registerFactory(() => OrderPickupBloc());
 
   //* Use cases
