@@ -1,5 +1,6 @@
 import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/countdown.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/logo_text.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/pickup_page_widgets.dart';
 import 'package:Goodbytz/injection_container.dart';
@@ -39,6 +40,8 @@ class PickupPage extends StatelessWidget {
                             ),
                           ]),
                         ),
+                        CountDownTimer(
+                            secondsRemaining: 10, whenTimeExpires: (() {})),
                         Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
