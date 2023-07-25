@@ -34,6 +34,9 @@ class OrderControlsState extends State<OrderControls> {
           height: 4.h,
         ),
         SizedBox(height: 20.h),
+
+        //* Listen to the text field and disable or enable
+        //* the pickup order button based on that
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: orderIdTextController,
           builder: (context, value, child) {
@@ -47,6 +50,8 @@ class OrderControlsState extends State<OrderControls> {
                       ),
                       backgroundColor: Theme.of(context).primaryColor,
                       disabledForegroundColor: const Color(0xFFE1E1E4)),
+                  // disable or enable the botton based on
+                  // the text controller value
                   onPressed: orderIdTextController.text.isNotEmpty
                       ? () {
                           dispatchAuth();

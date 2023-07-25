@@ -23,16 +23,19 @@ class _CountDownTimerState extends State<CountDownTimer>
   late final AnimationController _controller;
   late final Duration duration;
 
-  String get timerDisplayString {
+  // Display the timer
+  String get displayTheTime {
     final duration = _controller.duration! * _controller.value;
+    // If nothing is passed to the constructor make it as below
     if (widget.countDownFormatter != null) {
       return widget.countDownFormatter!(duration.inSeconds) as String;
     } else {
-      return formatHHMMSS(duration.inSeconds);
+      return formatTimeAsHHMMSS(duration.inSeconds);
     }
   }
 
-  String formatHHMMSS(int seconds) {
+  // Formate the clock string as HHMMSS
+  String formatTimeAsHHMMSS(int seconds) {
     final hours = (seconds / 3600).truncate();
     seconds = (seconds % 3600).truncate();
     final minutes = (seconds / 60).truncate();
@@ -66,6 +69,7 @@ class _CountDownTimerState extends State<CountDownTimer>
       });
   }
 
+  // Update the clock countdown animation
   @override
   void didUpdateWidget(CountDownTimer oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -101,7 +105,7 @@ class _CountDownTimerState extends State<CountDownTimer>
         animation: _controller,
         builder: (_, Widget? child) {
           return Text(
-            timerDisplayString,
+            displayTheTime,
             style: widget.countDownTimerStyle,
           );
         },
