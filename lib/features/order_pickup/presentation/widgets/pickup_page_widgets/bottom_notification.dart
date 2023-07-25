@@ -26,6 +26,7 @@ class BottomNotification extends StatelessWidget {
             : Text(
                 'Order pickup time is done!',
                 style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: pickupOrderData.dishes.isNotEmpty
                         ? Colors.white
                         : Colors.black),

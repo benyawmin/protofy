@@ -17,6 +17,7 @@ class GridViewSection extends StatelessWidget {
       width: 40.w,
       height: 20.h,
       child: GridView.count(
+        primary: false,
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
         crossAxisCount: 3,

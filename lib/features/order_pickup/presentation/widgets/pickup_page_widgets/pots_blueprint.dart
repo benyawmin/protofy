@@ -4,8 +4,8 @@ import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class PotsBlueprint extends StatelessWidget {
-  const PotsBlueprint({
+class PickupBoxSystemBlueprint extends StatelessWidget {
+  const PickupBoxSystemBlueprint({
     super.key,
     required this.pickupOrderData,
   });
@@ -18,18 +18,22 @@ class PotsBlueprint extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          GridViewSection(
-            orderData: pickupOrderData,
-            section: 0,
+          Expanded(
+            child: GridViewSection(
+              orderData: pickupOrderData,
+              section: 0,
+            ),
           ),
           const MiddleGridDivider(),
           SizedBox(
             width: 2.w,
           ),
           const MiddleGridDivider(),
-          GridViewSection(
-            orderData: pickupOrderData,
-            section: 1,
+          Expanded(
+            child: GridViewSection(
+              orderData: pickupOrderData,
+              section: 1,
+            ),
           )
         ],
       ),

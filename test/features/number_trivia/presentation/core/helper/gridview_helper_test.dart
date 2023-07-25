@@ -8,7 +8,7 @@ void main() {
   test('logicBuilder', () {
     // Create a sample OrderData object with some dishes
     OrderData orderData =
-        const OrderData(dishes: [0, 2, 6], orderID: 'benyamin_jafari_2000');
+        OrderData(dishes: const [0, 2, 6], orderID: 'benyamin_jafari_2000');
 
     // Test section 0
     List<Widget> resultSection0 = griviewUILogicBuilder(0, 0, orderData);

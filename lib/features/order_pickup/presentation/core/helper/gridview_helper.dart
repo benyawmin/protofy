@@ -8,10 +8,10 @@ List<Widget> griviewUILogicBuilder(
     int index, int section, OrderData orderData) {
   List<Widget> lb = [];
   // show green pot when the food is ready
-  Widget blinkingPot =
-      BlinkAnimation(child: Image.asset('icons/pot_green.png'));
+  Widget blinkingPot = Expanded(
+      child: BlinkAnimation(child: Image.asset('icons/pot_green.png')));
   // show black pot when the food is not ready
-  Widget potImage = Image.asset('icons/pot.png');
+  Widget potImage = Expanded(child: Image.asset('icons/pot.png'));
   // grid view is divided into two section [0, 1] we build UI based on that
   int baseIndex = section == 0 ? 0 : 3;
 

@@ -1,12 +1,10 @@
+import 'package:Goodbytz/core/ui/app_theme.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/pages/sleep_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'injection_container.dart' as di;
 import 'package:sizer/sizer.dart';
 
 void main() async {
-  debugPaintPointersEnabled = true;
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   runApp(const MyApp());
@@ -21,11 +19,7 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return MaterialApp(
-          theme: ThemeData(
-              textTheme: GoogleFonts.openSansTextTheme(
-                Theme.of(context).textTheme,
-              ),
-              primaryColor: const Color(0xFF1E5229)),
+          theme: AppTheme.getThemeData(context),
           title: 'Goodbytz',
           home: const SleepPage(),
         );
