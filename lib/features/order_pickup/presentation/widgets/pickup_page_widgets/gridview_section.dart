@@ -20,7 +20,6 @@ class GridViewSection extends StatelessWidget {
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
         crossAxisCount: 3,
-        physics: const NeverScrollableScrollPhysics(),
         children: List.generate(6, (index) {
           return Column(
               children: griviewUILogicBuilder(index, section, orderData));

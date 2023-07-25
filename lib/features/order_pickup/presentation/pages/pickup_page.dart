@@ -1,17 +1,32 @@
 import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/bloc/order_pickup_bloc/order_pickup_bloc.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/core/helper/container_border.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/countdown.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/logo_text.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/slider_banner.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/pickup_page_widgets.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/bottom_notification.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/pots_blueprint.dart';
 import 'package:Goodbytz/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
-class PickupPage extends StatelessWidget {
+class PickupPage extends StatefulWidget {
   final OrderData orderData;
   const PickupPage({super.key, required this.orderData});
+
+  @override
+  State<PickupPage> createState() => _PickupPageState();
+}
+
+class _PickupPageState extends State<PickupPage> {
+  late OrderData pickupOrderData;
+
+  @override
+  void initState() {
+    super.initState();
+    pickupOrderData = widget.orderData;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,30 +59,22 @@ class PickupPage extends StatelessWidget {
                             ),
                           ]),
                         ),
+
+                        //*** Countdown timer to pickup the order ***//
                         CountDownTimer(
-                            secondsRemaining: 120, whenTimeExpires: (() {})),
+                            countDownTimerStyle:
+                                TextStyle(color: Colors.black, fontSize: 8.sp),
+                            secondsRemaining: 10,
+                            whenTimeExpires: (() {
+                              setState(() {
+                                pickupOrderData.dishes = [];
+                              });
+                            })),
 
                         //*** Blueprint of the pots ***//
-                        Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GridViewSection(
-                                orderData: orderData,
-                                section: 0,
-                              ),
-                              const MiddleGridDivider(),
-                              SizedBox(
-                                width: 2.w,
-                              ),
-                              const MiddleGridDivider(),
-                              GridViewSection(
-                                orderData: orderData,
-                                section: 1,
-                              )
-                            ],
-                          ),
-                        ),
+                        PotsBlueprint(pickupOrderData: pickupOrderData),
+
+                        // Add space
                         SizedBox(
                           height: 8.h,
                         ),
@@ -78,24 +85,16 @@ class PickupPage extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          orderData.orderID,
+                          pickupOrderData.orderID,
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
+
+                        // Add space
                         const Spacer(),
 
-                        //*** Notificatio to take the food boxes ***//
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: containerRadius(),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(2.h),
-                            child: Text(
-                              'Please take your order from the boxes: ${orderData.dishes.join(", ")}',
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ),
+                        //*** Notification to take the food boxes ***//
+                        BottomNotification(
+                          pickupOrderData: pickupOrderData,
                         )
                       ],
                     ),
@@ -120,14 +119,5 @@ class PickupPage extends StatelessWidget {
             },
           ),
         ));
-  }
-
-  // Rounded Container shape radius builder
-  BorderRadius containerRadius() {
-    return BorderRadius.only(
-        topRight: Radius.circular(2.h),
-        bottomRight: const Radius.circular(0),
-        topLeft: Radius.circular(2.h),
-        bottomLeft: const Radius.circular(0));
   }
 }

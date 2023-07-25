@@ -20,6 +20,7 @@ class _OrderIdTextFieldState extends State<OrderIdTextField> {
     return TextField(
         controller: widget.orderIdTextController,
         decoration: InputDecoration(
+            labelText: 'Order ID',
             filled: true,
             fillColor: const Color(0xFFFFFFFF),
             border: OutlineInputBorder(
@@ -27,7 +28,6 @@ class _OrderIdTextFieldState extends State<OrderIdTextField> {
                   BorderSide(color: Theme.of(context).primaryColor, width: 1),
               borderRadius: BorderRadius.circular(18),
             ),
-            hintText: 'Order ID',
             hintStyle: const TextStyle(color: Color(0xFF74777F))),
         onChanged: widget.onOrderIdTextChanged);
   }
