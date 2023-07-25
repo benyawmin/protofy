@@ -11,7 +11,7 @@ class MiddleGridDivider extends StatelessWidget {
       width: 8.w,
       height: 18.h,
       decoration: BoxDecoration(
-        color: const Color(0xFFDADADA),
+        color: const Color(0xFFC6C6C6),
         borderRadius: BorderRadius.circular(10),
       ),
     );

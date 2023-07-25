@@ -31,6 +31,19 @@ class _PickupPageState extends State<PickupPage> {
         backgroundColor: const Color(0xFFF5F5F7),
         body: Stack(
           children: [
+            Positioned(
+              right: 0,
+              left: 0,
+              bottom: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF623B39).withOpacity(0.12),
+                  borderRadius: containerRadius(),
+                ),
+                height: 55.h,
+                width: 100.w,
+              ),
+            ),
             Column(
               children: [
                 //*** Top banner ***//
@@ -91,19 +104,6 @@ class _PickupPageState extends State<PickupPage> {
                   pickupOrderData: pickupOrderData,
                 )
               ],
-            ),
-            Positioned(
-              right: 0,
-              left: 0,
-              bottom: 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xFF623B39).withOpacity(0.12),
-                  borderRadius: containerRadius(),
-                ),
-                height: 55.h,
-                width: 100.w,
-              ),
             ),
           ],
         ));
