@@ -58,7 +58,7 @@ class _PickupPageState extends State<PickupPage> {
                         color: Colors.black,
                         fontSize: 8.sp,
                         fontWeight: FontWeight.bold),
-                    secondsRemaining: 10,
+                    secondsRemaining: 300,
                     whenTimeExpires: (() {
                       setState(() {
                         pickupOrderData.dishes = [];
