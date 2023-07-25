@@ -10,4 +10,4 @@ Flutter technical test project for GOODBYTZ
    (right now they are responsive).
    
 In this code assumtion is that for example the user order is ready and his/her/other order is in the boxes 
-[ 0, 2, 6 ]. and he/her/other has 5 minutes to take the order from the boxes otherwise they will be removed from the boxes. The countdown is shown on the screen.
+[ 0, 2, 6 ]. and he/she/other has 5 minutes to take the order from the boxes otherwise they will be removed from the boxes. The countdown is shown on the screen.
