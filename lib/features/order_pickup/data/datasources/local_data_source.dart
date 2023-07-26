@@ -10,12 +10,14 @@ abstract class LocalDataSource {
   ///
   /// Throws [NoLocalDataException] if no cached data is present
   Future<OrderDataModel> getCachedOrderData();
-  Future<void> cacheOrderData(OrderDataModel tokenToCache);
+  Future<void> cacheOrderData(OrderDataModel orderLocalDataToCache);
 }
 
 // ignore: constant_identifier_names
 const CACHED_ORDER_DATA = 'CACHED_USER_DATA';
 
+/// We cache the [OrderDataModel] so if anything went wrong with the server
+/// we do not lost the order data.
 class LocalDataSourceImpl implements LocalDataSource {
   final FlutterSecureStorage secureStorage;
 

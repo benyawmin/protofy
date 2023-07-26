@@ -10,6 +10,8 @@ class FakeServerImpl implements FakeServer {
     // Server fake delay to process the request
     await Future.delayed(const Duration(seconds: 1));
 
+    // If order id is correct the server returns the [order_id] and the number
+    // of the boxes in which the user's dishes are present.
     if (orderId == 'haritha_kumar_2000') {
       return Response(
           '{ "order_id": "haritha_kumar_2000", "dishes": [ 0, 2, 6 ] }', 200);
