@@ -3,6 +3,8 @@ import 'package:Goodbytz/features/order_pickup/presentation/core/helper/containe
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// Bottom notification of the screen which is the number of the boxes
+// that have ready food or shows the time is over notification
 class BottomNotification extends StatelessWidget {
   final OrderData pickupOrderData;
   const BottomNotification({super.key, required this.pickupOrderData});
@@ -18,6 +20,8 @@ class BottomNotification extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(2.h),
+        // If dishes is not empty show the box numbers,
+        // otherwise the time to pickup the order is UP!
         child: pickupOrderData.dishes.isNotEmpty
             ? Text(
                 'Please take your order from the boxes: ${pickupOrderData.dishes.join(", ")}',

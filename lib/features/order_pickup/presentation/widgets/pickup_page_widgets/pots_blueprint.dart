@@ -18,17 +18,22 @@ class PickupBoxSystemBlueprint extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          //*** First part of the gridview ***//
           Expanded(
             child: GridViewSection(
               orderData: pickupOrderData,
               section: 0,
             ),
           ),
+
+          //*** The dividing part of the gridviews with container ***//
           const MiddleGridDivider(),
           SizedBox(
             width: 2.w,
           ),
           const MiddleGridDivider(),
+
+          //*** Seconds part of the gridview ***//
           Expanded(
             child: GridViewSection(
               orderData: pickupOrderData,
