@@ -40,6 +40,7 @@ class RepositoryImpl implements OrderRepository {
         final remoteOrderData = await tokenPicker();
         final dishes = remoteOrderData.dishes;
 
+        /// Caching the [OrderDataModel]
         localDataSource.cacheOrderData(
             OrderDataModel(orderId: remoteOrderData.orderId, dishes: dishes));
         return Right(

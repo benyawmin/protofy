@@ -10,11 +10,13 @@ abstract class RemoteDataSource {
   Future<OrderDataModel> getOrderData(String orderId);
 }
 
+/// Call the server to get the [OrderDataModel]
 class RemoteDataSourceImpl implements RemoteDataSource {
   RemoteDataSourceImpl();
   @override
-  Future<OrderDataModel> getOrderData(String orderId) =>
-      _orderDataApiRequest('http://sampleApi.com/', orderId);
+  // Calling the API with the api address and sending the orderID
+  Future<OrderDataModel> getOrderData(String orderID) =>
+      _orderDataApiRequest('http://sampleApi.com/', orderID);
 
   Future<OrderDataModel> _orderDataApiRequest(
       String url, String orderId) async {

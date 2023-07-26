@@ -25,6 +25,7 @@ class OrderDataModel extends Equatable {
     return data;
   }
 
+  // Sending the props to the Equatable for overriding the == operator
   @override
   List<Object?> get props => [orderId, dishes];
 }

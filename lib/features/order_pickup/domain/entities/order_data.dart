@@ -8,6 +8,7 @@ class OrderData extends Equatable {
 
   OrderData({required this.orderID, required this.dishes});
 
+  // Sending the props to the Equatable for overriding the == operator
   @override
   List<Object?> get props => [orderID, dishes];
 }
