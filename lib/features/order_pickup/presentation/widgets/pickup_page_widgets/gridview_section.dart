@@ -13,18 +13,20 @@ class GridViewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 40.w,
-      height: 20.h,
-      child: GridView.count(
-        primary: false,
-        mainAxisSpacing: 5,
-        crossAxisSpacing: 5,
-        crossAxisCount: 3,
-        children: List.generate(6, (index) {
-          return Column(
-              children: griviewUILogicBuilder(index, section, orderData));
-        }),
+    return Expanded(
+      child: SizedBox(
+        width: 40.w,
+        height: 20.h,
+        child: GridView.count(
+          primary: false,
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 5,
+          crossAxisCount: 3,
+          children: List.generate(6, (index) {
+            return Column(
+                children: griviewUILogicBuilder(index, section, orderData));
+          }),
+        ),
       ),
     );
   }
