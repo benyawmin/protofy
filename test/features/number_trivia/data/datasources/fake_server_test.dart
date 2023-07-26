@@ -13,9 +13,9 @@ void main() {
         'Should return the order data for the correct order id',
         () async {
       // arrange
-      const String orderID = 'benyamin_jafari_2000';
+      const String orderID = 'haritha_kumar_2000';
       const String serverCorrectResponse =
-          '{ "order_id": "benyamin_jafari_2000", "dishes": [ 0, 2, 6 ] }';
+          '{ "order_id": "haritha_kumar_2000", "dishes": [ 0, 2, 6 ] }';
       // act
 
       final response = await apiFakeServer.getOrderDataFromApi(

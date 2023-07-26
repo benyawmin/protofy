@@ -23,10 +23,12 @@ class LocalDataSourceImpl implements LocalDataSource {
 
   LocalDataSourceImpl({required this.secureStorage});
 
+  /// [OrderDataModel] will be read from the memory
   @override
   Future<OrderDataModel> getCachedOrderData() async {
     final jsonString = await secureStorage.read(key: CACHED_ORDER_DATA);
 
+    /// If the [OrderDataModel] exist in memory return it otherwise return [CacheException]
     if (jsonString != null) {
       return Future.value(OrderDataModel.fromJson(jsonDecode(jsonString)));
     } else {
@@ -34,6 +36,7 @@ class LocalDataSourceImpl implements LocalDataSource {
     }
   }
 
+  /// [OrderDataModel] will be cached in memory as a json map
   @override
   Future<void> cacheOrderData(OrderDataModel orderDataModelToCache) {
     return secureStorage.write(

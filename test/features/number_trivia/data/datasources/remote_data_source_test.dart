@@ -11,12 +11,11 @@ void main() {
   });
 
   group('getOrderData', () {
-    const orderID = 'benyamin_jafari_2000';
+    const orderID = 'haritha_kumar_2000';
     final dishes = [0, 2, 6];
-    test('should return a OrderDataModel when order ID is correct',
-        () async {
+    test('should return a OrderDataModel when order ID is correct', () async {
       // Arrange
-      const correctOrderID = 'benyamin_jafari_2000';
+      const correctOrderID = 'haritha_kumar_2000';
       final expectedToken = OrderDataModel(orderId: orderID, dishes: dishes);
 
       // Act
