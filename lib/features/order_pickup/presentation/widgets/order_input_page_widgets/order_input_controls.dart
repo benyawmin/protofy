@@ -35,8 +35,8 @@ class OrderControlsState extends State<OrderControls> {
         ),
         SizedBox(height: 20.h),
 
-        //* Listen to the text field and disable or enable
-        //* the pickup order button based on that
+        // Listen to the text field and disable or enable
+        // the pickup order button based on that
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: orderIdTextController,
           builder: (context, value, child) {

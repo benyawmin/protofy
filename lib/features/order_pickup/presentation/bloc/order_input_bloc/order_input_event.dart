@@ -7,6 +7,8 @@ abstract class OrderInputEvent extends Equatable {
   List<Object> get props => [];
 }
 
+// This event will be called when user clicks the pickup order button after
+// Entering the order ID
 class OrderIDAuthenticationRequest extends OrderInputEvent {
   final String orderId;
 
