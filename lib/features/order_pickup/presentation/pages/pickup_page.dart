@@ -3,6 +3,7 @@ import 'package:Goodbytz/features/order_pickup/presentation/core/helper/containe
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/countdown.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/logo_text.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/slider_banner.dart';
+import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/order_id_label.dart';
 import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/pickup_page_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -86,14 +87,7 @@ class _PickupPageState extends State<PickupPage> {
                 ),
 
                 //*** Showing the order ID ***//
-                const Text(
-                  'Order ID:',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  pickupOrderData.orderID,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
+                OrderIDLabel(pickupOrderData: pickupOrderData),
 
                 // Add space
                 const Spacer(),

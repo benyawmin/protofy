@@ -10,13 +10,14 @@ class SliderBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       items: [
-        Image.asset(fit: BoxFit.fill, 'images/top_banner.png'),
-        Image.asset(fit: BoxFit.fill, 'images/top_banner1.png'),
-        Image.asset(fit: BoxFit.fill, 'images/top_banner2.png'),
+        // Images of the slider banner
+        Image.asset(fit: BoxFit.fitWidth, 'images/top_banner.png'),
+        Image.asset(fit: BoxFit.fitWidth, 'images/top_banner1.png'),
+        Image.asset(fit: BoxFit.fitWidth, 'images/top_banner2.png'),
       ],
       options: CarouselOptions(
         height: 18.h,
-        aspectRatio: 16 / 9,
+        // aspectRatio: 16 / 9,
         viewportFraction: 1,
         initialPage: 0,
         scrollPhysics: const NeverScrollableScrollPhysics(),
