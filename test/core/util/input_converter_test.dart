@@ -1,5 +1,5 @@
-import 'package:Goodbytz/core/error/failures.dart';
-import 'package:Goodbytz/core/util/input_converter.dart';
+import 'package:protofy/core/error/failures.dart';
+import 'package:protofy/core/util/input_converter.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 

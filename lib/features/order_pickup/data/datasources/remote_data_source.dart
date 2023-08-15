@@ -1,30 +1,28 @@
 import 'dart:convert';
 
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/fake_server.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/features/order_pickup/data/datasources/api_provider.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 
 abstract class RemoteDataSource {
   /// Call the Api endpoint
   /// Throw exception [ServerException] for all error codes
-  Future<OrderDataModel> getOrderData(String orderId);
+  Future<StadtSalatModel> getOrderData();
 }
 
-/// Call the server to get the [OrderDataModel]
+/// Call the server to get the [StadtSalatModel]
 class RemoteDataSourceImpl implements RemoteDataSource {
   RemoteDataSourceImpl();
   @override
   // Calling the API with the api address and sending the orderID
-  Future<OrderDataModel> getOrderData(String orderID) =>
-      _orderDataApiRequest('http://sampleApi.com/', orderID);
+  Future<StadtSalatModel> getOrderData() => _orderDataApiRequest();
 
-  Future<OrderDataModel> _orderDataApiRequest(
-      String url, String orderId) async {
-    final fakeServer = FakeServerImpl();
-    final response = await fakeServer.getOrderDataFromApi(orderId);
+  Future<StadtSalatModel> _orderDataApiRequest() async {
+    final fakeServer = ApiProvider();
+    final response = await fakeServer.getOrderDataFromApi();
 
     if (response.statusCode == 200) {
-      return OrderDataModel.fromJson(json.decode(response.body));
+      return StadtSalatModel.fromJson(json.decode(response.body));
     } else {
       throw ServerException();
     }

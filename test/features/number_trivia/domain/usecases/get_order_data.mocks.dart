@@ -6,10 +6,10 @@
 import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:Goodbytz/core/error/failures.dart' as _i5;
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart'
+import 'package:protofy/core/error/failures.dart' as _i5;
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart'
     as _i6;
-import 'package:Goodbytz/features/order_pickup/domain/repositories/order_repository.dart'
+import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

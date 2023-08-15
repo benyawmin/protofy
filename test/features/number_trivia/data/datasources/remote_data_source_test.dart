@@ -1,6 +1,6 @@
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -16,7 +16,7 @@ void main() {
     test('should return a OrderDataModel when order ID is correct', () async {
       // Arrange
       const correctOrderID = 'haritha_kumar_2000';
-      final expectedToken = OrderDataModel(orderId: orderID, dishes: dishes);
+      final expectedToken = StadtSalatModel(orderId: orderID, dishes: dishes);
 
       // Act
       final result = await remoteDataSource.getOrderData(correctOrderID);

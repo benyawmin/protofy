@@ -1,12 +1,12 @@
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/core/error/failures.dart';
-import 'package:Goodbytz/core/network/network_info.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/local_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
-import 'package:Goodbytz/features/order_pickup/data/repositories/repository_impl.dart';
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/domain/repositories/order_repository.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/core/error/failures.dart';
+import 'package:protofy/core/network/network_info.dart';
+import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
+import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/data/repositories/repository_impl.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:dartz/dartz.dart';
@@ -41,7 +41,7 @@ void main() {
         () async {
       // arrange
       final expectedUserAuth = OrderData(orderID: orderID, dishes: dishes);
-      final remoteToken = OrderDataModel(orderId: orderID, dishes: dishes);
+      final remoteToken = StadtSalatModel(orderId: orderID, dishes: dishes);
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
       when(mockRemoteDataSource.getOrderData(orderID))
           .thenAnswer((_) async => remoteToken);

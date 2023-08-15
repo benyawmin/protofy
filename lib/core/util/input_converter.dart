@@ -1,4 +1,4 @@
-import 'package:Goodbytz/core/error/failures.dart';
+import 'package:protofy/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
 //! The trick in this code is that if the criteria for a correct orderId

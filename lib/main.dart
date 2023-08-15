@@ -1,5 +1,5 @@
-import 'package:Goodbytz/core/ui/app_theme.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/pages/sleep_page.dart';
+import 'package:protofy/core/ui/app_theme.dart';
+import 'package:protofy/features/order_pickup/presentation/pages/order_input_page.dart';
 import 'package:flutter/material.dart';
 import 'injection_container.dart' as di;
 import 'package:sizer/sizer.dart';
@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: AppTheme.getThemeData(context),
-          title: 'Goodbytz',
-          home: const SleepPage(),
+          title: 'Protofy',
+          home: const OrderInputPage(),
         );
       },
     );

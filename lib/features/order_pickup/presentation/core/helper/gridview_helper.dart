@@ -1,5 +1,5 @@
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/core/widgets/blink_animation.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/presentation/core/widgets/blink_animation.dart';
 import 'package:flutter/material.dart';
 
 // Choosing which pot icons should be blinking (meaning which boxes have

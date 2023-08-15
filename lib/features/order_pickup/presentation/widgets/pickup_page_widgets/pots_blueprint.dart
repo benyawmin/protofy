@@ -1,6 +1,6 @@
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/gridview_section.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/widgets/pickup_page_widgets/middle_grid_divider.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/pickup_page_widgets/gridview_section.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/pickup_page_widgets/middle_grid_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

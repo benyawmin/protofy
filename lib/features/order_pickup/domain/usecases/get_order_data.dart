@@ -1,7 +1,7 @@
-import 'package:Goodbytz/core/error/failures.dart';
-import 'package:Goodbytz/core/usecases/usecase.dart';
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/domain/repositories/order_repository.dart';
+import 'package:protofy/core/error/failures.dart';
+import 'package:protofy/core/usecases/usecase.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

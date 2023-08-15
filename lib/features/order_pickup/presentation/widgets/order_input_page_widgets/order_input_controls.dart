@@ -1,5 +1,5 @@
-import 'package:Goodbytz/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/widgets/order_input_page_widgets/order_id_text_field.dart';
+import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/order_id_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';

@@ -1,44 +1,44 @@
 import 'dart:convert';
 
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 abstract class LocalDataSource {
-  /// Gets cached [OrderDataModel] which was gotten the last time
+  /// Gets cached [StadtSalatModel] which was gotten the last time
   /// user had an internet connection
   ///
   /// Throws [NoLocalDataException] if no cached data is present
-  Future<OrderDataModel> getCachedOrderData();
-  Future<void> cacheOrderData(OrderDataModel orderLocalDataToCache);
+  Future<StadtSalatModel> getCachedOrderData();
+  Future<void> cacheOrderData(StadtSalatModel orderLocalDataToCache);
 }
 
 // ignore: constant_identifier_names
 const CACHED_ORDER_DATA = 'CACHED_USER_DATA';
 
-/// We cache the [OrderDataModel] so if anything went wrong with the server
+/// We cache the [StadtSalatModel] so if anything went wrong with the server
 /// we do not lost the order data.
 class LocalDataSourceImpl implements LocalDataSource {
   final FlutterSecureStorage secureStorage;
 
   LocalDataSourceImpl({required this.secureStorage});
 
-  /// [OrderDataModel] will be read from the memory
+  /// [StadtSalatModel] will be read from the memory
   @override
-  Future<OrderDataModel> getCachedOrderData() async {
+  Future<StadtSalatModel> getCachedOrderData() async {
     final jsonString = await secureStorage.read(key: CACHED_ORDER_DATA);
 
     /// If the [OrderDataModel] exist in memory return it otherwise return [CacheException]
     if (jsonString != null) {
-      return Future.value(OrderDataModel.fromJson(jsonDecode(jsonString)));
+      return Future.value(StadtSalatModel.fromJson(jsonDecode(jsonString)));
     } else {
       throw CacheException();
     }
   }
 
-  /// [OrderDataModel] will be cached in memory as a json map
+  /// [StadtSalatModel] will be cached in memory as a json map
   @override
-  Future<void> cacheOrderData(OrderDataModel orderDataModelToCache) {
+  Future<void> cacheOrderData(StadtSalatModel orderDataModelToCache) {
     return secureStorage.write(
         key: CACHED_ORDER_DATA,
         value: json.encode(orderDataModelToCache.toJson()));

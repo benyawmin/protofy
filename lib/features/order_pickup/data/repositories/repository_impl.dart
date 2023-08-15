@@ -1,14 +1,13 @@
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/core/error/failures.dart';
-import 'package:Goodbytz/core/network/network_info.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/local_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/domain/repositories/order_repository.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/core/error/failures.dart';
+import 'package:protofy/core/network/network_info.dart';
+import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
+import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
 import 'package:dartz/dartz.dart';
 
-typedef _TokenPicker = Future<OrderDataModel> Function();
+typedef _TokenPicker = Future<StadtSalatModel> Function();
 
 class RepositoryImpl implements OrderRepository {
   final RemoteDataSource remoteDataSource;
@@ -23,28 +22,24 @@ class RepositoryImpl implements OrderRepository {
 
   // Returns Either a Failure or the OrderData
   @override
-  Future<Either<Failure, OrderData>> checkOrderID(
-      {required String orderId}) async {
+  Future<Either<Failure, StadtSalatModel>> checkOrderID() async {
     return await _getDataOfOrder(() {
-      return remoteDataSource.getOrderData(orderId);
+      return remoteDataSource.getOrderData();
     });
   }
 
   // Try to get the data of the order
-  Future<Either<Failure, OrderData>> _getDataOfOrder(
-    _TokenPicker tokenPicker,
-  ) async {
+  Future<Either<Failure, StadtSalatModel>> _getDataOfOrder(
+      _TokenPicker tokenPicker, async) async {
     // Check if network is connected send the request
     if (await networkInfo.isConnected) {
       try {
         final remoteOrderData = await tokenPicker();
-        final dishes = remoteOrderData.dishes;
 
         /// Caching the [OrderDataModel]
         localDataSource.cacheOrderData(
-            OrderDataModel(orderId: remoteOrderData.orderId, dishes: dishes));
-        return Right(
-            OrderData(orderID: remoteOrderData.orderId, dishes: dishes));
+            StadtSalatModel(products: remoteOrderData.products));
+        return Right(StadtSalatModel(products: remoteOrderData.products));
       } on ServerException {
         return Left(ServerFailure());
       }

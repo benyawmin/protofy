@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:Goodbytz/core/error/exceptions.dart';
-import 'package:Goodbytz/features/order_pickup/data/datasources/local_data_source.dart';
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -27,7 +27,8 @@ void main() {
         "order_id": "id",
         "dishes": [0, 2, 6]
       });
-      final expectedData = OrderDataModel(orderId: 'id', dishes: const [0, 2, 6]);
+      final expectedData =
+          StadtSalatModel(orderId: 'id', dishes: const [0, 2, 6]);
 
       when(mockSecureStorage.read(key: anyNamed('key')))
           .thenAnswer((_) => Future.value(tokenJson));
@@ -54,7 +55,7 @@ void main() {
     test('should cache the orderData', () async {
       // arrange
       final tokenToCache =
-          OrderDataModel(orderId: 'id', dishes: const [0, 2, 6]);
+          StadtSalatModel(orderId: 'id', dishes: const [0, 2, 6]);
       // act
       await localDataSource.cacheOrderData(tokenToCache);
       // assert

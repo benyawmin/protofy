@@ -5,12 +5,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:Goodbytz/core/network/network_info.dart' as _i6;
-import 'package:Goodbytz/features/order_pickup/data/datasources/local_data_source.dart'
+import 'package:protofy/core/network/network_info.dart' as _i6;
+import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart'
     as _i5;
-import 'package:Goodbytz/features/order_pickup/data/datasources/remote_data_source.dart'
+import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart'
     as _i3;
-import 'package:Goodbytz/features/order_pickup/data/models/order_data_model.dart'
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -26,7 +26,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeOrderDataModel_0 extends _i1.SmartFake
-    implements _i2.OrderDataModel {
+    implements _i2.StadtSalatModel {
   _FakeOrderDataModel_0(
     Object parent,
     Invocation parentInvocation,
@@ -45,20 +45,21 @@ class MockRemoteDataSource extends _i1.Mock implements _i3.RemoteDataSource {
   }
 
   @override
-  _i4.Future<_i2.OrderDataModel> getOrderData(String? orderId) =>
+  _i4.Future<_i2.StadtSalatModel> getOrderData(String? orderId) =>
       (super.noSuchMethod(
         Invocation.method(
           #getOrderData,
           [orderId],
         ),
-        returnValue: _i4.Future<_i2.OrderDataModel>.value(_FakeOrderDataModel_0(
+        returnValue:
+            _i4.Future<_i2.StadtSalatModel>.value(_FakeOrderDataModel_0(
           this,
           Invocation.method(
             #getOrderData,
             [orderId],
           ),
         )),
-      ) as _i4.Future<_i2.OrderDataModel>);
+      ) as _i4.Future<_i2.StadtSalatModel>);
 }
 
 /// A class which mocks [LocalDataSource].
@@ -70,21 +71,22 @@ class MockLocalDataSource extends _i1.Mock implements _i5.LocalDataSource {
   }
 
   @override
-  _i4.Future<_i2.OrderDataModel> getCachedOrderData() => (super.noSuchMethod(
+  _i4.Future<_i2.StadtSalatModel> getCachedOrderData() => (super.noSuchMethod(
         Invocation.method(
           #getCachedOrderData,
           [],
         ),
-        returnValue: _i4.Future<_i2.OrderDataModel>.value(_FakeOrderDataModel_0(
+        returnValue:
+            _i4.Future<_i2.StadtSalatModel>.value(_FakeOrderDataModel_0(
           this,
           Invocation.method(
             #getCachedOrderData,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.OrderDataModel>);
+      ) as _i4.Future<_i2.StadtSalatModel>);
   @override
-  _i4.Future<void> cacheOrderData(_i2.OrderDataModel? tokenToCache) =>
+  _i4.Future<void> cacheOrderData(_i2.StadtSalatModel? tokenToCache) =>
       (super.noSuchMethod(
         Invocation.method(
           #cacheOrderData,

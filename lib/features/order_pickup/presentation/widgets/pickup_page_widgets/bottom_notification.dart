@@ -1,5 +1,5 @@
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
-import 'package:Goodbytz/features/order_pickup/presentation/core/helper/container_border.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/presentation/core/helper/container_border.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

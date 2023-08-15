@@ -1,4 +1,4 @@
-import 'package:Goodbytz/features/order_pickup/domain/entities/order_data.dart';
+import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
 import 'package:flutter/material.dart';
 
 class OrderIDLabel extends StatelessWidget {
