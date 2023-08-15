@@ -23,7 +23,7 @@ void main() {
     final List<int> dishes = [0, 2, 6];
     const orderID = 'benyamin_jafari_2000';
     const params = Params(orderId: orderID);
-    final userAuth = OrderData(orderID: 'token', dishes: dishes);
+    final userAuth = StadtSalatModel(orderID: 'token', dishes: dishes);
 
     test('should return UserAuth from the repository', () async {
       // arrange

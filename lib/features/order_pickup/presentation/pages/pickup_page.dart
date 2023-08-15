@@ -1,3 +1,4 @@
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
 import 'package:protofy/features/order_pickup/presentation/core/helper/container_border.dart';
 import 'package:protofy/features/order_pickup/presentation/core/widgets/countdown.dart';
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class PickupPage extends StatefulWidget {
-  final OrderData orderData;
+  final StadtSalatModel orderData;
   const PickupPage({super.key, required this.orderData});
 
   @override
@@ -17,7 +18,7 @@ class PickupPage extends StatefulWidget {
 }
 
 class _PickupPageState extends State<PickupPage> {
-  late OrderData pickupOrderData;
+  late StadtSalatModel pickupOrderData;
 
   @override
   void initState() {
@@ -74,12 +75,12 @@ class _PickupPageState extends State<PickupPage> {
                     secondsRemaining: 300,
                     whenTimeExpires: (() {
                       setState(() {
-                        pickupOrderData.dishes = [];
+                        // pickupOrderData.dishes = [];
                       });
                     })),
 
                 //*** Blueprint of the pots ***//
-                PickupBoxSystemBlueprint(pickupOrderData: pickupOrderData),
+                // PickupBoxSystemBlueprint(pickupOrderData: pickupOrderData),
 
                 // Add space
                 SizedBox(
@@ -87,15 +88,15 @@ class _PickupPageState extends State<PickupPage> {
                 ),
 
                 //*** Showing the order ID ***//
-                OrderIDLabel(pickupOrderData: pickupOrderData),
+                // OrderIDLabel(pickupOrderData: pickupOrderData),
 
                 // Add space
                 const Spacer(),
 
                 //*** Notification to take the food boxes ***//
-                BottomNotification(
-                  pickupOrderData: pickupOrderData,
-                )
+                // BottomNotification(
+                //   pickupOrderData: pickupOrderData,
+                // )
               ],
             ),
           ],

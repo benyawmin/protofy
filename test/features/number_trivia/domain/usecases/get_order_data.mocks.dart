@@ -43,7 +43,7 @@ class MockOrderRepository extends _i1.Mock implements _i3.OrderRepository {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.OrderData>> checkOrderID(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.StadtSalatModel>> checkOrderID(
           {required String? orderId}) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -51,8 +51,9 @@ class MockOrderRepository extends _i1.Mock implements _i3.OrderRepository {
           [],
           {#orderId: orderId},
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i6.OrderData>>.value(
-            _FakeEither_0<_i5.Failure, _i6.OrderData>(
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i6.StadtSalatModel>>.value(
+                _FakeEither_0<_i5.Failure, _i6.StadtSalatModel>(
           this,
           Invocation.method(
             #checkOrderID,
@@ -60,5 +61,5 @@ class MockOrderRepository extends _i1.Mock implements _i3.OrderRepository {
             {#orderId: orderId},
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.OrderData>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.StadtSalatModel>>);
 }

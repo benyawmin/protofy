@@ -2,6 +2,7 @@
 
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/util/input_converter.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
 import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
 import 'package:bloc/bloc.dart';

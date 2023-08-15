@@ -72,15 +72,15 @@ void main() {
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
             .thenReturn(const Right('correct_email'));
-        when(mockGetAuthToken.call(any)).thenAnswer(
-            (_) async => Right(OrderData(orderID: 'token', dishes: dishes)));
+        when(mockGetAuthToken.call(any)).thenAnswer((_) async =>
+            Right(StadtSalatModel(orderID: 'token', dishes: dishes)));
         return loginBloc;
       },
       act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
         OrderIDAuthenticationInProgress(),
         OrderIDAuthenticationSuccess(
-            orderData: OrderData(orderID: 'token', dishes: dishes)),
+            orderData: StadtSalatModel(orderID: 'token', dishes: dishes)),
       ],
     );
   });

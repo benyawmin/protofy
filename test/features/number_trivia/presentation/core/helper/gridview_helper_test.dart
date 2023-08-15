@@ -7,8 +7,8 @@ import 'package:protofy/features/order_pickup/presentation/core/widgets/blink_an
 void main() {
   test('logicBuilder', () {
     // Create a sample OrderData object with some dishes
-    OrderData orderData =
-        OrderData(dishes: const [0, 2, 6], orderID: 'haritha_kumar_2000');
+    StadtSalatModel orderData =
+        StadtSalatModel(dishes: const [0, 2, 6], orderID: 'haritha_kumar_2000');
 
     // Test section 0
     List<Widget> resultSection0 = griviewUILogicBuilder(0, 0, orderData);

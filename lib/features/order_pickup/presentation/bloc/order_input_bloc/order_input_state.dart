@@ -15,7 +15,7 @@ class OrderIDAuthenticationInProgress extends OrderInputState {}
 
 // If the order ID was correct and everything went ok emit this state
 class OrderIDAuthenticationSuccess extends OrderInputState {
-  final OrderData orderData;
+  final StadtSalatModel orderData;
 
   const OrderIDAuthenticationSuccess({required this.orderData});
 

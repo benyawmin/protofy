@@ -65,21 +65,23 @@ class MockGetOrderData extends _i1.Mock implements _i4.GetOrderData {
         ),
       ) as _i2.OrderRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>> call(_i4.Params? params) =>
+  _i5.Future<_i3.Either<_i6.Failure, _i7.StadtSalatModel>> call(
+          _i4.Params? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,
           [params],
         ),
-        returnValue: _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>>.value(
-            _FakeEither_1<_i6.Failure, _i7.OrderData>(
+        returnValue:
+            _i5.Future<_i3.Either<_i6.Failure, _i7.StadtSalatModel>>.value(
+                _FakeEither_1<_i6.Failure, _i7.StadtSalatModel>(
           this,
           Invocation.method(
             #call,
             [params],
           ),
         )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.OrderData>>);
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.StadtSalatModel>>);
 }
 
 /// A class which mocks [InputOrderIDValidation].

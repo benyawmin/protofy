@@ -18,13 +18,9 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<StadtSalatModel> getOrderData() => _orderDataApiRequest();
 
   Future<StadtSalatModel> _orderDataApiRequest() async {
-    final fakeServer = ApiProvider();
-    final response = await fakeServer.getOrderDataFromApi();
+    final apiProvider = ApiProvider();
+    final saladList = await apiProvider.getOrderDataFromApi();
 
-    if (response.statusCode == 200) {
-      return StadtSalatModel.fromJson(json.decode(response.body));
-    } else {
-      throw ServerException();
-    }
+    return StadtSalatModel.fromJson(saladList);
   }
 }

@@ -1,6 +1,7 @@
 import 'package:protofy/core/error/exceptions.dart';
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/network/network_info.dart';
+import 'package:protofy/core/usecases/usecase.dart';
 import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
 import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
@@ -25,7 +26,7 @@ class RepositoryImpl implements OrderRepository {
   Future<Either<Failure, StadtSalatModel>> checkOrderID() async {
     return await _getDataOfOrder(() {
       return remoteDataSource.getOrderData();
-    });
+    }, NoParams());
   }
 
   // Try to get the data of the order
