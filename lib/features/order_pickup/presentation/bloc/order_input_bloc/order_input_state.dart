@@ -1,33 +1,33 @@
 part of 'order_input_bloc.dart';
 
-abstract class OrderInputState extends Equatable {
-  const OrderInputState();
+abstract class SaladListState extends Equatable {
+  const SaladListState();
 
   @override
   List<Object> get props => [];
 }
 
 // Initial state of the order id page
-class OrderIDAuthenticationInitial extends OrderInputState {}
+class SaladListStateInitial extends SaladListState {}
 
 // In progress state of the order id page (after clicking the button show loadig)
-class OrderIDAuthenticationInProgress extends OrderInputState {}
+class SaladListStateLoading extends SaladListState {}
 
 // If the order ID was correct and everything went ok emit this state
-class OrderIDAuthenticationSuccess extends OrderInputState {
-  final StadtSalatModel orderData;
+class SaladListStateLoaded extends SaladListState {
+  final StadtSalatModel saladList;
 
-  const OrderIDAuthenticationSuccess({required this.orderData});
+  const SaladListStateLoaded({required this.saladList});
 
   @override
-  List<Object> get props => [orderData];
+  List<Object> get props => [saladList];
 }
 
 // Emit this state if an error happend during the Order ID Authentication process
-class OrderIDAuthenticationError extends OrderInputState {
+class SaladListStateError extends SaladListState {
   final String message;
 
-  const OrderIDAuthenticationError({required this.message});
+  const SaladListStateError({required this.message});
 
   @override
   List<Object> get props => [message];

@@ -17,3 +17,8 @@ class OrderIDAuthenticationRequest extends OrderInputEvent {
   @override
   List<Object> get props => [orderId];
 }
+
+class LoadSaladList extends OrderInputEvent {
+  @override
+  List<Object> get props => [];
+}

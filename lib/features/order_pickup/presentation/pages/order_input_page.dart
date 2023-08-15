@@ -18,29 +18,33 @@ class OrderInputPage extends StatelessWidget {
           create: (_) => sl<OrderInputBloc>(),
           child: Column(
             children: <Widget>[
-              BlocBuilder<OrderInputBloc, OrderInputState>(
+              BlocBuilder<OrderInputBloc, SaladListState>(
                 builder: (context, state) {
                   //! Handling different pages and logics based on the state
                   //! emmited from the bloc
-                  if (state is OrderIDAuthenticationInitial) {
+                  if (state is SaladListStateInitial) {
+                    BlocProvider.of<OrderInputBloc>(context)
+                        .add(LoadSaladList());
                     return const OrderMainBody();
-                  } else if (state is OrderIDAuthenticationInProgress) {
+                  } else if (state is SaladListStateLoading) {
                     return const Stack(
                         alignment: Alignment.center,
                         children: [OrderMainBody(), Loading()]);
-                  } else if (state is OrderIDAuthenticationSuccess) {
+                  } else if (state is SaladListStateLoaded) {
                     // Animated fade in transition to the next page
-                    SchedulerBinding.instance.addPostFrameCallback((_) {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                            transitionsBuilder: (_, a, __, c) =>
-                                FadeTransition(opacity: a, child: c),
-                            transitionDuration: const Duration(seconds: 1),
-                            pageBuilder: (_, __, ___) =>
-                                PickupPage(orderData: state.orderData)),
-                      );
-                    });
-                  } else if (state is OrderIDAuthenticationError) {
+                    return const Text('The state is loaded');
+                    // SchedulerBinding.instance.addPostFrameCallback((_) {
+                    //   Navigator.of(context).push(
+                    //     PageRouteBuilder(
+                    //         transitionsBuilder: (_, a, __, c) =>
+                    //             FadeTransition(opacity: a, child: c),
+                    //         transitionDuration: const Duration(seconds: 1),
+                    //         pageBuilder: (_, __, ___) =>
+                    //             PickupPage(orderData: state.saladList)),
+                    //   );
+                    // }
+                    // );
+                  } else if (state is SaladListStateError) {
                     return OrderInputError(message: state.message);
                   }
                   return const SizedBox.shrink();

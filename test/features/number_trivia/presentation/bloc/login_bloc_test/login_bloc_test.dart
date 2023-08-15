@@ -33,10 +33,10 @@ void main() {
     });
 
     test('initial state should be AuthenticationInitial', () {
-      expect(loginBloc.state, OrderIDAuthenticationInitial());
+      expect(loginBloc.state, SaladListStateInitial());
     });
 
-    blocTest<OrderInputBloc, OrderInputState>(
+    blocTest<OrderInputBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationError] when input validation fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -45,13 +45,12 @@ void main() {
       },
       act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        OrderIDAuthenticationInProgress(),
-        const OrderIDAuthenticationError(
-            message: INVALID_INPUT_FAILURE_MESSAGE),
+        SaladListStateLoading(),
+        const SaladListStateError(message: INVALID_INPUT_FAILURE_MESSAGE),
       ],
     );
 
-    blocTest<OrderInputBloc, OrderInputState>(
+    blocTest<OrderInputBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationError] when authentication fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -62,12 +61,12 @@ void main() {
       },
       act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        OrderIDAuthenticationInProgress(),
-        const OrderIDAuthenticationError(message: SERVER_FAILURE_MESSAGE),
+        SaladListStateLoading(),
+        const SaladListStateError(message: SERVER_FAILURE_MESSAGE),
       ],
     );
 
-    blocTest<OrderInputBloc, OrderInputState>(
+    blocTest<OrderInputBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationSuccess] when authentication succeeds',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -78,9 +77,9 @@ void main() {
       },
       act: (bloc) => bloc.add(const OrderIDAuthenticationRequest(orderId: '0')),
       expect: () => [
-        OrderIDAuthenticationInProgress(),
-        OrderIDAuthenticationSuccess(
-            orderData: StadtSalatModel(orderID: 'token', dishes: dishes)),
+        SaladListStateLoading(),
+        SaladListStateLoaded(
+            saladList: StadtSalatModel(orderID: 'token', dishes: dishes)),
       ],
     );
   });

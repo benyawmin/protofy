@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:protofy/core/error/failures.dart';
+import 'package:protofy/core/usecases/usecase.dart';
 import 'package:protofy/core/util/input_converter.dart';
 import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
@@ -18,16 +19,16 @@ const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 
 // Business logic of the app goes here in the bloc
-class OrderInputBloc extends Bloc<OrderInputEvent, OrderInputState> {
+class OrderInputBloc extends Bloc<OrderInputEvent, SaladListState> {
   final GetOrderData getOrderData;
   final InputOrderIDValidation inputOderIdValidation;
 
   OrderInputBloc({
     required this.getOrderData,
     required this.inputOderIdValidation,
-  }) : super(OrderIDAuthenticationInitial()) {
+  }) : super(SaladListStateInitial()) {
     on<OrderIDAuthenticationRequest>((event, emit) async {
-      emit(OrderIDAuthenticationInProgress());
+      emit(SaladListStateLoading());
 
       final orderIdEither =
           inputOderIdValidation.orderIdValidatior(event.orderId);
@@ -37,21 +38,30 @@ class OrderInputBloc extends Bloc<OrderInputEvent, OrderInputState> {
 
       // Folding the Either type and act based on failure or successful data
       await orderIdEither.fold(
-          (failure) async => emit(const OrderIDAuthenticationError(
+          (failure) async => emit(const SaladListStateError(
               message: INVALID_INPUT_FAILURE_MESSAGE)), (orderId) async {
         isOrderIdValid = true;
         correctOrderId = orderId;
       });
 
       if (isOrderIdValid) {
-        final failureOrOrderId =
-            await getOrderData(Params(orderId: correctOrderId));
+        final failureOrOrderId = await getOrderData(NoParams());
         await failureOrOrderId.fold(
-            (failure) async => emit(OrderIDAuthenticationError(
-                message: _mapFailureToMessage(failure))),
+            (failure) async => emit(
+                SaladListStateError(message: _mapFailureToMessage(failure))),
             (orderData) async =>
-                emit(OrderIDAuthenticationSuccess(orderData: orderData)));
+                emit(SaladListStateLoaded(saladList: orderData)));
       }
+    });
+
+    on<LoadSaladList>((event, emit) async {
+      emit(SaladListStateLoading());
+      final failureOrSaladList = await getOrderData(NoParams());
+      await failureOrSaladList.fold(
+          (failure) async =>
+              emit(SaladListStateError(message: _mapFailureToMessage(failure))),
+          (saladList) async =>
+              emit(SaladListStateLoaded(saladList: saladList)));
     });
   }
 
