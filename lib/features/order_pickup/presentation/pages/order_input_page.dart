@@ -1,8 +1,8 @@
+import 'package:flutter/scheduler.dart';
 import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
 import 'package:protofy/features/order_pickup/presentation/pages/pickup_page.dart';
 import 'package:protofy/injection_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/order_input_widgets.dart';
 
@@ -23,29 +23,31 @@ class OrderInputPage extends StatelessWidget {
                   //! Handling different pages and logics based on the state
                   //! emmited from the bloc
                   if (state is SaladListStateInitial) {
+                    debugPrint('Initial');
                     BlocProvider.of<OrderInputBloc>(context)
                         .add(LoadSaladList());
-                    return const OrderMainBody();
+                    return const SizedBox();
                   } else if (state is SaladListStateLoading) {
                     return const Stack(
                         alignment: Alignment.center,
-                        children: [OrderMainBody(), Loading()]);
+                        children: [SizedBox(), Loading()]);
                   } else if (state is SaladListStateLoaded) {
                     // Animated fade in transition to the next page
-                    return const Text('The state is loaded');
-                    // SchedulerBinding.instance.addPostFrameCallback((_) {
-                    //   Navigator.of(context).push(
-                    //     PageRouteBuilder(
-                    //         transitionsBuilder: (_, a, __, c) =>
-                    //             FadeTransition(opacity: a, child: c),
-                    //         transitionDuration: const Duration(seconds: 1),
-                    //         pageBuilder: (_, __, ___) =>
-                    //             PickupPage(orderData: state.saladList)),
-                    //   );
-                    // }
-                    // );
+                    // return const Text('The state is loaded');
+                    debugPrint('LOADED');
+                    SchedulerBinding.instance.addPostFrameCallback((_) {
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                            transitionsBuilder: (_, a, __, c) =>
+                                FadeTransition(opacity: a, child: c),
+                            transitionDuration: const Duration(seconds: 1),
+                            pageBuilder: (_, __, ___) => PickupPage(
+                                  saladList: state.saladList,
+                                )),
+                      );
+                    });
                   } else if (state is SaladListStateError) {
-                    return OrderInputError(message: state.message);
+                    // return OrderInputError(message: state.message);
                   }
                   return const SizedBox.shrink();
                 },

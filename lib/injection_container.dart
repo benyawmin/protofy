@@ -24,13 +24,15 @@ Future<void> init() async {
 
   //* Repository
   sl.registerLazySingleton<OrderRepository>(() => RepositoryImpl(
-      remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+      remoteDataSource: sl(),
+      //  localDataSource: sl(),
+       networkInfo: sl()));
 
   //* Data sources
   sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
 
-  sl.registerLazySingleton<LocalDataSource>(
-      () => LocalDataSourceImpl(secureStorage: sl()));
+  // sl.registerLazySingleton<LocalDataSource>(
+  //     () => LocalDataSourceImpl(secureStorage: sl()));
   //! Core
   sl.registerLazySingleton(() => InputOrderIDValidation());
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));

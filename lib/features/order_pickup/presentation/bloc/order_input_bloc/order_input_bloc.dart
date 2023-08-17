@@ -1,10 +1,10 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:flutter/foundation.dart';
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/usecases/usecase.dart';
 import 'package:protofy/core/util/input_converter.dart';
 import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
-import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
 import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
 import 'package:bloc/bloc.dart';
 
@@ -27,41 +27,15 @@ class OrderInputBloc extends Bloc<OrderInputEvent, SaladListState> {
     required this.getOrderData,
     required this.inputOderIdValidation,
   }) : super(SaladListStateInitial()) {
-    on<OrderIDAuthenticationRequest>((event, emit) async {
-      emit(SaladListStateLoading());
-
-      final orderIdEither =
-          inputOderIdValidation.orderIdValidatior(event.orderId);
-
-      bool isOrderIdValid = false;
-      String correctOrderId = '';
-
-      // Folding the Either type and act based on failure or successful data
-      await orderIdEither.fold(
-          (failure) async => emit(const SaladListStateError(
-              message: INVALID_INPUT_FAILURE_MESSAGE)), (orderId) async {
-        isOrderIdValid = true;
-        correctOrderId = orderId;
-      });
-
-      if (isOrderIdValid) {
-        final failureOrOrderId = await getOrderData(NoParams());
-        await failureOrOrderId.fold(
-            (failure) async => emit(
-                SaladListStateError(message: _mapFailureToMessage(failure))),
-            (orderData) async =>
-                emit(SaladListStateLoaded(saladList: orderData)));
-      }
-    });
-
     on<LoadSaladList>((event, emit) async {
+      debugPrint('Event Called');
       emit(SaladListStateLoading());
       final failureOrSaladList = await getOrderData(NoParams());
-      await failureOrSaladList.fold(
-          (failure) async =>
-              emit(SaladListStateError(message: _mapFailureToMessage(failure))),
-          (saladList) async =>
-              emit(SaladListStateLoaded(saladList: saladList)));
+      await failureOrSaladList.fold((failure) async {
+        emit(SaladListStateError(message: _mapFailureToMessage(failure)));
+      }, (saladList) async {
+        emit(SaladListStateLoaded(saladList: saladList));
+      });
     });
   }
 
