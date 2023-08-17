@@ -1,6 +1,6 @@
 import 'package:flutter/scheduler.dart';
 import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
-import 'package:protofy/features/order_pickup/presentation/pages/pickup_page.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_list.dart';
 import 'package:protofy/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,13 +41,13 @@ class OrderInputPage extends StatelessWidget {
                             transitionsBuilder: (_, a, __, c) =>
                                 FadeTransition(opacity: a, child: c),
                             transitionDuration: const Duration(seconds: 1),
-                            pageBuilder: (_, __, ___) => PickupPage(
+                            pageBuilder: (_, __, ___) => SaladList(
                                   saladList: state.saladList,
                                 )),
                       );
                     });
                   } else if (state is SaladListStateError) {
-                    // return OrderInputError(message: state.message);
+                    return OrderInputError(message: state.message);
                   }
                   return const SizedBox.shrink();
                 },

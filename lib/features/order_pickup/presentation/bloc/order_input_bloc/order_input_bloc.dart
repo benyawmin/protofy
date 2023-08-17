@@ -3,8 +3,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/usecases/usecase.dart';
-import 'package:protofy/core/util/input_converter.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
 import 'package:bloc/bloc.dart';
 
@@ -21,11 +19,9 @@ const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 // Business logic of the app goes here in the bloc
 class OrderInputBloc extends Bloc<OrderInputEvent, SaladListState> {
   final GetOrderData getOrderData;
-  final InputOrderIDValidation inputOderIdValidation;
 
   OrderInputBloc({
     required this.getOrderData,
-    required this.inputOderIdValidation,
   }) : super(SaladListStateInitial()) {
     on<LoadSaladList>((event, emit) async {
       debugPrint('Event Called');

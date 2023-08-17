@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/pickup_page_widgets/salad_category_list.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_category_list.dart';
 import 'package:sizer/sizer.dart';
 
-class PickupPage extends StatefulWidget {
+class SaladList extends StatefulWidget {
   final List saladList;
-  const PickupPage({super.key, required this.saladList});
+  const SaladList({super.key, required this.saladList});
 
   @override
-  State<PickupPage> createState() => _PickupPageState();
+  State<SaladList> createState() => _SaladListState();
 }
 
-class _PickupPageState extends State<PickupPage> {
+class _SaladListState extends State<SaladList> {
   List noMeats = [];
   List meats = [];
   List sides = [];
