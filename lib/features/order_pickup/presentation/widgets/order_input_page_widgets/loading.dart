@@ -8,10 +8,10 @@ class Loading extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50.h,
-      width: 50.w,
-      child: Center(
+    return Center(
+      child: SizedBox(
+        height: 60.h,
+        width: 50.w,
         child: Image.asset(
           "images/food_loader.gif",
         ),

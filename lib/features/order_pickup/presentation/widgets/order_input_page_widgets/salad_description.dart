@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -5,10 +7,13 @@ import 'package:sizer/sizer.dart';
 class SaladDescription extends StatelessWidget {
   final List saladCatList;
   final int index;
-  final int fontSize;
+  final double fontSize;
 
   const SaladDescription(
-      {super.key, required this.saladCatList, required this.index, required this.fontSize});
+      {super.key,
+      required this.saladCatList,
+      required this.index,
+      required this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class SaladDescription extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: SingleChildScrollView(
         child: Text(
-          saladCatList[index]['description'].toString(),
+          utf8.decode(saladCatList[index]['description'].codeUnits),
           style: GoogleFonts.openSans(fontSize: fontSize.sp),
           overflow: TextOverflow.clip,
         ),

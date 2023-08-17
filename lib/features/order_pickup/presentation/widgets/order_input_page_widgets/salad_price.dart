@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 class SaladPrice extends StatelessWidget {
   final List saladCatList;
   final int index;
-  final int fontSize;
+  final double fontSize;
 
   const SaladPrice(
       {super.key,

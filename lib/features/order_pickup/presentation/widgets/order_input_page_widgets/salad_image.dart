@@ -17,7 +17,7 @@ class SaladImage extends StatelessWidget {
       // handling network error on image loading
       errorBuilder:
           (BuildContext context, Object exception, StackTrace? stackTrace) {
-        return const Text('Network problem');
+        return const Icon(Icons.signal_wifi_statusbar_connected_no_internet_4_outlined);
       },
     );
   }

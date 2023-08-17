@@ -11,7 +11,7 @@ class SaladName extends StatelessWidget {
 
   final List saladCatList;
   final int index;
-  final int fontSize;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
