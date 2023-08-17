@@ -2,9 +2,7 @@ import 'package:protofy/core/error/exceptions.dart';
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/network/network_info.dart';
 import 'package:protofy/core/usecases/usecase.dart';
-import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
 import 'package:dartz/dartz.dart';
 

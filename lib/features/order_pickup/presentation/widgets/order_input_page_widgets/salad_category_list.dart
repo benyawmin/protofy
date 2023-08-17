@@ -1,6 +1,6 @@
-﻿import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/details.dart';
+﻿import 'package:animations/animations.dart';
+import 'package:flutter/material.dart';
+import 'package:protofy/features/order_pickup/presentation/pages/details_page.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_card.dart';
 import 'package:sizer/sizer.dart';
 
@@ -30,26 +30,15 @@ class SaladCategoryList extends StatelessWidget {
                 children: List.generate(saladCatList.length, (index) {
                   return Row(
                     children: [
-                      GestureDetector(
-                        onTap: () => Navigator.push(
-                          context,
-                          PageRouteBuilder(
-                            transitionDuration: const Duration(seconds: 4),
-                            pageBuilder: (_, __, ___) => Hero(
-                              tag: '$index',
-                              child: Details(
-                                saladCatList: saladCatList,
-                                index: index,
-                              ),
-                            ),
-                          ),
+                      OpenContainer(
+                        transitionDuration: const Duration(milliseconds: 500),
+                        closedBuilder: (context, action) => SaladCard(
+                          saladCatList: saladCatList,
+                          index: index,
                         ),
-                        child: Hero(
-                          tag: '$index',
-                          child: SaladCard(
-                            saladCatList: saladCatList,
-                            index: index,
-                          ),
+                        openBuilder: (context, action) => Details(
+                          saladCatList: saladCatList,
+                          index: index,
                         ),
                       ),
                       SizedBox(

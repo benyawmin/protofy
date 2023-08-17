@@ -1,13 +1,13 @@
 import 'package:flutter/scheduler.dart';
-import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
+import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/salad_list_bloc.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_list.dart';
 import 'package:protofy/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/order_input_widgets.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_list_widgets.dart';
 
-class OrderInputPage extends StatelessWidget {
-  const OrderInputPage({super.key});
+class SaladListPage extends StatelessWidget {
+  const SaladListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,16 @@ class OrderInputPage extends StatelessWidget {
       backgroundColor: const Color(0xFFF5F5F7),
       body: SingleChildScrollView(
         child: BlocProvider(
-          create: (_) => sl<OrderInputBloc>(),
+          create: (_) => sl<SaladListBloc>(),
           child: Column(
             children: <Widget>[
-              BlocBuilder<OrderInputBloc, SaladListState>(
+              BlocBuilder<SaladListBloc, SaladListState>(
                 builder: (context, state) {
                   //! Handling different pages and logics based on the state
                   //! emmited from the bloc
                   if (state is SaladListStateInitial) {
                     debugPrint('Initial');
-                    BlocProvider.of<OrderInputBloc>(context)
+                    BlocProvider.of<SaladListBloc>(context)
                         .add(LoadSaladList());
                     return const SizedBox();
                   } else if (state is SaladListStateLoading) {
@@ -47,7 +47,7 @@ class OrderInputPage extends StatelessWidget {
                       );
                     });
                   } else if (state is SaladListStateError) {
-                    return OrderInputError(message: state.message);
+                    return SaladListError(message: state.message);
                   }
                   return const SizedBox.shrink();
                 },

@@ -8,8 +8,8 @@ import 'package:bloc/bloc.dart';
 
 import 'package:equatable/equatable.dart';
 
-part 'order_input_event.dart';
-part 'order_input_state.dart';
+part 'salad_list_event.dart';
+part 'salad_list_state.dart';
 
 // Setting messages for each failure type
 const String SERVER_FAILURE_MESSAGE = 'Wrong Order ID';
@@ -17,10 +17,10 @@ const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String INVALID_INPUT_FAILURE_MESSAGE = 'Invalid Order number';
 
 // Business logic of the app goes here in the bloc
-class OrderInputBloc extends Bloc<OrderInputEvent, SaladListState> {
+class SaladListBloc extends Bloc<OrderInputEvent, SaladListState> {
   final GetOrderData getOrderData;
 
-  OrderInputBloc({
+  SaladListBloc({
     required this.getOrderData,
   }) : super(SaladListStateInitial()) {
     on<LoadSaladList>((event, emit) async {

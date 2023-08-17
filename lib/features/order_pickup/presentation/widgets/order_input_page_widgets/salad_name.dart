@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SaladName extends StatelessWidget {
   const SaladName({
@@ -18,7 +19,7 @@ class SaladName extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Text(
         saladCatList[index]['name'],
-        style: const TextStyle(fontWeight: FontWeight.bold),
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize.sp),
       ),
     );
   }

@@ -1,4 +1,4 @@
-part of 'order_input_bloc.dart';
+part of 'salad_list_bloc.dart';
 
 abstract class SaladListState extends Equatable {
   const SaladListState();

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 //* Shows error if there was an error after the order input
-class OrderInputError extends StatelessWidget {
+class SaladListError extends StatelessWidget {
   final String message;
-  const OrderInputError({super.key, required this.message});
+  const SaladListError({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

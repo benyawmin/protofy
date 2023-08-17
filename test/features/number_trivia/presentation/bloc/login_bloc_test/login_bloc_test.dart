@@ -2,7 +2,7 @@ import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/util/input_converter.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
 import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
-import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/order_input_bloc.dart';
+import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/salad_list_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -15,14 +15,14 @@ import 'login_bloc_test.mocks.dart';
 void main() {
   group('LoginBloc', () {
     final List<int> dishes = [0, 2, 6];
-    late OrderInputBloc loginBloc;
+    late SaladListBloc loginBloc;
     late MockGetOrderData mockGetAuthToken;
     late MockInputOrderIDValidation mockInputOrderIDValidation;
 
     setUp(() {
       mockGetAuthToken = MockGetOrderData();
       mockInputOrderIDValidation = MockInputOrderIDValidation();
-      loginBloc = OrderInputBloc(
+      loginBloc = SaladListBloc(
         getOrderData: mockGetAuthToken,
         inputOderIdValidation: mockInputOrderIDValidation,
       );
@@ -36,7 +36,7 @@ void main() {
       expect(loginBloc.state, SaladListStateInitial());
     });
 
-    blocTest<OrderInputBloc, SaladListState>(
+    blocTest<SaladListBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationError] when input validation fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -50,7 +50,7 @@ void main() {
       ],
     );
 
-    blocTest<OrderInputBloc, SaladListState>(
+    blocTest<SaladListBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationError] when authentication fails',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))
@@ -66,7 +66,7 @@ void main() {
       ],
     );
 
-    blocTest<OrderInputBloc, SaladListState>(
+    blocTest<SaladListBloc, SaladListState>(
       'emits [AuthenticationInProgress, AuthenticationSuccess] when authentication succeeds',
       build: () {
         when(mockInputOrderIDValidation.orderIdValidatior(any))

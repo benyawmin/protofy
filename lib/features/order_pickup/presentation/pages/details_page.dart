@@ -32,7 +32,7 @@ class Details extends StatelessWidget {
             ),
 
             //****** Name ******/
-            SaladName(saladCatList: saladCatList, index: index, fontSize: 14,),
+            SaladName(saladCatList: saladCatList, index: index, fontSize: 12,),
 
             SizedBox(
               height: 1.h,
@@ -40,12 +40,12 @@ class Details extends StatelessWidget {
 
             //****** Description ******/
             SaladDescription(
-                saladCatList: saladCatList, index: index, fontSize: 10),
+                saladCatList: saladCatList, index: index, fontSize: 8),
             SizedBox(
               height: 1.h,
             ),
             //****** Price ******/
-            SaladPrice(saladCatList: saladCatList, index: index, fontSize: 12)
+            SaladPrice(saladCatList: saladCatList, index: index, fontSize: 10)
             // flutter run -d chrome --web-renderer html
           ],
         ),

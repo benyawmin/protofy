@@ -1,5 +1,5 @@
 import 'package:protofy/core/ui/app_theme.dart';
-import 'package:protofy/features/order_pickup/presentation/pages/order_input_page.dart';
+import 'package:protofy/features/order_pickup/presentation/pages/salad_list_page.dart';
 import 'package:flutter/material.dart';
 import 'injection_container.dart' as di;
 import 'package:sizer/sizer.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: AppTheme.getThemeData(context),
           title: 'Protofy',
-          home: const OrderInputPage(),
+          home: const SaladListPage(),
         );
       },
     );
