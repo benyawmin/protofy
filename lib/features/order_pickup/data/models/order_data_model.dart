@@ -1,513 +1,1001 @@
-// class StadtSalatModel {
-//   List<Product> products;
+class StadtSalatModel {
+  StadtSalatModel({
+    required this.id,
+    required this.name,
+    required this.active,
+    required this.position,
+    required this.products,
+    required this.deliveryPrice,
+    required this.freeDeliveryThreshold,
+    required this.estimatedDeliveryDuration,
+    required this.estimatedDeliveryDurationDistance,
+    required this.estimatedDeliveryDurationIncrement,
+    required this.estimatedDeliveryDurationIncrementDistance,
+    required this.address,
+    required this.images,
+    required this.paymentMethods,
+    required this.deliveryTypes,
+    required this.reusablePackagingEnabled,
+    required this.businessDay,
+    required this.nextBusinessDays,
+    required this.deliveryGroup,
+    required this.alert,
+  });
+  late final String id;
+  late final String name;
+  late final bool active;
+  late final Position position;
+  late final List<Products> products;
+  late final DeliveryPrice deliveryPrice;
+  late final String freeDeliveryThreshold;
+  late final String estimatedDeliveryDuration;
+  late final int estimatedDeliveryDurationDistance;
+  late final String estimatedDeliveryDurationIncrement;
+  late final int estimatedDeliveryDurationIncrementDistance;
+  late final Address address;
+  late final Images images;
+  late final List<String> paymentMethods;
+  late final List<String> deliveryTypes;
+  late final bool reusablePackagingEnabled;
+  late final BusinessDay businessDay;
+  late final List<NextBusinessDays> nextBusinessDays;
+  late final String deliveryGroup;
+  late final Alert alert;
+  
+  StadtSalatModel.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+    name = json['name'];
+    active = json['active'];
+    position = Position.fromJson(json['position']);
+    products = List.from(json['products']).map((e)=>Products.fromJson(e)).toList();
+    deliveryPrice = DeliveryPrice.fromJson(json['deliveryPrice']);
+    freeDeliveryThreshold = json['freeDeliveryThreshold'];
+    estimatedDeliveryDuration = json['estimatedDeliveryDuration'];
+    estimatedDeliveryDurationDistance = json['estimatedDeliveryDurationDistance'];
+    estimatedDeliveryDurationIncrement = json['estimatedDeliveryDurationIncrement'];
+    estimatedDeliveryDurationIncrementDistance = json['estimatedDeliveryDurationIncrementDistance'];
+    address = Address.fromJson(json['address']);
+    images = Images.fromJson(json['images']);
+    paymentMethods = List.castFrom<dynamic, String>(json['paymentMethods']);
+    deliveryTypes = List.castFrom<dynamic, String>(json['deliveryTypes']);
+    reusablePackagingEnabled = json['reusablePackagingEnabled'];
+    businessDay = BusinessDay.fromJson(json['businessDay']);
+    nextBusinessDays = List.from(json['nextBusinessDays']).map((e)=>NextBusinessDays.fromJson(e)).toList();
+    deliveryGroup = json['deliveryGroup'];
+    alert = Alert.fromJson(json['alert']);
+  }
 
-//   StadtSalatModel({
-//     required this.products,
-//   });
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['name'] = name;
+    _data['active'] = active;
+    _data['position'] = position.toJson();
+    _data['products'] = products.map((e)=>e.toJson()).toList();
+    _data['deliveryPrice'] = deliveryPrice.toJson();
+    _data['freeDeliveryThreshold'] = freeDeliveryThreshold;
+    _data['estimatedDeliveryDuration'] = estimatedDeliveryDuration;
+    _data['estimatedDeliveryDurationDistance'] = estimatedDeliveryDurationDistance;
+    _data['estimatedDeliveryDurationIncrement'] = estimatedDeliveryDurationIncrement;
+    _data['estimatedDeliveryDurationIncrementDistance'] = estimatedDeliveryDurationIncrementDistance;
+    _data['address'] = address.toJson();
+    _data['images'] = images.toJson();
+    _data['paymentMethods'] = paymentMethods;
+    _data['deliveryTypes'] = deliveryTypes;
+    _data['reusablePackagingEnabled'] = reusablePackagingEnabled;
+    _data['businessDay'] = businessDay.toJson();
+    _data['nextBusinessDays'] = nextBusinessDays.map((e)=>e.toJson()).toList();
+    _data['deliveryGroup'] = deliveryGroup;
+    _data['alert'] = alert.toJson();
+    return _data;
+  }
+}
 
-//   factory StadtSalatModel.fromJson(Map<String, dynamic> json) {
-//     return StadtSalatModel(
-//       products:
-//           List<Product>.from(json['products'].map((x) => Product.fromJson(x))),
-//     );
-//   }
+class Position {
+  Position({
+    required this.longitude,
+    required this.latitude,
+  });
+  late final double longitude;
+  late final double latitude;
+  
+  Position.fromJson(Map<String, dynamic> json){
+    longitude = json['longitude'];
+    latitude = json['latitude'];
+  }
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'products': List<dynamic>.from(products.map((x) => x.toJson())),
-//     };
-//   }
-// }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['longitude'] = longitude;
+    _data['latitude'] = latitude;
+    return _data;
+  }
+}
 
-// class Product {
-//   String name;
-//   dynamic byname;
-//   dynamic description;
-//   dynamic longDescription;
-//   dynamic type;
-//   dynamic locationBasedPrices;
-//   dynamic nutrients;
-//   dynamic allergens;
-//   String image;
-//   Price price;
-//   dynamic notes;
-//   List<String> tags;
-//   List<String> productTags;
-//   List<Part> parts;
-//   List<dynamic> includes;
-//   List<dynamic> addons;
-//   bool available;
-//   int sorting;
-//   ProductDietaryInfo dietaryInfo;
-//   dynamic capacity;
-//   dynamic foodBusinessOperator;
-//   dynamic foodBusinessOperatorAddress;
-//   dynamic ingredientList;
-//   dynamic containerDepositInCent;
-//   String productId;
-//   dynamic id;
-//   dynamic imageContainer;
-//   String unavailabilityInfo;
-//   String statisticsFactorLunch;
-//   String statisticsFactorEvening;
-//   String energyKcal;
+class Products {
+  Products({
+    required this.name,
+     this.byname,
+     this.description,
+     this.longDescription,
+     this.type,
+     this.locationBasedPrices,
+     this.nutrients,
+     this.allergens,
+    required this.image,
+    required this.price,
+     this.notes,
+    required this.tags,
+    required this.productTags,
+    required this.parts,
+    required this.includes,
+    required this.addons,
+    required this.available,
+    required this.sorting,
+    required this.dietaryInfo,
+     this.capacity,
+     this.foodBusinessOperator,
+     this.foodBusinessOperatorAddress,
+     this.ingredientList,
+     this.containerDepositInCent,
+    required this.id,
+     this.imageContainer,
+    required this.unavailabilityInfo,
+    required this.statisticsFactorLunch,
+    required this.statisticsFactorEvening,
+    required this.energyKcal,
+  });
+  late final String name;
+  late final Null byname;
+  late final String? description;
+  late final String? longDescription;
+  late final Null type;
+  late final Null locationBasedPrices;
+  late final Null nutrients;
+  late final Null allergens;
+  late final String image;
+  late final Price price;
+  late final Null notes;
+  late final List<String> tags;
+  late final List<String> productTags;
+  late final List<Parts> parts;
+  late final List<Includes> includes;
+  late final List<Addons> addons;
+  late final bool available;
+  late final int sorting;
+  late final DietaryInfo dietaryInfo;
+  late final Null capacity;
+  late final Null foodBusinessOperator;
+  late final Null foodBusinessOperatorAddress;
+  late final Null ingredientList;
+  late final Null containerDepositInCent;
+  late final String id;
+  late final Null _id;
+  late final Null imageContainer;
+  late final String unavailabilityInfo;
+  late final String statisticsFactorLunch;
+  late final String statisticsFactorEvening;
+  late final String energyKcal;
+  
+  Products.fromJson(Map<String, dynamic> json){
+    name = json['name'];
+    byname = null;
+    description = null;
+    longDescription = null;
+    type = null;
+    locationBasedPrices = null;
+    nutrients = null;
+    allergens = null;
+    image = json['image'];
+    price = Price.fromJson(json['price']);
+    notes = null;
+    tags = List.castFrom<dynamic, String>(json['tags']);
+    productTags = List.castFrom<dynamic, String>(json['productTags']);
+    parts = List.from(json['parts']).map((e)=>Parts.fromJson(e)).toList();
+    includes = List.from(json['includes']).map((e)=>Includes.fromJson(e)).toList();
+    addons = List.from(json['addons']).map((e)=>Addons.fromJson(e)).toList();
+    available = json['available'];
+    sorting = json['sorting'];
+    dietaryInfo = DietaryInfo.fromJson(json['dietaryInfo']);
+    capacity = null;
+    foodBusinessOperator = null;
+    foodBusinessOperatorAddress = null;
+    ingredientList = null;
+    containerDepositInCent = null;
+    id = json['id'];
+    _id = null;
+    imageContainer = null;
+    unavailabilityInfo = json['unavailabilityInfo'];
+    statisticsFactorLunch = json['statisticsFactorLunch'];
+    statisticsFactorEvening = json['statisticsFactorEvening'];
+    energyKcal = json['energyKcal'];
+  }
 
-//   Product({
-//     required this.name,
-//     required this.byname,
-//     required this.description,
-//     required this.longDescription,
-//     required this.type,
-//     required this.locationBasedPrices,
-//     required this.nutrients,
-//     required this.allergens,
-//     required this.image,
-//     required this.price,
-//     required this.notes,
-//     required this.tags,
-//     required this.productTags,
-//     required this.parts,
-//     required this.includes,
-//     required this.addons,
-//     required this.available,
-//     required this.sorting,
-//     required this.dietaryInfo,
-//     required this.capacity,
-//     required this.foodBusinessOperator,
-//     required this.foodBusinessOperatorAddress,
-//     required this.ingredientList,
-//     required this.containerDepositInCent,
-//     required this.productId,
-//     required this.id,
-//     required this.imageContainer,
-//     required this.unavailabilityInfo,
-//     required this.statisticsFactorLunch,
-//     required this.statisticsFactorEvening,
-//     required this.energyKcal,
-//   });
-//   // From JSON factory method
-//   factory Product.fromJson(Map<String, dynamic> json) {
-//     return Product(
-//       name: json['name'],
-//       byname: json['byname'],
-//       description: json['description'],
-//       longDescription: json['longDescription'],
-//       type: json['type'],
-//       locationBasedPrices: json['locationBasedPrices'],
-//       nutrients: json['nutrients'],
-//       allergens: json['allergens'],
-//       image: json['image'],
-//       price: Price.fromJson(json['price']),
-//       notes: json['notes'],
-//       tags: List<String>.from(json['tags']),
-//       productTags: List<String>.from(json['productTags']),
-//       parts: (json['parts'] as List<dynamic>)
-//           .map((part) => Part.fromJson(part))
-//           .toList(),
-//       includes: json['includes'],
-//       addons: json['addons'],
-//       available: json['available'],
-//       sorting: json['sorting'],
-//       dietaryInfo: ProductDietaryInfo.fromJson(json['dietaryInfo']),
-//       capacity: json['capacity'],
-//       foodBusinessOperator: json['foodBusinessOperator'],
-//       foodBusinessOperatorAddress: json['foodBusinessOperatorAddress'],
-//       ingredientList: json['ingredientList'],
-//       containerDepositInCent: json['containerDepositInCent'],
-//       productId: json['productId'],
-//       id: json['id'],
-//       imageContainer: json['imageContainer'],
-//       unavailabilityInfo: json['unavailabilityInfo'],
-//       statisticsFactorLunch: json['statisticsFactorLunch'],
-//       statisticsFactorEvening: json['statisticsFactorEvening'],
-//       energyKcal: json['energyKcal'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['name'] = name;
+    _data['byname'] = byname;
+    _data['description'] = description;
+    _data['longDescription'] = longDescription;
+    _data['type'] = type;
+    _data['locationBasedPrices'] = locationBasedPrices;
+    _data['nutrients'] = nutrients;
+    _data['allergens'] = allergens;
+    _data['image'] = image;
+    _data['price'] = price.toJson();
+    _data['notes'] = notes;
+    _data['tags'] = tags;
+    _data['productTags'] = productTags;
+    _data['parts'] = parts.map((e)=>e.toJson()).toList();
+    _data['includes'] = includes.map((e)=>e.toJson()).toList();
+    _data['addons'] = addons.map((e)=>e.toJson()).toList();
+    _data['available'] = available;
+    _data['sorting'] = sorting;
+    _data['dietaryInfo'] = dietaryInfo.toJson();
+    _data['capacity'] = capacity;
+    _data['foodBusinessOperator'] = foodBusinessOperator;
+    _data['foodBusinessOperatorAddress'] = foodBusinessOperatorAddress;
+    _data['ingredientList'] = ingredientList;
+    _data['containerDepositInCent'] = containerDepositInCent;
+    _data['id'] = id;
+    _data['_id'] = _id;
+    _data['imageContainer'] = imageContainer;
+    _data['unavailabilityInfo'] = unavailabilityInfo;
+    _data['statisticsFactorLunch'] = statisticsFactorLunch;
+    _data['statisticsFactorEvening'] = statisticsFactorEvening;
+    _data['energyKcal'] = energyKcal;
+    return _data;
+  }
+}
 
-//   // To JSON method
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'name': name,
-//       'byname': byname,
-//       'description': description,
-//       'longDescription': longDescription,
-//       'type': type,
-//       'locationBasedPrices': locationBasedPrices,
-//       'nutrients': nutrients,
-//       'allergens': allergens,
-//       'image': image,
-//       'price': price.toJson(),
-//       'notes': notes,
-//       'tags': tags,
-//       'productTags': productTags,
-//       'parts': parts.map((part) => part.toJson()).toList(),
-//       'includes': includes,
-//       'addons': addons,
-//       'available': available,
-//       'sorting': sorting,
-//       'dietaryInfo': dietaryInfo.toJson(),
-//       'capacity': capacity,
-//       'foodBusinessOperator': foodBusinessOperator,
-//       'foodBusinessOperatorAddress': foodBusinessOperatorAddress,
-//       'ingredientList': ingredientList,
-//       'containerDepositInCent': containerDepositInCent,
-//       'productId': productId,
-//       'id': id,
-//       'imageContainer': imageContainer,
-//       'unavailabilityInfo': unavailabilityInfo,
-//       'statisticsFactorLunch': statisticsFactorLunch,
-//       'statisticsFactorEvening': statisticsFactorEvening,
-//       'energyKcal': energyKcal,
-//     };
-//   }
-// }
+class Price {
+  Price({
+    required this.withVat,
+    required this.withoutVat,
+    required this.vat,
+    required this.vatAmount,
+  });
+  late final String withVat;
+  late final String withoutVat;
+  late final String vat;
+  late final String vatAmount;
+  
+  Price.fromJson(Map<String, dynamic> json){
+    withVat = json['withVat'];
+    withoutVat = json['withoutVat'];
+    vat = json['vat'];
+    vatAmount = json['vatAmount'];
+  }
 
-// class ProductDietaryInfo {
-//   List<Allergen> allergens;
-//   List<String> tags;
-//   Nutrients nutrients;
-//   int portionWeight;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['withVat'] = withVat;
+    _data['withoutVat'] = withoutVat;
+    _data['vat'] = vat;
+    _data['vatAmount'] = vatAmount;
+    return _data;
+  }
+}
 
-//   ProductDietaryInfo({
-//     required this.allergens,
-//     required this.tags,
-//     required this.nutrients,
-//     required this.portionWeight,
-//   });
+class Parts {
+  Parts({
+    required this.count,
+    required this.ingredient,
+  });
+  late final int count;
+  late final Ingredient ingredient;
+  
+  Parts.fromJson(Map<String, dynamic> json){
+    count = json['count'];
+    ingredient = Ingredient.fromJson(json['ingredient']);
+  }
 
-//   factory ProductDietaryInfo.fromJson(Map<String, dynamic> json) {
-//     return ProductDietaryInfo(
-//       allergens: List<Allergen>.from(
-//           json['allergens'].map((x) => Allergen.fromJson(x))),
-//       tags: List<String>.from(json['tags'].map((x) => x)),
-//       nutrients: Nutrients.fromJson(json['nutrients']),
-//       portionWeight: json['portionWeight'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['count'] = count;
+    _data['ingredient'] = ingredient.toJson();
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'allergens': List<dynamic>.from(allergens.map((x) => x.toJson())),
-//       'tags': List<dynamic>.from(tags.map((x) => x)),
-//       'nutrients': nutrients.toJson(),
-//       'portionWeight': portionWeight,
-//     };
-//   }
-// }
+class Ingredient {
+  Ingredient({
+    required this.name,
+     this.description,
+     this.longDescription,
+     this.nutrients,
+     this.allergens,
+     this.ingredients,
+     this.image,
+    required this.tags,
+    required this.available,
+    required this.dietaryInfo,
+    required this.shelfLifeDays,
+     this.packageSize,
+    required this.packageCharge,
+    required this.weightLoss,
+    required this.packageSizePerStore,
+    required this.id,
+    required this.energyKcalPerUnit,
+    required this.portionSize,
+    required this.unit,
+    required this.statisticsFactorLunch,
+    required this.statisticsFactorEvening,
+     this.cos,
+  });
+  late final String name;
+  late final String? description;
+  late final String? longDescription;
+  late final Null nutrients;
+  late final Null allergens;
+  late final Null ingredients;
+  late final String? image;
+  late final List<String> tags;
+  late final bool available;
+  late final DietaryInfo dietaryInfo;
+  late final int shelfLifeDays;
+  late final String? packageSize;
+  late final int packageCharge;
+  late final int weightLoss;
+  late final PackageSizePerStore packageSizePerStore;
+  late final String id;
+  late final String energyKcalPerUnit;
+  late final String portionSize;
+  late final String unit;
+  late final String statisticsFactorLunch;
+  late final String statisticsFactorEvening;
+  late final Null cos;
+  
+  Ingredient.fromJson(Map<String, dynamic> json){
+    name = json['name'];
+    description = null;
+    longDescription = null;
+    nutrients = null;
+    allergens = null;
+    ingredients = null;
+    image = null;
+    tags = List.castFrom<dynamic, String>(json['tags']);
+    available = json['available'];
+    dietaryInfo = DietaryInfo.fromJson(json['dietaryInfo']);
+    shelfLifeDays = json['shelfLifeDays'];
+    packageSize = null;
+    packageCharge = json['packageCharge'];
+    weightLoss = json['weightLoss'];
+    packageSizePerStore = PackageSizePerStore.fromJson(json['packageSizePerStore']);
+    id = json['id'];
+    energyKcalPerUnit = json['energyKcalPerUnit'];
+    portionSize = json['portionSize'];
+    unit = json['unit'];
+    statisticsFactorLunch = json['statisticsFactorLunch'];
+    statisticsFactorEvening = json['statisticsFactorEvening'];
+    cos = null;
+  }
 
-// class Allergen {
-//   String id;
-//   String name;
-//   String examples;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['name'] = name;
+    _data['description'] = description;
+    _data['longDescription'] = longDescription;
+    _data['nutrients'] = nutrients;
+    _data['allergens'] = allergens;
+    _data['ingredients'] = ingredients;
+    _data['image'] = image;
+    _data['tags'] = tags;
+    _data['available'] = available;
+    _data['dietaryInfo'] = dietaryInfo.toJson();
+    _data['shelfLifeDays'] = shelfLifeDays;
+    _data['packageSize'] = packageSize;
+    _data['packageCharge'] = packageCharge;
+    _data['weightLoss'] = weightLoss;
+    _data['packageSizePerStore'] = packageSizePerStore.toJson();
+    _data['id'] = id;
+    _data['energyKcalPerUnit'] = energyKcalPerUnit;
+    _data['portionSize'] = portionSize;
+    _data['unit'] = unit;
+    _data['statisticsFactorLunch'] = statisticsFactorLunch;
+    _data['statisticsFactorEvening'] = statisticsFactorEvening;
+    _data['cos'] = cos;
+    return _data;
+  }
+}
 
-//   Allergen({
-//     required this.id,
-//     required this.name,
-//     required this.examples,
-//   });
+class DietaryInfo {
+  DietaryInfo({
+    required this.allergens,
+    required this.tags,
+    required this.nutrients,
+    required this.portionWeight,
+    required this.nutrientsOverridden,
+  });
+  late final List<String> allergens;
+  late final List<String> tags;
+  late final Nutrients nutrients;
+  late final int portionWeight;
+  late final bool nutrientsOverridden;
+  
+  DietaryInfo.fromJson(Map<String, dynamic> json){
+    tags = List.castFrom<dynamic, String>(json['tags']);
+    nutrients = Nutrients.fromJson(json['nutrients']);
+    portionWeight = json['portionWeight'];
+    nutrientsOverridden = json['nutrientsOverridden'];
+  }
 
-//   factory Allergen.fromJson(Map<String, dynamic> json) {
-//     return Allergen(
-//       id: json['id'],
-//       name: json['name'],
-//       examples: json['examples'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['allergens'] = allergens;
+    _data['tags'] = tags;
+    _data['nutrients'] = nutrients.toJson();
+    _data['portionWeight'] = portionWeight;
+    _data['nutrientsOverridden'] = nutrientsOverridden;
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'id': id,
-//       'name': name,
-//       'examples': examples,
-//     };
-//   }
-// }
+class Nutrients {
+  Nutrients({
+    required this.energyKcal,
+     this.kJoule,
+    required this.fat,
+    required this.saturatedFattyAcids,
+    required this.carbohydrates,
+    required this.sugar,
+    required this.fibers,
+    required this.protein,
+    required this.salt,
+  });
+  late final String energyKcal;
+  late final String? kJoule;
+  late final String fat;
+  late final String saturatedFattyAcids;
+  late final String carbohydrates;
+  late final String sugar;
+  late final String fibers;
+  late final String protein;
+  late final String salt;
+  
+  Nutrients.fromJson(Map<String, dynamic> json){
+    energyKcal = json['energyKcal'];
+    kJoule = null;
+    fat = json['fat'];
+    saturatedFattyAcids = json['saturatedFattyAcids'];
+    carbohydrates = json['carbohydrates'];
+    sugar = json['sugar'];
+    fibers = json['fibers'];
+    protein = json['protein'];
+    salt = json['salt'];
+  }
 
-// class Nutrients {
-//   String energyKcal;
-//   dynamic kJoule;
-//   String fat;
-//   String saturatedFattyAcids;
-//   String carbohydrates;
-//   String sugar;
-//   String fibers;
-//   String protein;
-//   String salt;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['energyKcal'] = energyKcal;
+    _data['kJoule'] = kJoule;
+    _data['fat'] = fat;
+    _data['saturatedFattyAcids'] = saturatedFattyAcids;
+    _data['carbohydrates'] = carbohydrates;
+    _data['sugar'] = sugar;
+    _data['fibers'] = fibers;
+    _data['protein'] = protein;
+    _data['salt'] = salt;
+    return _data;
+  }
+}
 
-//   Nutrients({
-//     required this.energyKcal,
-//     required this.kJoule,
-//     required this.fat,
-//     required this.saturatedFattyAcids,
-//     required this.carbohydrates,
-//     required this.sugar,
-//     required this.fibers,
-//     required this.protein,
-//     required this.salt,
-//   });
+class PackageSizePerStore {
+  PackageSizePerStore();
+  
+  PackageSizePerStore.fromJson(Map json);
 
-//   factory Nutrients.fromJson(Map<String, dynamic> json) {
-//     return Nutrients(
-//       energyKcal: json['energyKcal'],
-//       kJoule: json['kJoule'],
-//       fat: json['fat'],
-//       saturatedFattyAcids: json['saturatedFattyAcids'],
-//       carbohydrates: json['carbohydrates'],
-//       sugar: json['sugar'],
-//       fibers: json['fibers'],
-//       protein: json['protein'],
-//       salt: json['salt'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'energyKcal': energyKcal,
-//       'kJoule': kJoule,
-//       'fat': fat,
-//       'saturatedFattyAcids': saturatedFattyAcids,
-//       'carbohydrates': carbohydrates,
-//       'sugar': sugar,
-//       'fibers': fibers,
-//       'protein': protein,
-//       'salt': salt,
-//     };
-//   }
-// }
+class _id {
+  _id({
+    required this.timestamp,
+    required this.date,
+  });
+  late final int timestamp;
+  late final String date;
+  
+  _id.fromJson(Map<String, dynamic> json){
+    timestamp = json['timestamp'];
+    date = json['date'];
+  }
 
-// class Part {
-//   int count;
-//   Ingredient ingredient;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['timestamp'] = timestamp;
+    _data['date'] = date;
+    return _data;
+  }
+}
 
-//   Part({
-//     required this.count,
-//     required this.ingredient,
-//   });
+class Includes {
+  Includes({
+    required this.name,
+     this.byname,
+     this.description,
+     this.longDescription,
+     this.type,
+     this.locationBasedPrices,
+     this.nutrients,
+     this.allergens,
+    required this.image,
+    required this.price,
+     this.notes,
+    required this.tags,
+    required this.productTags,
+    required this.parts,
+    required this.includes,
+    required this.addons,
+    required this.available,
+    required this.sorting,
+    required this.dietaryInfo,
+     this.capacity,
+     this.foodBusinessOperator,
+     this.foodBusinessOperatorAddress,
+     this.ingredientList,
+     this.containerDepositInCent,
+    required this.id,
+     this.imageContainer,
+     this.unavailabilityInfo,
+    required this.statisticsFactorLunch,
+    required this.statisticsFactorEvening,
+    required this.energyKcal,
+  });
+  late final String name;
+  late final Null byname;
+  late final Null description;
+  late final Null longDescription;
+  late final Null type;
+  late final Null locationBasedPrices;
+  late final Null nutrients;
+  late final Null allergens;
+  late final String image;
+  late final Price price;
+  late final Null notes;
+  late final List<String> tags;
+  late final List<String> productTags;
+  late final List<Parts> parts;
+  late final List<dynamic> includes;
+  late final List<dynamic> addons;
+  late final bool available;
+  late final int sorting;
+  late final DietaryInfo dietaryInfo;
+  late final Null capacity;
+  late final Null foodBusinessOperator;
+  late final Null foodBusinessOperatorAddress;
+  late final Null ingredientList;
+  late final Null containerDepositInCent;
+  late final String id;
+  late final Null _id;
+  late final Null imageContainer;
+  late final Null unavailabilityInfo;
+  late final String statisticsFactorLunch;
+  late final String statisticsFactorEvening;
+  late final String energyKcal;
+  
+  Includes.fromJson(Map<String, dynamic> json){
+    name = json['name'];
+    byname = null;
+    description = null;
+    longDescription = null;
+    type = null;
+    locationBasedPrices = null;
+    nutrients = null;
+    allergens = null;
+    image = json['image'];
+    price = Price.fromJson(json['price']);
+    notes = null;
+    tags = List.castFrom<dynamic, String>(json['tags']);
+    productTags = List.castFrom<dynamic, String>(json['productTags']);
+    parts = List.from(json['parts']).map((e)=>Parts.fromJson(e)).toList();
+    includes = List.castFrom<dynamic, dynamic>(json['includes']);
+    addons = List.castFrom<dynamic, dynamic>(json['addons']);
+    available = json['available'];
+    sorting = json['sorting'];
+    dietaryInfo = DietaryInfo.fromJson(json['dietaryInfo']);
+    capacity = null;
+    foodBusinessOperator = null;
+    foodBusinessOperatorAddress = null;
+    ingredientList = null;
+    containerDepositInCent = null;
+    id = json['id'];
+    _id = null;
+    imageContainer = null;
+    unavailabilityInfo = null;
+    statisticsFactorLunch = json['statisticsFactorLunch'];
+    statisticsFactorEvening = json['statisticsFactorEvening'];
+    energyKcal = json['energyKcal'];
+  }
 
-//   factory Part.fromJson(Map<String, dynamic> json) {
-//     return Part(
-//       count: json['count'],
-//       ingredient: Ingredient.fromJson(json['ingredient']),
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['name'] = name;
+    _data['byname'] = byname;
+    _data['description'] = description;
+    _data['longDescription'] = longDescription;
+    _data['type'] = type;
+    _data['locationBasedPrices'] = locationBasedPrices;
+    _data['nutrients'] = nutrients;
+    _data['allergens'] = allergens;
+    _data['image'] = image;
+    _data['price'] = price.toJson();
+    _data['notes'] = notes;
+    _data['tags'] = tags;
+    _data['productTags'] = productTags;
+    _data['parts'] = parts.map((e)=>e.toJson()).toList();
+    _data['includes'] = includes;
+    _data['addons'] = addons;
+    _data['available'] = available;
+    _data['sorting'] = sorting;
+    _data['dietaryInfo'] = dietaryInfo.toJson();
+    _data['capacity'] = capacity;
+    _data['foodBusinessOperator'] = foodBusinessOperator;
+    _data['foodBusinessOperatorAddress'] = foodBusinessOperatorAddress;
+    _data['ingredientList'] = ingredientList;
+    _data['containerDepositInCent'] = containerDepositInCent;
+    _data['id'] = id;
+    _data['_id'] = _id;
+    _data['imageContainer'] = imageContainer;
+    _data['unavailabilityInfo'] = unavailabilityInfo;
+    _data['statisticsFactorLunch'] = statisticsFactorLunch;
+    _data['statisticsFactorEvening'] = statisticsFactorEvening;
+    _data['energyKcal'] = energyKcal;
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'count': count,
-//       'ingredient': ingredient.toJson(),
-//     };
-//   }
-// }
+class Addons {
+  Addons({
+    required this.name,
+     this.byname,
+     this.description,
+     this.longDescription,
+     this.type,
+     this.locationBasedPrices,
+     this.nutrients,
+     this.allergens,
+    required this.image,
+    required this.price,
+     this.notes,
+    required this.tags,
+    required this.productTags,
+    required this.parts,
+    required this.includes,
+    required this.addons,
+    required this.available,
+    required this.sorting,
+    required this.dietaryInfo,
+     this.capacity,
+     this.foodBusinessOperator,
+     this.foodBusinessOperatorAddress,
+     this.ingredientList,
+     this.containerDepositInCent,
+    required this.id,
+     this.imageContainer,
+     this.unavailabilityInfo,
+    required this.statisticsFactorLunch,
+    required this.statisticsFactorEvening,
+    required this.energyKcal,
+  });
+  late final String name;
+  late final Null byname;
+  late final String? description;
+  late final Null longDescription;
+  late final Null type;
+  late final Null locationBasedPrices;
+  late final Null nutrients;
+  late final Null allergens;
+  late final String image;
+  late final Price price;
+  late final Null notes;
+  late final List<String> tags;
+  late final List<String> productTags;
+  late final List<Parts> parts;
+  late final List<dynamic> includes;
+  late final List<dynamic> addons;
+  late final bool available;
+  late final int sorting;
+  late final DietaryInfo dietaryInfo;
+  late final Null capacity;
+  late final Null foodBusinessOperator;
+  late final Null foodBusinessOperatorAddress;
+  late final Null ingredientList;
+  late final Null containerDepositInCent;
+  late final String id;
+  late final Null _id;
+  late final Null imageContainer;
+  late final String? unavailabilityInfo;
+  late final String statisticsFactorLunch;
+  late final String statisticsFactorEvening;
+  late final String energyKcal;
+  
+  Addons.fromJson(Map<String, dynamic> json){
+    name = json['name'];
+    byname = null;
+    description = null;
+    longDescription = null;
+    type = null;
+    locationBasedPrices = null;
+    nutrients = null;
+    allergens = null;
+    image = json['image'];
+    price = Price.fromJson(json['price']);
+    notes = null;
+    tags = List.castFrom<dynamic, String>(json['tags']);
+    productTags = List.castFrom<dynamic, String>(json['productTags']);
+    parts = List.from(json['parts']).map((e)=>Parts.fromJson(e)).toList();
+    includes = List.castFrom<dynamic, dynamic>(json['includes']);
+    addons = List.castFrom<dynamic, dynamic>(json['addons']);
+    available = json['available'];
+    sorting = json['sorting'];
+    dietaryInfo = DietaryInfo.fromJson(json['dietaryInfo']);
+    capacity = null;
+    foodBusinessOperator = null;
+    foodBusinessOperatorAddress = null;
+    ingredientList = null;
+    containerDepositInCent = null;
+    id = json['id'];
+    _id = null;
+    imageContainer = null;
+    unavailabilityInfo = null;
+    statisticsFactorLunch = json['statisticsFactorLunch'];
+    statisticsFactorEvening = json['statisticsFactorEvening'];
+    energyKcal = json['energyKcal'];
+  }
 
-// class Ingredient {
-//   String name;
-//   String? description;
-//   dynamic longDescription;
-//   dynamic nutrients;
-//   dynamic allergens;
-//   dynamic ingredients;
-//   String? image;
-//   List<String> tags;
-//   bool available;
-//   IngredientDietaryInfo dietaryInfo;
-//   int shelfLifeDays;
-//   dynamic packageSize;
-//   int packageCharge;
-//   int weightLoss;
-//   PackageSizePerStore packageSizePerStore;
-//   String ingredientId;
-//   Id id;
-//   String energyKcalPerUnit;
-//   String portionSize;
-//   String unit;
-//   String statisticsFactorLunch;
-//   String statisticsFactorEvening;
-//   dynamic cos;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['name'] = name;
+    _data['byname'] = byname;
+    _data['description'] = description;
+    _data['longDescription'] = longDescription;
+    _data['type'] = type;
+    _data['locationBasedPrices'] = locationBasedPrices;
+    _data['nutrients'] = nutrients;
+    _data['allergens'] = allergens;
+    _data['image'] = image;
+    _data['price'] = price.toJson();
+    _data['notes'] = notes;
+    _data['tags'] = tags;
+    _data['productTags'] = productTags;
+    _data['parts'] = parts.map((e)=>e.toJson()).toList();
+    _data['includes'] = includes;
+    _data['addons'] = addons;
+    _data['available'] = available;
+    _data['sorting'] = sorting;
+    _data['dietaryInfo'] = dietaryInfo.toJson();
+    _data['capacity'] = capacity;
+    _data['foodBusinessOperator'] = foodBusinessOperator;
+    _data['foodBusinessOperatorAddress'] = foodBusinessOperatorAddress;
+    _data['ingredientList'] = ingredientList;
+    _data['containerDepositInCent'] = containerDepositInCent;
+    _data['id'] = id;
+    _data['_id'] = _id;
+    _data['imageContainer'] = imageContainer;
+    _data['unavailabilityInfo'] = unavailabilityInfo;
+    _data['statisticsFactorLunch'] = statisticsFactorLunch;
+    _data['statisticsFactorEvening'] = statisticsFactorEvening;
+    _data['energyKcal'] = energyKcal;
+    return _data;
+  }
+}
 
-//   Ingredient({
-//     required this.name,
-//     required this.description,
-//     required this.longDescription,
-//     required this.nutrients,
-//     required this.allergens,
-//     required this.ingredients,
-//     required this.image,
-//     required this.tags,
-//     required this.available,
-//     required this.dietaryInfo,
-//     required this.shelfLifeDays,
-//     required this.packageSize,
-//     required this.packageCharge,
-//     required this.weightLoss,
-//     required this.packageSizePerStore,
-//     required this.ingredientId,
-//     required this.id,
-//     required this.energyKcalPerUnit,
-//     required this.portionSize,
-//     required this.unit,
-//     required this.statisticsFactorLunch,
-//     required this.statisticsFactorEvening,
-//     required this.cos,
-//   });
+class DeliveryPrice {
+  DeliveryPrice({
+    required this.withVat,
+    required this.withoutVat,
+    required this.vat,
+    required this.vatAmount,
+  });
+  late final String withVat;
+  late final String withoutVat;
+  late final String vat;
+  late final String vatAmount;
+  
+  DeliveryPrice.fromJson(Map<String, dynamic> json){
+    withVat = json['withVat'];
+    withoutVat = json['withoutVat'];
+    vat = json['vat'];
+    vatAmount = json['vatAmount'];
+  }
 
-//   factory Ingredient.fromJson(Map<String, dynamic> json) {
-//     return Ingredient(
-//       name: json['name'],
-//       description: json['description'],
-//       longDescription: json['longDescription'],
-//       nutrients: json['nutrients'],
-//       allergens: json['allergens'],
-//       ingredients: json['ingredients'],
-//       image: json['image'],
-//       tags: List<String>.from(json['tags'].map((x) => x)),
-//       available: json['available'],
-//       dietaryInfo: IngredientDietaryInfo.fromJson(json['dietaryInfo']),
-//       shelfLifeDays: json['shelfLifeDays'],
-//       packageSize: json['packageSize'],
-//       packageCharge: json['packageCharge'],
-//       weightLoss: json['weightLoss'],
-//       packageSizePerStore:
-//           PackageSizePerStore.fromJson(json['packageSizePerStore']),
-//       ingredientId: json['ingredientId'],
-//       id: Id.fromJson(json['id']),
-//       energyKcalPerUnit: json['energyKcalPerUnit'],
-//       portionSize: json['portionSize'],
-//       unit: json['unit'],
-//       statisticsFactorLunch: json['statisticsFactorLunch'],
-//       statisticsFactorEvening: json['statisticsFactorEvening'],
-//       cos: json['cos'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['withVat'] = withVat;
+    _data['withoutVat'] = withoutVat;
+    _data['vat'] = vat;
+    _data['vatAmount'] = vatAmount;
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'name': name,
-//       'description': description,
-//       'longDescription': longDescription,
-//       'nutrients': nutrients,
-//       'allergens': allergens,
-//       'ingredients': ingredients,
-//       'image': image,
-//       'tags': tags,
-//       'available': available,
-//       'dietaryInfo': dietaryInfo.toJson(),
-//       'shelfLifeDays': shelfLifeDays,
-//       'packageSize': packageSize,
-//       'packageCharge': packageCharge,
-//       'weightLoss': weightLoss,
-//       'packageSizePerStore': packageSizePerStore.toJson(),
-//       'ingredientId': ingredientId,
-//       'id': id.toJson(),
-//       'energyKcalPerUnit': energyKcalPerUnit,
-//       'portionSize': portionSize,
-//       'unit': unit,
-//       'statisticsFactorLunch': statisticsFactorLunch,
-//       'statisticsFactorEvening': statisticsFactorEvening,
-//       'cos': cos,
-//     };
-//   }
-// }
+class Address {
+  Address({
+    required this.street,
+    required this.city,
+    required this.zipCode,
+     this.company,
+  });
+  late final String street;
+  late final String city;
+  late final String zipCode;
+  late final Null company;
+  
+  Address.fromJson(Map<String, dynamic> json){
+    street = json['street'];
+    city = json['city'];
+    zipCode = json['zipCode'];
+    company = null;
+  }
 
-// class IngredientDietaryInfo {
-//   List<String> allergens;
-//   List<String> tags;
-//   Nutrients nutrients;
-//   int portionWeight;
-//   bool nutrientsOverridden;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['street'] = street;
+    _data['city'] = city;
+    _data['zipCode'] = zipCode;
+    _data['company'] = company;
+    return _data;
+  }
+}
 
-//   IngredientDietaryInfo({
-//     required this.allergens,
-//     required this.tags,
-//     required this.nutrients,
-//     required this.portionWeight,
-//     required this.nutrientsOverridden,
-//   });
+class Images {
+  Images({
+    required this.storeTeaser,
+  });
+  late final String storeTeaser;
+  
+  Images.fromJson(Map<String, dynamic> json){
+    storeTeaser = json['storeTeaser'];
+  }
 
-//   factory IngredientDietaryInfo.fromJson(Map<String, dynamic> json) {
-//     return IngredientDietaryInfo(
-//       allergens: List<String>.from(json['allergens'].map((x) => x)),
-//       tags: List<String>.from(json['tags'].map((x) => x)),
-//       nutrients: Nutrients.fromJson(json['nutrients']),
-//       portionWeight: json['portionWeight'],
-//       nutrientsOverridden: json['nutrientsOverridden'],
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['storeTeaser'] = storeTeaser;
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'allergens': allergens,
-//       'tags': tags,
-//       'nutrients': nutrients.toJson(),
-//       'portionWeight': portionWeight,
-//       'nutrientsOverridden': nutrientsOverridden,
-//     };
-//   }
-// }
+class BusinessDay {
+  BusinessDay({
+    required this.end,
+    required this.notes,
+    required this.businessHours,
+    required this.deliveryGroupId,
+    required this.storeBusinessHours,
+    required this.id,
+  });
+  late final String end;
+  late final List<dynamic> notes;
+  late final List<BusinessHours> businessHours;
+  late final String deliveryGroupId;
+  late final StoreBusinessHours storeBusinessHours;
+  late final String id;
+  late final Null _id;
+  
+  BusinessDay.fromJson(Map<String, dynamic> json){
+    end = json['end'];
+    notes = List.castFrom<dynamic, dynamic>(json['notes']);
+    businessHours = List.from(json['businessHours']).map((e)=>BusinessHours.fromJson(e)).toList();
+    deliveryGroupId = json['deliveryGroupId'];
+    storeBusinessHours = StoreBusinessHours.fromJson(json['storeBusinessHours']);
+    id = json['id'];
+    _id = null;
+  }
 
-// class Id {
-//   int timestamp;
-//   DateTime date;
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['end'] = end;
+    _data['notes'] = notes;
+    _data['businessHours'] = businessHours.map((e)=>e.toJson()).toList();
+    _data['deliveryGroupId'] = deliveryGroupId;
+    _data['storeBusinessHours'] = storeBusinessHours.toJson();
+    _data['id'] = id;
+    _data['_id'] = _id;
+    return _data;
+  }
+}
 
-//   Id({
-//     required this.timestamp,
-//     required this.date,
-//   });
+class BusinessHours {
+  BusinessHours({
+    required this.openingTime,
+    required this.closingTime,
+    required this.deliveryAreaId,
+  });
+  late final String openingTime;
+  late final String closingTime;
+  late final String deliveryAreaId;
+  
+  BusinessHours.fromJson(Map<String, dynamic> json){
+    openingTime = json['openingTime'];
+    closingTime = json['closingTime'];
+    deliveryAreaId = json['deliveryAreaId'];
+  }
 
-//   factory Id.fromJson(Map<String, dynamic> json) {
-//     return Id(
-//       timestamp: json['timestamp'],
-//       date: DateTime.parse(json['date']),
-//     );
-//   }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['openingTime'] = openingTime;
+    _data['closingTime'] = closingTime;
+    _data['deliveryAreaId'] = deliveryAreaId;
+    return _data;
+  }
+}
 
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'timestamp': timestamp,
-//       'date': date.toIso8601String(),
-//     };
-//   }
-// }
+class StoreBusinessHours {
+  StoreBusinessHours();
+  
+  StoreBusinessHours.fromJson(Map json);
 
-// class PackageSizePerStore {
-//   PackageSizePerStore();
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    return _data;
+  }
+}
 
-//   factory PackageSizePerStore.fromJson(Map<String, dynamic> json) {
-//     return PackageSizePerStore();
-//   }
+class NextBusinessDays {
+  NextBusinessDays({
+    required this.end,
+    required this.notes,
+    required this.businessHours,
+    required this.deliveryGroupId,
+    required this.storeBusinessHours,
+    required this.id,
+  });
+  late final String end;
+  late final List<dynamic> notes;
+  late final List<BusinessHours> businessHours;
+  late final String deliveryGroupId;
+  late final StoreBusinessHours storeBusinessHours;
+  late final String id;
+  late final Null _id;
+  
+  NextBusinessDays.fromJson(Map<String, dynamic> json){
+    end = json['end'];
+    notes = List.castFrom<dynamic, dynamic>(json['notes']);
+    businessHours = List.from(json['businessHours']).map((e)=>BusinessHours.fromJson(e)).toList();
+    deliveryGroupId = json['deliveryGroupId'];
+    storeBusinessHours = StoreBusinessHours.fromJson(json['storeBusinessHours']);
+    id = json['id'];
+    _id = null;
+  }
 
-//   Map<String, dynamic> toJson() {
-//     return {};
-//   }
-// }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['end'] = end;
+    _data['notes'] = notes;
+    _data['businessHours'] = businessHours.map((e)=>e.toJson()).toList();
+    _data['deliveryGroupId'] = deliveryGroupId;
+    _data['storeBusinessHours'] = storeBusinessHours.toJson();
+    _data['id'] = id;
+    _data['_id'] = _id;
+    return _data;
+  }
+}
 
-// class Price {
-//   String withVat;
-//   String withoutVat;
-//   String vat;
-//   String vatAmount;
+class Alert {
+  Alert({
+    required this.enabled,
+    required this.message,
+    required this.severity,
+  });
+  late final bool enabled;
+  late final String message;
+  late final String severity;
+  
+  Alert.fromJson(Map<String, dynamic> json){
+    enabled = json['enabled'];
+    message = json['message'];
+    severity = json['severity'];
+  }
 
-//   Price({
-//     required this.withVat,
-//     required this.withoutVat,
-//     required this.vat,
-//     required this.vatAmount,
-//   });
-
-//   factory Price.fromJson(Map<String, dynamic> json) {
-//     return Price(
-//       withVat: json['withVat'],
-//       withoutVat: json['withoutVat'],
-//       vat: json['vat'],
-//       vatAmount: json['vatAmount'],
-//     );
-//   }
-
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'withVat': withVat,
-//       'withoutVat': withoutVat,
-//       'vat': vat,
-//       'vatAmount': vatAmount,
-//     };
-//   }
-// }
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['enabled'] = enabled;
+    _data['message'] = message;
+    _data['severity'] = severity;
+    return _data;
+  }
+}

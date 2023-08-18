@@ -12,7 +12,7 @@ class ApiProvider {
     http.Response response = await http.get(uri);
     if (response.statusCode == 200) {
       final items = json.decode(response.body);
-      return items['products'];
+      return items;
     } else {
       throw ServerException();
     }

@@ -28,8 +28,6 @@ Future<void> init() async {
   //* Data sources
   sl.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
 
-  // sl.registerLazySingleton<LocalDataSource>(
-  //     () => LocalDataSourceImpl(secureStorage: sl()));
   //! Core
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 

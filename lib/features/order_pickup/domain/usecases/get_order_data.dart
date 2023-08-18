@@ -1,18 +1,19 @@
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/usecases/usecase.dart';
+import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
 import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
 // Providing the data gotten from outside to the app
-class GetOrderData implements UseCase<List, NoParams> {
+class GetOrderData implements UseCase<StadtSalatModel, NoParams> {
   final OrderRepository repository;
 
   GetOrderData(this.repository);
 
   @override
   // Callable class was used here (call should be the name of the function)
-  Future<Either<Failure, List>> call(NoParams params) async {
+  Future<Either<Failure, StadtSalatModel>> call(NoParams params) async {
     return await repository.checkOrderID();
   }
 }

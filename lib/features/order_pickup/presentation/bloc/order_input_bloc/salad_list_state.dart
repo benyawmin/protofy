@@ -15,7 +15,7 @@ class SaladListStateLoading extends SaladListState {}
 
 // If the order ID was correct and everything went ok emit this state
 class SaladListStateLoaded extends SaladListState {
-  final List saladList;
+  final StadtSalatModel saladList;
 
   const SaladListStateLoaded({required this.saladList});
 
