@@ -1,97 +1,56 @@
+import 'dart:convert';
+
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:protofy/core/error/exceptions.dart';
-import 'package:protofy/core/error/failures.dart';
-import 'package:protofy/core/network/network_info.dart';
-import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
+import '../../../../fixtures/fixture_reader.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
 import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
-import 'package:protofy/features/order_pickup/data/repositories/repository_impl.dart';
-import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
-import 'package:protofy/features/order_pickup/domain/repositories/salad_repository.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:dartz/dartz.dart';
-import 'package:mockito/mockito.dart';
 
-import 'repository_impl_test.mocks.dart';
+import '../datasources/remote_data_source_test.mocks.dart';
 
-@GenerateMocks([RemoteDataSource, LocalDataSource, NetworkInfo])
 void main() {
-  late SaladRepository repository;
-  late MockRemoteDataSource mockRemoteDataSource;
-  late MockLocalDataSource mockLocalDataSource;
-  late MockNetworkInfo mockNetworkInfo;
+  late RemoteDataSourceImpl remoteDataSource;
+  late MockApiProvider mockApiProvider;
 
   setUp(() {
-    mockRemoteDataSource = MockRemoteDataSource();
-    mockLocalDataSource = MockLocalDataSource();
-    mockNetworkInfo = MockNetworkInfo();
-
-    repository = RepositoryImpl(
-      remoteDataSource: mockRemoteDataSource,
-      localDataSource: mockLocalDataSource,
-      networkInfo: mockNetworkInfo,
-    );
+    mockApiProvider = MockApiProvider();
+    remoteDataSource = RemoteDataSourceImpl(apiProvider: mockApiProvider);
   });
 
-  group('authentication', () {
-    const orderID = 'benyamin_jafari_2000';
-    final dishes = [0, 2, 6];
+  group('getSaladData', () {
+    final saladData = json.decode(fixture('sample_map.json'));
 
-    test('should return OrderData when the device is connected to the network',
-        () async {
-      // arrange
-      final expectedUserAuth =
-          StadtSalatModel(orderID: orderID, dishes: dishes);
-      final remoteToken = StadtSalatModel(orderId: orderID, dishes: dishes);
-      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockRemoteDataSource.getSaladData(orderID))
-          .thenAnswer((_) async => remoteToken);
-      when(mockLocalDataSource.cacheOrderData(remoteToken))
-          .thenAnswer((_) async {});
-
-      // act
-      final result = await repository.checkOrderID(
-        orderId: 'benyamin_jafari_2000',
-      );
-
-      // assert
-      expect(result, Right(expectedUserAuth));
-      verify(mockRemoteDataSource.getSaladData(orderID)).called(1);
-      verify(mockLocalDataSource.cacheOrderData(remoteToken)).called(1);
-      verifyNoMoreInteractions(mockRemoteDataSource);
-      verifyNoMoreInteractions(mockLocalDataSource);
-    });
+    final expectedSaladModel = StadtSalatModel.fromJson(saladData);
 
     test(
-        'should return a ServerFailure when an exception is thrown during remote call',
-        () async {
-      // arrange
-      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockRemoteDataSource.getSaladData(orderID))
-          .thenThrow(ServerException());
+      'should return SaladModel when the call to ApiProvider is successful',
+      () async {
+        // Arrange
+        when(mockApiProvider.getSaladData()).thenAnswer((_) async => saladData);
 
-      // act
-      final result = await repository.checkOrderID(orderId: orderID);
+        // Act
+        final result = await remoteDataSource.getSaladData();
 
-      // assert
-      expect(result, equals(Left(ServerFailure())));
-      verify(mockRemoteDataSource.getSaladData(orderID)).called(1);
-      verifyZeroInteractions(mockLocalDataSource);
-    });
+        // Assert
+        expect(result, equals(expectedSaladModel));
+        verify(mockApiProvider.getSaladData());
+      },
+    );
 
     test(
-        'should return a NoInternetConnection failure when the device is not connected to the network',
-        () async {
-      // Arrange
-      when(mockNetworkInfo.isConnected).thenAnswer((_) async => false);
+      'should throw a ServerException when the call to ApiProvider is unsuccessful',
+      () async {
+        // Arrange
+        when(mockApiProvider.getSaladData()).thenThrow(ServerException());
 
-      // Act
-      final result = await repository.checkOrderID(orderId: orderID);
+        // Act
+        final call = remoteDataSource.getSaladData;
 
-      // Assert
-      expect(result, equals(Left(NoInternetConnection())));
-      verifyZeroInteractions(mockRemoteDataSource);
-      verifyZeroInteractions(mockLocalDataSource);
-    });
+        // Assert
+        expect(call(), throwsA(isInstanceOf<ServerException>()));
+        verify(mockApiProvider.getSaladData());
+      },
+    );
   });
 }

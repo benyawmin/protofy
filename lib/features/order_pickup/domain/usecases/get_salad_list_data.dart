@@ -14,15 +14,15 @@ class GetSaladListData implements UseCase<StadtSalatModel, NoParams> {
   @override
   // Callable class was used here (call should be the name of the function)
   Future<Either<Failure, StadtSalatModel>> call(NoParams params) async {
-    return await repository.checkOrderID();
+    return await repository.getSaladListOfData();
   }
 }
 
 class Params extends Equatable {
-  final String orderId;
+  final String param;
 
-  const Params({required this.orderId});
+  const Params({required this.param});
 
   @override
-  List<Object?> get props => [orderId];
+  List<Object?> get props => [param];
 }

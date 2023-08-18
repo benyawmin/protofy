@@ -1,39 +1,49 @@
-import 'package:protofy/core/error/exceptions.dart';
-import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'dart:convert';
 
+import 'package:mockito/annotations.dart';
+import 'package:protofy/core/error/exceptions.dart';
+import '../../../../fixtures/fixture_reader.dart';
+import 'package:test/test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
+import 'package:protofy/features/order_pickup/data/datasources/api_provider.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
+
+import 'remote_data_source_test.mocks.dart';
+
+@GenerateMocks([ApiProvider])
 void main() {
-  late RemoteDataSource remoteDataSource;
+  late MockApiProvider mockApiProvider;
+  late RemoteDataSourceImpl dataSource;
 
   setUp(() {
-    remoteDataSource = RemoteDataSourceImpl();
+    mockApiProvider = MockApiProvider();
+    dataSource = RemoteDataSourceImpl(apiProvider: mockApiProvider);
   });
 
-  group('getOrderData', () {
-    const orderID = 'haritha_kumar_2000';
-    final dishes = [0, 2, 6];
-    test('should return a OrderDataModel when order ID is correct', () async {
+  group('getSaladData', () {
+    final testData = json.decode(fixture('sample_map.json')); // Replace this with your test data
+
+    test('should return salad data when the call to ApiProvider is successful',
+        () async {
       // Arrange
-      const correctOrderID = 'haritha_kumar_2000';
-      final expectedToken = StadtSalatModel(orderId: orderID, dishes: dishes);
+      when(mockApiProvider.getSaladData()).thenAnswer((_) async => testData);
 
       // Act
-      final result = await remoteDataSource.getSaladData(correctOrderID);
+      final result = await dataSource.getSaladData();
 
       // Assert
-      expect(result, isNotNull);
-      expect(result, equals(expectedToken));
+      expect(result, equals(StadtSalatModel.fromJson(testData)));
     });
 
     test(
-        'should throw a ServerException when the server response was unexcpected (for example wrong order id)',
+        'should throw ServerException when the call to ApiProvider is unsuccessful',
         () async {
       // Arrange
-      const wrongOrderID = 'benyaminn';
+      when(mockApiProvider.getSaladData()).thenThrow(ServerException());
 
       // Act
-      final call = remoteDataSource.getSaladData(wrongOrderID);
+      final call = dataSource.getSaladData();
 
       // Assert
       expect(call, throwsA(isA<ServerException>()));

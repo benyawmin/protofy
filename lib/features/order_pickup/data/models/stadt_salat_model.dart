@@ -1,7 +1,9 @@
-class StadtSalatModel {
+import 'package:equatable/equatable.dart';
+
+class StadtSalatModel extends Equatable {
   final List<Product> products;
 
-  StadtSalatModel({
+  const StadtSalatModel({
     required this.products,
   });
 
@@ -25,16 +27,19 @@ class StadtSalatModel {
       'products': products.map((product) => product.toJson()).toList(),
     };
   }
+
+  @override
+  List<Object?> get props => [products];
 }
 
-class Product {
+class Product extends Equatable {
   final String name;
   final String description;
   final String image;
   final Price price;
   final List<String> tags;
 
-  Product({
+  const Product({
     required this.name,
     required this.description,
     required this.image,
@@ -64,7 +69,7 @@ class Product {
       image: json['image'] ?? '',
       price: json['price'] != null
           ? Price.fromJson(json['price'])
-          : Price(vat: '0', vatAmount: '0', withVat: '0', withoutVat: '0'),
+          : const Price(vat: '0', vatAmount: '0', withVat: '0', withoutVat: '0'),
       tags: (json['tags'] as List<dynamic>?)
               ?.map((tag) => tag.toString())
               .toList() ??
@@ -82,15 +87,18 @@ class Product {
       'tags': tags,
     };
   }
+
+  @override
+  List<Object?> get props => [name, description, image, price, tags];
 }
 
-class Price {
+class Price extends Equatable {
   final String withVat;
   final String withoutVat;
   final String vat;
   final String vatAmount;
 
-  Price({
+  const Price({
     required this.withVat,
     required this.withoutVat,
     required this.vat,
@@ -127,4 +135,7 @@ class Price {
       'vatAmount': vatAmount,
     };
   }
+
+  @override
+  List<Object?> get props => [withVat, withoutVat, vat, vatAmount];
 }

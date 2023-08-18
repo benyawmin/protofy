@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_category_list.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/salad_category_list.dart';
 import 'package:sizer/sizer.dart';
 
 class SaladList extends StatefulWidget {
@@ -21,21 +21,7 @@ class _SaladListState extends State<SaladList> {
   @override
   void initState() {
     super.initState();
-    for (var orderItem in widget.saladList) {
-      if (orderItem.tags.contains('category.nomeat')) {
-        noMeats.add(orderItem);
-      } else if (orderItem.tags.contains('category.meat')) {
-        meats.add(orderItem);
-      } else if (orderItem.tags.contains('category.drink')) {
-        drinks.add(orderItem);
-      } else if (orderItem.tags.contains('category.top-seller')) {
-        popular.add(orderItem);
-      } else if (orderItem.tags.contains('category.dessert')) {
-        deserts.add(orderItem);
-      } else if (orderItem.tags.contains('category.side')) {
-        sides.add(orderItem);
-      }
-    }
+    categorizing();
   }
 
   @override
@@ -57,5 +43,26 @@ class _SaladListState extends State<SaladList> {
         ),
       ),
     );
+  }
+
+  categorizing() {
+// Define a map to store categories and their corresponding lists
+    var categoryMap = {
+      'category.nomeat': noMeats,
+      'category.meat': meats,
+      'category.drink': drinks,
+      'category.top-seller': popular,
+      'category.dessert': deserts,
+      'category.side': sides,
+    };
+
+    for (var orderItem in widget.saladList) {
+      for (var categoryTag in categoryMap.keys) {
+        if (orderItem.tags.contains(categoryTag)) {
+          categoryMap[categoryTag]!.add(orderItem);
+          break; // Break the loop once the category is found
+        }
+      }
+    }
   }
 }

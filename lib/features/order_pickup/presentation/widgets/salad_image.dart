@@ -18,7 +18,7 @@ class SaladImage extends StatelessWidget {
       imageUrl:
           'https://static.stadtsalat.de/shop/image/${saladCatList[index].image}',
       progressIndicatorBuilder: (context, url, downloadProgress) =>
-          CircularProgressIndicator(value: downloadProgress.progress),
+          const SizedBox.shrink(),
       errorWidget: (context, url, error) => const Icon(
           Icons.signal_wifi_statusbar_connected_no_internet_4_outlined),
     );

@@ -18,9 +18,9 @@ class RepositoryImpl implements SaladRepository {
     required this.networkInfo,
   });
 
-  // Returns Either a Failure or the OrderData
+  // Returns Either a Failure or the salad data list
   @override
-  Future<Either<Failure, StadtSalatModel>> checkOrderID() async {
+  Future<Either<Failure, StadtSalatModel>> getSaladListOfData() async {
     return await _getDataOfSaladList(() {
       return remoteDataSource.getSaladData();
     }, NoParams());

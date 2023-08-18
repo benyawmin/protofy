@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/presentation/pages/details_page.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_lists.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/salad_lists.dart';
 import 'package:sizer/sizer.dart';
 
 class SaladCategoryList extends StatelessWidget {
@@ -32,6 +32,7 @@ class SaladCategoryList extends StatelessWidget {
                 children: List.generate(saladCatList.length, (index) {
                   return Row(
                     children: [
+                      // Hero animation from ---> to
                       OpenContainer(
                         transitionDuration: const Duration(milliseconds: 500),
                         closedBuilder: (context, action) => SaladListScreen(

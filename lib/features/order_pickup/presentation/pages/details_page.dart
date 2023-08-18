@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_description.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_image.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_name.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_price.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/salad_list_widgets.dart';
 import 'package:sizer/sizer.dart';
 
 class Details extends StatelessWidget {
@@ -33,7 +30,11 @@ class Details extends StatelessWidget {
             ),
 
             //****** Name ******/
-            SaladName(saladCatList: saladCatList, index: index, fontSize: 16,),
+            SaladName(
+              saladCatList: saladCatList,
+              index: index,
+              fontSize: 16,
+            ),
 
             SizedBox(
               height: 1.h,

@@ -1,10 +1,10 @@
 import 'package:flutter/scheduler.dart';
 import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/salad_list_bloc.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_list.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/salad_list.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/salad_list_widgets.dart';
 import 'package:protofy/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_list_widgets.dart';
 
 class SaladListPage extends StatelessWidget {
   const SaladListPage({super.key});
