@@ -1,0 +1,2719 @@
+{
+    "id": "grosse-theaterstrasse-store",
+    "name": "Grosse Theaterstrasse Store",
+    "active": true,
+    "position": {"longitude": 9.989115, "latitude": 53.55698},
+    "products": [
+      {
+        "name": "Vollkornbrot",
+        "byname": null,
+        "description": null,
+        "longDescription": null,
+        "type": null,
+        "locationBasedPrices": null,
+        "nutrients": null,
+        "allergens": null,
+        "image": "2023-3-vollkornbrot",
+        "price": {
+          "withVat": "1.45",
+          "withoutVat": "1.36",
+          "vat": "0.07",
+          "vatAmount": "0.09"
+        },
+        "notes": null,
+        "tags": [
+          "addon",
+          "addon.bread",
+          "vegetarian",
+          "lactosefree",
+          "vegan",
+          "product.notprepable"
+        ],
+        "productTags": ["addon.bread", "product.notprepable", "addon"],
+        "parts": [
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Vollkornbrot",
+              "description": " ",
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "vollkornbrot",
+              "tags": [
+                "statistic.production.all",
+                "addon.bread",
+                "statistic.production.cook.0",
+                "statistic.production.bread"
+              ],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [
+                  "gluten_rye",
+                  "gluten_barley",
+                  "gluten_wheat",
+                  "gluten_cereals"
+                ],
+                "tags": ["lactosefree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "181.00",
+                  "kJoule": null,
+                  "fat": "5.80",
+                  "saturatedFattyAcids": "1.80",
+                  "carbohydrates": "37.70",
+                  "sugar": "0.80",
+                  "fibers": "3.00",
+                  "protein": "7.20",
+                  "salt": "1.40"
+                },
+                "portionWeight": 97,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 0,
+              "packageSize": null,
+              "packageCharge": 3,
+              "weightLoss": 0,
+              "packageSizePerStore": {},
+              "id": "kraftiges-vollkornbrot",
+              "_id": {
+                "timestamp": 1465987601,
+                "date": "2016-06-15T12:46:41.000+02:00"
+              },
+              "energyKcalPerUnit": "195",
+              "portionSize": "3",
+              "unit": "piece",
+              "statisticsFactorLunch": "1",
+              "statisticsFactorEvening": "1",
+              "cos": null
+            }
+          }
+        ],
+        "includes": [],
+        "addons": [],
+        "available": true,
+        "sorting": 0,
+        "dietaryInfo": {
+          "allergens": [
+            {
+              "id": "gluten_barley",
+              "name": "Gluten - Gerste",
+              "examples": "Gerste sowie daraus gewonnene Erzeugnisse"
+            },
+            {
+              "id": "gluten_rye",
+              "name": "Gluten - Roggen",
+              "examples": "Roggen sowie daraus gewonnene Erzeugnisse"
+            },
+            {
+              "id": "gluten_cereals",
+              "name": "glutenhaltige Getreide",
+              "examples": "Weizen, Roggen, Gerste, Hafer und Erzeugnisse daraus"
+            },
+            {
+              "id": "gluten_wheat",
+              "name": "Gluten - Weizen",
+              "examples": "Weizen sowie daraus gewonnene Erzeugnisse"
+            }
+          ],
+          "tags": ["lactosefree", "vegan", "vegetarian"],
+          "nutrients": {
+            "energyKcal": "175.57",
+            "kJoule": null,
+            "fat": "5.63",
+            "saturatedFattyAcids": "1.75",
+            "carbohydrates": "36.57",
+            "sugar": "0.78",
+            "fibers": "2.91",
+            "protein": "6.98",
+            "salt": "1.36"
+          },
+          "portionWeight": 97
+        },
+        "capacity": null,
+        "foodBusinessOperator": null,
+        "foodBusinessOperatorAddress": null,
+        "ingredientList": null,
+        "containerDepositInCent": null,
+        "id": "kraftiges-vollkornbrot",
+        "_id": null,
+        "imageContainer": null,
+        "unavailabilityInfo": "",
+        "statisticsFactorLunch": "1",
+        "statisticsFactorEvening": "1",
+        "energyKcal": "163"
+      },
+      {
+        "name": "Bio-Couscous",
+        "byname": null,
+        "description": null,
+        "longDescription": null,
+        "type": null,
+        "locationBasedPrices": null,
+        "nutrients": null,
+        "allergens": null,
+        "image": "couscous+couscous",
+        "price": {
+          "withVat": "0",
+          "withoutVat": "0.00",
+          "vat": "0.07",
+          "vatAmount": "0.00"
+        },
+        "notes": null,
+        "tags": [
+          "addon.ingredient",
+          "product.nodoubles",
+          "addon",
+          "vegetarian",
+          "ingredient.base",
+          "lactosefree",
+          "vegan"
+        ],
+        "productTags": [
+          "ingredient.base",
+          "product.nodoubles",
+          "addon",
+          "addon.ingredient"
+        ],
+        "parts": [
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Bio-Couscous",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": null,
+              "tags": ["statistic.production.all", "statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": ["gluten_wheat", "gluten_cereals"],
+                "tags": ["lactosefree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "123.39",
+                  "kJoule": null,
+                  "fat": "1.92",
+                  "saturatedFattyAcids": "0.20",
+                  "carbohydrates": "21.21",
+                  "sugar": "1.23",
+                  "fibers": "0.16",
+                  "protein": "3.94",
+                  "salt": "2.00"
+                },
+                "portionWeight": 110,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": null,
+              "packageCharge": 0,
+              "weightLoss": 0,
+              "packageSizePerStore": {},
+              "id": "couscous",
+              "_id": {
+                "timestamp": 1684921499,
+                "date": "2023-05-24T11:44:59.000+02:00"
+              },
+              "energyKcalPerUnit": "0",
+              "portionSize": "110",
+              "unit": "gram",
+              "statisticsFactorLunch": "1",
+              "statisticsFactorEvening": "1",
+              "cos": null
+            }
+          }
+        ],
+        "includes": [],
+        "addons": [],
+        "available": true,
+        "sorting": 0,
+        "dietaryInfo": {
+          "allergens": [
+            {
+              "id": "gluten_cereals",
+              "name": "glutenhaltige Getreide",
+              "examples": "Weizen, Roggen, Gerste, Hafer und Erzeugnisse daraus"
+            },
+            {
+              "id": "gluten_wheat",
+              "name": "Gluten - Weizen",
+              "examples": "Weizen sowie daraus gewonnene Erzeugnisse"
+            }
+          ],
+          "tags": ["lactosefree", "vegan", "vegetarian"],
+          "nutrients": {
+            "energyKcal": "135.73",
+            "kJoule": null,
+            "fat": "2.11",
+            "saturatedFattyAcids": "0.22",
+            "carbohydrates": "23.33",
+            "sugar": "1.35",
+            "fibers": "0.18",
+            "protein": "4.33",
+            "salt": "2.20"
+          },
+          "portionWeight": 110
+        },
+        "capacity": null,
+        "foodBusinessOperator": null,
+        "foodBusinessOperatorAddress": null,
+        "ingredientList": null,
+        "containerDepositInCent": null,
+        "id": "couscous",
+        "_id": null,
+        "imageContainer": null,
+        "unavailabilityInfo": "",
+        "statisticsFactorLunch": "1",
+        "statisticsFactorEvening": "1",
+        "energyKcal": "0"
+      },
+      {
+        "name": "Mie Noodle Tofu",
+        "byname": null,
+        "description":
+            "Mie Nudeln · Spinat · Rotkohl · Brokkoli · Süßkartoffel · Bio-Tofu · Ssamjang-Sauce · Bio-Ingwer · Koriander · Limette · Sesam",
+        "longDescription":
+            "<p>Tadaaaa, hier ist sie: Unsere erste asiatische Bowl auf Nudel-Basis! Doch auf deiner Gabel landen nicht nur unglaublich leckere <strong>Mie-Nudeln</strong>, sondern auch super viel gesundes Gemüse und köstlicher<strong> Bio-Tofu</strong>! Frischer <strong>Spinat </strong>und knackiger <strong>Rotkohl</strong> bringen eine schöne Leichtigkeit in die vegane Kombi. Lecker gewürzt und geröstet im Ofen, gesellen sich <strong>Brokkoli </strong>und <strong>Süßkartoffel</strong> dazu. Und was ist typisch für die asiatische Küche? Natürlich Tofu! Wie gut, dass Treiber Tofu aus Berlin uns mit dem besten <strong>Bio-Tofu </strong>weit und breit beliefert, hergestellt aus deutschen Bio-Sojabohnen. Dazu servieren wir würzige, homemade <strong>Ssamjang-Sauce</strong>. Einfach umami! Oben drauf gibt’s noch ein paar Must-Haves der asiatischen Küche, damit diese Bowl dich so richtig vom Hocker haut: Frischer <strong>Bio-Ingwer</strong>, <strong>Koriander</strong>, <strong>Limette</strong> und<strong> Sesam</strong>. Und für unsere brandneue <strong>MIE NOODLE TOFU</strong> haben wir noch ein leckeres Dressing entwickelt. Das Ergebnis: Unser würziges, veganes <strong>Soja-Sesam-Dressing</strong>. Wenn du mal wieder Lust auf Nudeln hast und die asiatische, frische Küche genauso liebst wie wir, ist diese Bowl genau das Richtige für dich.</p>",
+        "type": null,
+        "locationBasedPrices": null,
+        "nutrients": null,
+        "allergens": null,
+        "image": "2023-3-mie-noodle-tofu",
+        "price": {
+          "withVat": "14.45",
+          "withoutVat": "13.50",
+          "vat": "0.07",
+          "vatAmount": "0.95"
+        },
+        "notes": null,
+        "tags": [
+          "uber.category.nomeat",
+          "category.nomeat",
+          "vegetarian",
+          "lactosefree",
+          "vegan",
+          "product.bowl"
+        ],
+        "productTags": [
+          "category.nomeat",
+          "product.bowl",
+          "uber.category.nomeat"
+        ],
+        "parts": [
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Mie Nudeln ",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": null,
+              "tags": ["statistic.production.all", "statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": ["gluten_wheat", "gluten_cereals"],
+                "tags": ["lactosefree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "105.70",
+                  "kJoule": null,
+                  "fat": "0.80",
+                  "saturatedFattyAcids": "0.20",
+                  "carbohydrates": "21.00",
+                  "sugar": "0.60",
+                  "fibers": "0.00",
+                  "protein": "3.10",
+                  "salt": "0.20"
+                },
+                "portionWeight": 110,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": null,
+              "packageCharge": 0,
+              "weightLoss": -34,
+              "packageSizePerStore": {},
+              "id": "mie-nudeln",
+              "_id": {
+                "timestamp": 1677568843,
+                "date": "2023-02-28T08:20:43.000+01:00"
+              },
+              "energyKcalPerUnit": "0",
+              "portionSize": "110",
+              "unit": "gram",
+              "statisticsFactorLunch": "1",
+              "statisticsFactorEvening": "1",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Spinat",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "basis-spinat-1809",
+              "tags": ["statistic.purchase.other"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "18.00",
+                  "kJoule": null,
+                  "fat": "0.30",
+                  "saturatedFattyAcids": "0.00",
+                  "carbohydrates": "1.50",
+                  "sugar": "0.10",
+                  "fibers": "1.80",
+                  "protein": "2.30",
+                  "salt": "0.10"
+                },
+                "portionWeight": 20,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/2 200",
+              "packageCharge": 860,
+              "weightLoss": 0,
+              "packageSizePerStore": {},
+              "id": "baby-spinat",
+              "_id": {
+                "timestamp": 1469099506,
+                "date": "2016-07-21T13:11:46.000+02:00"
+              },
+              "energyKcalPerUnit": "0.2",
+              "portionSize": "20",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.00",
+              "statisticsFactorEvening": "1.00",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Rotkohl",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "rotkohl-basis-201802",
+              "tags": ["statistic.production.cut.0", "statistic.production.all"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "23.00",
+                  "kJoule": null,
+                  "fat": "0.20",
+                  "saturatedFattyAcids": "0.00",
+                  "carbohydrates": "4.00",
+                  "sugar": "3.00",
+                  "fibers": "2.50",
+                  "protein": "2.00",
+                  "salt": "0.00"
+                },
+                "portionWeight": 60,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/2 200\t",
+              "packageCharge": 2600,
+              "weightLoss": 10,
+              "packageSizePerStore": {},
+              "id": "rotkohl",
+              "_id": {
+                "timestamp": 1475068367,
+                "date": "2016-09-28T15:12:47.000+02:00"
+              },
+              "energyKcalPerUnit": "0.31",
+              "portionSize": "60",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.40",
+              "statisticsFactorEvening": "1.40",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Brokkoli",
+              "description": null,
+              "longDescription":
+                  "<p>„Eat your Greens“ sagt man ja so schön – und wir machen es Dir verdammt leicht, das umzusetzen. Brokkoli schmeckt an sich ja schon verdammt gut, aber wir pimpen ihn noch ordentlich auf. Und servieren ihn Dir auf den Punkt al dente gegart, dann leicht angeröstet und mit Chili und Muskat verfeinert. Neben richtig viel Geschmack gibt es gesunde Schwefelstoffe, Beta-Carotine, eine ordentliche Portion Vitamin C, Eiweiß und Mineralstoffe kostenlos dazu. Für ein starkes Immunsystem und gesunde Zellen!</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "brokkoli-600x400",
+              "tags": ["statistic.production.all", "statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "78.10",
+                  "kJoule": "0.00",
+                  "fat": "4.90",
+                  "saturatedFattyAcids": "0.40",
+                  "carbohydrates": "2.91",
+                  "sugar": "2.86",
+                  "fibers": "3.16",
+                  "protein": "3.99",
+                  "salt": "0.70"
+                },
+                "portionWeight": 60,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/6 200\t",
+              "packageCharge": 1000,
+              "weightLoss": 17,
+              "packageSizePerStore": {},
+              "id": "brokkoli",
+              "_id": {
+                "timestamp": 1469099646,
+                "date": "2016-07-21T13:14:06.000+02:00"
+              },
+              "energyKcalPerUnit": "0.01",
+              "portionSize": "60",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.20",
+              "statisticsFactorEvening": "1.20",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Süßkartoffel",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "2023-2-suesskartoffel",
+              "tags": ["statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "130.70",
+                  "kJoule": null,
+                  "fat": "4.70",
+                  "saturatedFattyAcids": "0.40",
+                  "carbohydrates": "22.50",
+                  "sugar": "4.80",
+                  "fibers": "3.50",
+                  "protein": "1.80",
+                  "salt": "1.10"
+                },
+                "portionWeight": 70,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/4 200",
+              "packageCharge": 2600,
+              "weightLoss": 25,
+              "packageSizePerStore": {},
+              "id": "sweet-potato",
+              "_id": {
+                "timestamp": 1623831279,
+                "date": "2021-06-16T10:14:39.000+02:00"
+              },
+              "energyKcalPerUnit": "0",
+              "portionSize": "70",
+              "unit": "gram",
+              "statisticsFactorLunch": "1",
+              "statisticsFactorEvening": "1",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Bio-Tofu",
+              "description": " ",
+              "longDescription":
+                  "<p>Ja, auch Tofu kann nach etwas schmecken! Zum Beispiel, wenn man ihn ordentlich mariniert. Machen wir, und zwar mit einem Mix aus Zitronengras, Chili und Limette. Damit die kleine Eiweißbombe die Marinade auch richtig aufnimmt, pressen wir den Tofu vorher gut aus. Danach wird er knusprig gebacken – und hat so schon den eingefleischtesten Steakfan überzeugt. Ehrlich.&nbsp;</p>",
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "tofu-600x400",
+              "tags": ["statistic.production.all", "statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": ["soybeans"],
+                "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "124.10",
+                  "kJoule": null,
+                  "fat": "9.80",
+                  "saturatedFattyAcids": "0.83",
+                  "carbohydrates": "3.00",
+                  "sugar": "1.50",
+                  "fibers": "0.51",
+                  "protein": "5.60",
+                  "salt": "2.00"
+                },
+                "portionWeight": 70,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/3 150",
+              "packageCharge": 1200,
+              "weightLoss": 15,
+              "packageSizePerStore": {},
+              "id": "gerosteter-tofu",
+              "_id": {
+                "timestamp": 1465982885,
+                "date": "2016-06-15T11:28:05.000+02:00"
+              },
+              "energyKcalPerUnit": "1.89",
+              "portionSize": "70",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.20",
+              "statisticsFactorEvening": "1.00",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Ssamjang-Sauce",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "balsamico-2018",
+              "tags": [
+                "statistic.production.all",
+                "statistic.production.dressing"
+              ],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [
+                  "gluten_barley",
+                  "sesame_seeds",
+                  "gluten_cereals",
+                  "soybeans"
+                ],
+                "tags": ["lactosefree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "192.96",
+                  "kJoule": null,
+                  "fat": "14.10",
+                  "saturatedFattyAcids": "1.44",
+                  "carbohydrates": "13.87",
+                  "sugar": "11.61",
+                  "fibers": "1.00",
+                  "protein": "2.23",
+                  "salt": "2.00"
+                },
+                "portionWeight": 10,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 3,
+              "packageSize": "",
+              "packageCharge": 0,
+              "weightLoss": 0,
+              "packageSizePerStore": {},
+              "id": "ssamjang-sauce",
+              "_id": {
+                "timestamp": 1578652641,
+                "date": "2020-01-10T11:37:21.000+01:00"
+              },
+              "energyKcalPerUnit": "0",
+              "portionSize": "10",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.2",
+              "statisticsFactorEvening": "1.2",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Koriander",
+              "description": " ",
+              "longDescription":
+                  "<p>Koriander ist der Hammer. Finden wir jedenfalls. Und ja: mag nicht jeder, wissen wir. Aber gib dem Kraut doch noch mal eine Chance. Wir nehmen nur so viel, dass das zitronige Aroma gut durchkommt, aber nicht zu dominant ist. Immer noch nicht überzeugt? Jede Menge antibakteriell wirkender ätherischer Öle stecken auch drin. Für den extra Gesundheits-Kick quasi. Also los, trau Dich!&nbsp;</p>",
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "koriander-1806",
+              "tags": ["statistic.production.cut.0", "statistic.production.all"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "50.00",
+                  "kJoule": null,
+                  "fat": "0.50",
+                  "saturatedFattyAcids": "0.10",
+                  "carbohydrates": "7.00",
+                  "sugar": "1.00",
+                  "fibers": "2.80",
+                  "protein": "2.10",
+                  "salt": "0.10"
+                },
+                "portionWeight": 3,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 1,
+              "packageSize": "1/9 150",
+              "packageCharge": 50,
+              "weightLoss": 8,
+              "packageSizePerStore": {},
+              "id": "koriander",
+              "_id": {
+                "timestamp": 1465983822,
+                "date": "2016-06-15T11:43:42.000+02:00"
+              },
+              "energyKcalPerUnit": "0.23",
+              "portionSize": "3",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.20",
+              "statisticsFactorEvening": "1.20",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Sesam",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "2020-03-sesam",
+              "tags": ["statistic.production.all", "statistic.production.cook.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": ["sesame_seeds"],
+                "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "569.00",
+                  "kJoule": null,
+                  "fat": "47.60",
+                  "saturatedFattyAcids": "7.00",
+                  "carbohydrates": "11.60",
+                  "sugar": "0.30",
+                  "fibers": "11.80",
+                  "protein": "17.70",
+                  "salt": "0.00"
+                },
+                "portionWeight": 2,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 3,
+              "packageSize": "1/6 150",
+              "packageCharge": 900,
+              "weightLoss": 5,
+              "packageSizePerStore": {},
+              "id": "sesam",
+              "_id": {
+                "timestamp": 1516953497,
+                "date": "2018-01-26T08:58:17.000+01:00"
+              },
+              "energyKcalPerUnit": "1",
+              "portionSize": "2",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.00",
+              "statisticsFactorEvening": "1.00",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Bio-Ingwer",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "2021-1-ingwer",
+              "tags": ["statistic.production.cut.0"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "41.20",
+                  "kJoule": null,
+                  "fat": "0.50",
+                  "saturatedFattyAcids": "0.10",
+                  "carbohydrates": "10.00",
+                  "sugar": "9.10",
+                  "fibers": "0.40",
+                  "protein": "0.50",
+                  "salt": "0.10"
+                },
+                "portionWeight": 15,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 3,
+              "packageSize": "1/6 150",
+              "packageCharge": 750,
+              "weightLoss": 10,
+              "packageSizePerStore": {},
+              "id": "ingwer",
+              "_id": {
+                "timestamp": 1578565312,
+                "date": "2020-01-09T11:21:52.000+01:00"
+              },
+              "energyKcalPerUnit": "0",
+              "portionSize": "15",
+              "unit": "gram",
+              "statisticsFactorLunch": "1",
+              "statisticsFactorEvening": "1",
+              "cos": null
+            }
+          },
+          {
+            "count": 1,
+            "ingredient": {
+              "name": "Limette",
+              "description": null,
+              "longDescription": null,
+              "nutrients": null,
+              "allergens": null,
+              "ingredients": null,
+              "image": "2023-1-limette",
+              "tags": ["statistic.production.cut.0", "statistic.production.all"],
+              "available": true,
+              "dietaryInfo": {
+                "allergens": [],
+                "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                "nutrients": {
+                  "energyKcal": "48.00",
+                  "kJoule": null,
+                  "fat": "2.40",
+                  "saturatedFattyAcids": "0.00",
+                  "carbohydrates": "1.90",
+                  "sugar": "1.90",
+                  "fibers": "1.00",
+                  "protein": "0.50",
+                  "salt": "0.00"
+                },
+                "portionWeight": 12,
+                "nutrientsOverridden": false
+              },
+              "shelfLifeDays": 2,
+              "packageSize": "1/6 150\t",
+              "packageCharge": 80,
+              "weightLoss": 5,
+              "packageSizePerStore": {},
+              "id": "limette",
+              "_id": {
+                "timestamp": 1504465807,
+                "date": "2017-09-03T21:10:07.000+02:00"
+              },
+              "energyKcalPerUnit": "0.01",
+              "portionSize": "12",
+              "unit": "gram",
+              "statisticsFactorLunch": "1.10",
+              "statisticsFactorEvening": "1.10",
+              "cos": null
+            }
+          }
+        ],
+        "includes": [
+          {
+            "name": "Soja-Sesam",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "2023-3-dressing-soja-sesam",
+            "price": {
+              "withVat": "2",
+              "withoutVat": "1.87",
+              "vat": "0.07",
+              "vatAmount": "0.13"
+            },
+            "notes": null,
+            "tags": [
+              "addon.ingredient",
+              "addon",
+              "ingredient.dressing",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": ["addon.ingredient", "addon", "ingredient.dressing"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Soja-Sesam",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "soja-sesam_v2",
+                  "tags": [
+                    "statistic.production.all",
+                    "ingredient.dressing",
+                    "statistic.production.dressing"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": ["sesame_seeds", "soybeans"],
+                    "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "360.00",
+                      "kJoule": null,
+                      "fat": "34.40",
+                      "saturatedFattyAcids": "3.00",
+                      "carbohydrates": "11.00",
+                      "sugar": "8.00",
+                      "fibers": "0.00",
+                      "protein": "1.00",
+                      "salt": "1.40"
+                    },
+                    "portionWeight": 65,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 3,
+                  "packageSize": null,
+                  "packageCharge": 0,
+                  "weightLoss": 5,
+                  "packageSizePerStore": {},
+                  "id": "soy-sesame",
+                  "_id": {
+                    "timestamp": 1677503210,
+                    "date": "2023-02-27T14:06:50.000+01:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "1",
+                  "unit": "piece",
+                  "statisticsFactorLunch": "1.2",
+                  "statisticsFactorEvening": "1.2",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [
+                {
+                  "id": "sesame_seeds",
+                  "name": "Sesamsamen",
+                  "examples": "Knabbergebäck, Falafel, Hummus, Sushi, …"
+                },
+                {
+                  "id": "soybeans",
+                  "name": "Sojabohnen",
+                  "examples": "Speisefette, Tofu, Suppen, Saucen, Käseimitate, …"
+                }
+              ],
+              "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "234.00",
+                "kJoule": null,
+                "fat": "22.36",
+                "saturatedFattyAcids": "1.95",
+                "carbohydrates": "7.15",
+                "sugar": "5.20",
+                "fibers": "0.00",
+                "protein": "0.65",
+                "salt": "0.91"
+              },
+              "portionWeight": 65
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "soy-sesame",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": null,
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          }
+        ],
+        "addons": [
+          {
+            "name": "Ciabatta",
+            "byname": null,
+            "description": " ",
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "2023-3-ciabatta",
+            "price": {
+              "withVat": "0.95",
+              "withoutVat": "0.89",
+              "vat": "0.07",
+              "vatAmount": "0.06"
+            },
+            "notes": null,
+            "tags": [
+              "addon",
+              "addon.bread",
+              "vegetarian",
+              "lactosefree",
+              "vegan",
+              "product.notprepable"
+            ],
+            "productTags": ["addon.bread", "product.notprepable", "addon"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Ciabatta",
+                  "description": " ",
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "ciabatta",
+                  "tags": [
+                    "statistic.production.all",
+                    "addon.bread",
+                    "statistic.production.cook.0",
+                    "statistic.production.bread"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [
+                      "gluten_barley",
+                      "gluten_wheat",
+                      "gluten_cereals"
+                    ],
+                    "tags": ["lactosefree", "vegan", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "254.00",
+                      "kJoule": null,
+                      "fat": "0.80",
+                      "saturatedFattyAcids": "0.40",
+                      "carbohydrates": "48.00",
+                      "sugar": "0.70",
+                      "fibers": "3.00",
+                      "protein": "7.60",
+                      "salt": "1.40"
+                    },
+                    "portionWeight": 60,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 0,
+                  "packageSize": "",
+                  "packageCharge": 0,
+                  "weightLoss": 0,
+                  "packageSizePerStore": {},
+                  "id": "knuspriges-ciabatta",
+                  "_id": {
+                    "timestamp": 1465987539,
+                    "date": "2016-06-15T12:45:39.000+02:00"
+                  },
+                  "energyKcalPerUnit": "57",
+                  "portionSize": "3",
+                  "unit": "piece",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [
+                {
+                  "id": "gluten_barley",
+                  "name": "Gluten - Gerste",
+                  "examples": "Gerste sowie daraus gewonnene Erzeugnisse"
+                },
+                {
+                  "id": "gluten_cereals",
+                  "name": "glutenhaltige Getreide",
+                  "examples":
+                      "Weizen, Roggen, Gerste, Hafer und Erzeugnisse daraus"
+                },
+                {
+                  "id": "gluten_wheat",
+                  "name": "Gluten - Weizen",
+                  "examples": "Weizen sowie daraus gewonnene Erzeugnisse"
+                }
+              ],
+              "tags": ["lactosefree", "vegan", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "152.40",
+                "kJoule": null,
+                "fat": "0.48",
+                "saturatedFattyAcids": "0.24",
+                "carbohydrates": "28.80",
+                "sugar": "0.42",
+                "fibers": "1.80",
+                "protein": "4.56",
+                "salt": "0.84"
+              },
+              "portionWeight": 60
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "knuspriges-ciabatta",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "115"
+          },
+          {
+            "name": "Avocado",
+            "byname": null,
+            "description": " ",
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "avocado-180523",
+            "price": {
+              "withVat": "2.45",
+              "withoutVat": "2.29",
+              "vat": "0.07",
+              "vatAmount": "0.16"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": ["ingredient.premium", "addon.ingredient", "addon"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Avocado",
+                  "description": null,
+                  "longDescription":
+                      "<p>Es ist Liebe! Auch wenn wir es hier mit Hass-Avocados zu tun haben. Eine der aromatischsten Sorten, die es gibt – und deshalb landet sie auch in unseren Salaten und Bowls. Butterzart, aber nicht matschig, im Geschmack schön nussig und mit jeder Menge guter Inhaltsstoffe im Gepäck. Darunter zum Beispiel ungesättigte Fettsäuren, die Schönheitsvitamine A und E und viele sekundäre Pflanzenstoffe. Der Superstar unter den Superfoods quasi. Geht einfach immer.&nbsp;</p>",
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "avocado",
+                  "tags": [
+                    "statistic.production.cut.0",
+                    "statistic.production.cut",
+                    "statistic.production.all"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "221.00",
+                      "kJoule": null,
+                      "fat": "23.50",
+                      "saturatedFattyAcids": "1.80",
+                      "carbohydrates": "0.40",
+                      "sugar": "0.30",
+                      "fibers": "5.00",
+                      "protein": "1.90",
+                      "salt": "0.00"
+                    },
+                    "portionWeight": 65,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/3 200\t",
+                  "packageCharge": 3000,
+                  "weightLoss": 0,
+                  "packageSizePerStore": {},
+                  "id": "avocado",
+                  "_id": {
+                    "timestamp": 1465379917,
+                    "date": "2016-06-08T11:58:37.000+02:00"
+                  },
+                  "energyKcalPerUnit": "160",
+                  "portionSize": "0.5",
+                  "unit": "piece",
+                  "statisticsFactorLunch": "1.00",
+                  "statisticsFactorEvening": "0.8",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": -12,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "143.65",
+                "kJoule": null,
+                "fat": "15.28",
+                "saturatedFattyAcids": "1.17",
+                "carbohydrates": "0.26",
+                "sugar": "0.20",
+                "fibers": "3.25",
+                "protein": "1.24",
+                "salt": "0.00"
+              },
+              "portionWeight": 65
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "avocado",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "120"
+          },
+          {
+            "name": "Vollkornbrot",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "2023-3-vollkornbrot",
+            "price": {
+              "withVat": "1.45",
+              "withoutVat": "1.36",
+              "vat": "0.07",
+              "vatAmount": "0.09"
+            },
+            "notes": null,
+            "tags": [
+              "addon",
+              "addon.bread",
+              "vegetarian",
+              "lactosefree",
+              "vegan",
+              "product.notprepable"
+            ],
+            "productTags": ["addon.bread", "product.notprepable", "addon"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Vollkornbrot",
+                  "description": " ",
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "vollkornbrot",
+                  "tags": [
+                    "statistic.production.all",
+                    "addon.bread",
+                    "statistic.production.cook.0",
+                    "statistic.production.bread"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [
+                      "gluten_rye",
+                      "gluten_barley",
+                      "gluten_wheat",
+                      "gluten_cereals"
+                    ],
+                    "tags": ["lactosefree", "vegan", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "181.00",
+                      "kJoule": null,
+                      "fat": "5.80",
+                      "saturatedFattyAcids": "1.80",
+                      "carbohydrates": "37.70",
+                      "sugar": "0.80",
+                      "fibers": "3.00",
+                      "protein": "7.20",
+                      "salt": "1.40"
+                    },
+                    "portionWeight": 97,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 0,
+                  "packageSize": null,
+                  "packageCharge": 3,
+                  "weightLoss": 0,
+                  "packageSizePerStore": {},
+                  "id": "kraftiges-vollkornbrot",
+                  "_id": {
+                    "timestamp": 1465987601,
+                    "date": "2016-06-15T12:46:41.000+02:00"
+                  },
+                  "energyKcalPerUnit": "195",
+                  "portionSize": "3",
+                  "unit": "piece",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [
+                {
+                  "id": "gluten_barley",
+                  "name": "Gluten - Gerste",
+                  "examples": "Gerste sowie daraus gewonnene Erzeugnisse"
+                },
+                {
+                  "id": "gluten_rye",
+                  "name": "Gluten - Roggen",
+                  "examples": "Roggen sowie daraus gewonnene Erzeugnisse"
+                },
+                {
+                  "id": "gluten_cereals",
+                  "name": "glutenhaltige Getreide",
+                  "examples":
+                      "Weizen, Roggen, Gerste, Hafer und Erzeugnisse daraus"
+                },
+                {
+                  "id": "gluten_wheat",
+                  "name": "Gluten - Weizen",
+                  "examples": "Weizen sowie daraus gewonnene Erzeugnisse"
+                }
+              ],
+              "tags": ["lactosefree", "vegan", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "175.57",
+                "kJoule": null,
+                "fat": "5.63",
+                "saturatedFattyAcids": "1.75",
+                "carbohydrates": "36.57",
+                "sugar": "0.78",
+                "fibers": "2.91",
+                "protein": "6.98",
+                "salt": "1.36"
+              },
+              "portionWeight": 97
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "kraftiges-vollkornbrot",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "163"
+          },
+          {
+            "name": "Bio-Hähnchen",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "bio-hähnchen-600x400",
+            "price": {
+              "withVat": "4.95",
+              "withoutVat": "4.63",
+              "vat": "0.07",
+              "vatAmount": "0.32"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "lactosefree"
+            ],
+            "productTags": [
+              "ingredient.premium",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Bio-Hähnchen",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "bio-hähnchen-600x400",
+                  "tags": [
+                    "statistic.production.all",
+                    "statistic.production.cook.0"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "glutenfree"],
+                    "nutrients": {
+                      "energyKcal": "171.90",
+                      "kJoule": null,
+                      "fat": "5.20",
+                      "saturatedFattyAcids": "1.00",
+                      "carbohydrates": "3.10",
+                      "sugar": "1.20",
+                      "fibers": "0.10",
+                      "protein": "28.00",
+                      "salt": "2.60"
+                    },
+                    "portionWeight": 80,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/6 200",
+                  "packageCharge": 1300,
+                  "weightLoss": 15,
+                  "packageSizePerStore": {},
+                  "id": "bio-hahnchen",
+                  "_id": {
+                    "timestamp": 1578567563,
+                    "date": "2020-01-09T11:59:23.000+01:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "80",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.2",
+                  "statisticsFactorEvening": "1.2",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "glutenfree"],
+              "nutrients": {
+                "energyKcal": "137.52",
+                "kJoule": null,
+                "fat": "4.16",
+                "saturatedFattyAcids": "0.80",
+                "carbohydrates": "2.48",
+                "sugar": "0.96",
+                "fibers": "0.08",
+                "protein": "22.40",
+                "salt": "2.08"
+              },
+              "portionWeight": 80
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "hahnchen-bio",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "Grüner Spargel",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "grüner-spargel-600x400",
+            "price": {
+              "withVat": "3.50",
+              "withoutVat": "3.27",
+              "vat": "0.07",
+              "vatAmount": "0.23"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": ["ingredient.premium", "addon.ingredient", "addon"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Grüner Spargel",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "2023-2-gruener-spargel",
+                  "tags": [],
+                  "available": false,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "76.00",
+                      "kJoule": null,
+                      "fat": "6.00",
+                      "saturatedFattyAcids": "0.49",
+                      "carbohydrates": "2.10",
+                      "sugar": "1.88",
+                      "fibers": "1.60",
+                      "protein": "2.00",
+                      "salt": "0.70"
+                    },
+                    "portionWeight": 70,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": null,
+                  "packageCharge": 0,
+                  "weightLoss": 40,
+                  "packageSizePerStore": {},
+                  "id": "gruner-spargel",
+                  "_id": {
+                    "timestamp": 1617019066,
+                    "date": "2021-03-29T13:57:46.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "70",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": false,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "53.20",
+                "kJoule": null,
+                "fat": "4.20",
+                "saturatedFattyAcids": "0.34",
+                "carbohydrates": "1.47",
+                "sugar": "1.32",
+                "fibers": "1.12",
+                "protein": "1.40",
+                "salt": "0.49"
+              },
+              "portionWeight": 70
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "gruner-spargel",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": null,
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "Karotten-Lax",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "karotten-lax-600x400",
+            "price": {
+              "withVat": "0.95",
+              "withoutVat": "0.89",
+              "vat": "0.07",
+              "vatAmount": "0.06"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.standard",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "ingredient.standard"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Karotten-Lax",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "karotten-lax-600x400",
+                  "tags": ["statistic.production.cook.0"],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "89.76",
+                      "kJoule": null,
+                      "fat": "5.50",
+                      "saturatedFattyAcids": "0.61",
+                      "carbohydrates": "7.30",
+                      "sugar": "5.17",
+                      "fibers": "3.00",
+                      "protein": "1.00",
+                      "salt": "2.70"
+                    },
+                    "portionWeight": 50,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": null,
+                  "packageCharge": 0,
+                  "weightLoss": 10,
+                  "packageSizePerStore": {},
+                  "id": "smoky-carrot",
+                  "_id": {
+                    "timestamp": 1586249024,
+                    "date": "2020-04-07T10:43:44.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "50",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.2",
+                  "statisticsFactorEvening": "1.2",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "44.88",
+                "kJoule": null,
+                "fat": "2.75",
+                "saturatedFattyAcids": "0.31",
+                "carbohydrates": "3.65",
+                "sugar": "2.59",
+                "fibers": "1.50",
+                "protein": "0.50",
+                "salt": "1.35"
+              },
+              "portionWeight": 50
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "smoky-carrot",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "Rote zwiebel",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "rote-zwiebel-600x400",
+            "price": {
+              "withVat": "0.45",
+              "withoutVat": "0.42",
+              "vat": "0.07",
+              "vatAmount": "0.03"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "ingredient.topping",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient",
+              "ingredient.topping",
+              "addon.ingredient",
+              "addon"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Rote Zwiebel",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "rote-zwiebel-0107",
+                  "tags": ["statistic.production.cut.0"],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "32.90",
+                      "kJoule": "0.00",
+                      "fat": "0.20",
+                      "saturatedFattyAcids": "0.20",
+                      "carbohydrates": "5.90",
+                      "sugar": "4.70",
+                      "fibers": "1.90",
+                      "protein": "1.40",
+                      "salt": "0.10"
+                    },
+                    "portionWeight": 20,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 4,
+                  "packageSize": "1/6 200",
+                  "packageCharge": 1800,
+                  "weightLoss": 8,
+                  "packageSizePerStore": {},
+                  "id": "rote-zwiebel",
+                  "_id": {
+                    "timestamp": 1562136114,
+                    "date": "2019-07-03T08:41:54.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "20",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.2",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "6.58",
+                "kJoule": "0.00",
+                "fat": "0.04",
+                "saturatedFattyAcids": "0.04",
+                "carbohydrates": "1.18",
+                "sugar": "0.94",
+                "fibers": "0.38",
+                "protein": "0.28",
+                "salt": "0.02"
+              },
+              "portionWeight": 20
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "rote-zwiebel",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "Brokkoli",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "brokkoli-600x400",
+            "price": {
+              "withVat": "1.45",
+              "withoutVat": "1.36",
+              "vat": "0.07",
+              "vatAmount": "0.09"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.standard",
+              "ingredient",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "ingredient.standard"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Brokkoli",
+                  "description": null,
+                  "longDescription":
+                      "<p>„Eat your Greens“ sagt man ja so schön – und wir machen es Dir verdammt leicht, das umzusetzen. Brokkoli schmeckt an sich ja schon verdammt gut, aber wir pimpen ihn noch ordentlich auf. Und servieren ihn Dir auf den Punkt al dente gegart, dann leicht angeröstet und mit Chili und Muskat verfeinert. Neben richtig viel Geschmack gibt es gesunde Schwefelstoffe, Beta-Carotine, eine ordentliche Portion Vitamin C, Eiweiß und Mineralstoffe kostenlos dazu. Für ein starkes Immunsystem und gesunde Zellen!</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "brokkoli-600x400",
+                  "tags": [
+                    "statistic.production.all",
+                    "statistic.production.cook.0"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "78.10",
+                      "kJoule": "0.00",
+                      "fat": "4.90",
+                      "saturatedFattyAcids": "0.40",
+                      "carbohydrates": "2.91",
+                      "sugar": "2.86",
+                      "fibers": "3.16",
+                      "protein": "3.99",
+                      "salt": "0.70"
+                    },
+                    "portionWeight": 60,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/6 200\t",
+                  "packageCharge": 1000,
+                  "weightLoss": 17,
+                  "packageSizePerStore": {},
+                  "id": "brokkoli",
+                  "_id": {
+                    "timestamp": 1469099646,
+                    "date": "2016-07-21T13:14:06.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0.01",
+                  "portionSize": "60",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.20",
+                  "statisticsFactorEvening": "1.20",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": -7,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "46.86",
+                "kJoule": "0.00",
+                "fat": "2.94",
+                "saturatedFattyAcids": "0.24",
+                "carbohydrates": "1.75",
+                "sugar": "1.72",
+                "fibers": "1.90",
+                "protein": "2.39",
+                "salt": "0.42"
+              },
+              "portionWeight": 60
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "brokkoli",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "65"
+          },
+          {
+            "name": "Blumenkohl",
+            "byname": null,
+            "description": " ",
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "curry-blumenkohl-600x400",
+            "price": {
+              "withVat": "1.45",
+              "withoutVat": "1.36",
+              "vat": "0.07",
+              "vatAmount": "0.09"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.standard",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": ["addon.ingredient", "addon", "ingredient.standard"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Blumenkohl",
+                  "description": " ",
+                  "longDescription":
+                      "<p>Blumenkohl feiert gerade ein MEGA Comeback. Vor allem in orientalischen Gerichten. Und so gibt es ihn auch bei uns: in frisch gemahlenem Koriander und Curry-Kurkuma mariniert und dann schön angeröstet. Das setzt Aromen frei, die Du bislang noch nicht kanntest. Muss man mal probieren! Und da Blumenkohl so schön mild ist, schmeckt er auch allen, die bei Kohl sonst die Nase rümpfen.&nbsp;</p>",
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "curry-blumenkohl-600x400",
+                  "tags": [
+                    "statistic.production.all",
+                    "statistic.production.cook.0"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "76.10",
+                      "kJoule": null,
+                      "fat": "5.80",
+                      "saturatedFattyAcids": "0.50",
+                      "carbohydrates": "2.40",
+                      "sugar": "2.40",
+                      "fibers": "2.80",
+                      "protein": "2.90",
+                      "salt": "1.10"
+                    },
+                    "portionWeight": 80,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/6 200\t",
+                  "packageCharge": 1200,
+                  "weightLoss": 20,
+                  "packageSizePerStore": {},
+                  "id": "blumenkohl",
+                  "_id": {
+                    "timestamp": 1465990750,
+                    "date": "2016-06-15T13:39:10.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0.38",
+                  "portionSize": "80",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.20",
+                  "statisticsFactorEvening": "1.20",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": -9,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "60.88",
+                "kJoule": null,
+                "fat": "4.64",
+                "saturatedFattyAcids": "0.40",
+                "carbohydrates": "1.92",
+                "sugar": "1.92",
+                "fibers": "2.24",
+                "protein": "2.32",
+                "salt": "0.88"
+              },
+              "portionWeight": 80
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "blumenkohl",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "78"
+          },
+          {
+            "name": "Grüne Chili",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "grüne-chili-600x400",
+            "price": {
+              "withVat": "0.45",
+              "withoutVat": "0.42",
+              "vat": "0.07",
+              "vatAmount": "0.03"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "ingredient.topping",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient.configurator",
+              "ingredient.topping",
+              "addon.ingredient",
+              "addon"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Grüne Chili",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "grüne-chili-600x400",
+                  "tags": ["statistic.production.cut.0"],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "40.00",
+                      "kJoule": null,
+                      "fat": "0.20",
+                      "saturatedFattyAcids": "0.10",
+                      "carbohydrates": "9.46",
+                      "sugar": "5.10",
+                      "fibers": "1.50",
+                      "protein": "2.00",
+                      "salt": "0.00"
+                    },
+                    "portionWeight": 10,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": null,
+                  "packageCharge": 0,
+                  "weightLoss": 5,
+                  "packageSizePerStore": {},
+                  "id": "chili-grun",
+                  "_id": {
+                    "timestamp": 1623998745,
+                    "date": "2021-06-18T08:45:45.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "10",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "4.00",
+                "kJoule": null,
+                "fat": "0.02",
+                "saturatedFattyAcids": "0.01",
+                "carbohydrates": "0.95",
+                "sugar": "0.51",
+                "fibers": "0.15",
+                "protein": "0.20",
+                "salt": "0.00"
+              },
+              "portionWeight": 10
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "chili-grun",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "Weißer Spargel",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "weisser-spargel-600x400",
+            "price": {
+              "withVat": "3.5",
+              "withoutVat": "3.27",
+              "vat": "0.07",
+              "vatAmount": "0.23"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "ingredient",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient.premium",
+              "ingredient",
+              "addon.ingredient",
+              "addon"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Weißer Spargel",
+                  "description": null,
+                  "longDescription":
+                      "<p>Hach, jedes Jahr wieder ein Highlight. Spargel ist nicht nur verdammt lecker, sondern auch kalorien- und fettarm. Und dank Asparaginsäure und Kalium noch dazu ein kleines Detox-Wunder. Giftstoffe werden aus dem Körper gespült und das Blut gereinigt. Bei uns kriegst Du ihn garantiert nicht schlapp gekocht sondern schön al dente gegart und danach kurz angeröstet und karamellisiert. Wie sich das eben gehört!</p>",
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "weisser-spargel-600x400",
+                  "tags": [],
+                  "available": false,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "52.41",
+                      "kJoule": null,
+                      "fat": "3.20",
+                      "saturatedFattyAcids": "0.30",
+                      "carbohydrates": "2.70",
+                      "sugar": "2.41",
+                      "fibers": "1.60",
+                      "protein": "2.00",
+                      "salt": "1.00"
+                    },
+                    "portionWeight": 80,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/6 200",
+                  "packageCharge": 1800,
+                  "weightLoss": 20,
+                  "packageSizePerStore": {},
+                  "id": "spargel",
+                  "_id": {
+                    "timestamp": 1498744319,
+                    "date": "2017-06-29T15:51:59.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0.29",
+                  "portionSize": "80",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1.20",
+                  "statisticsFactorEvening": "1.20",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": false,
+            "sorting": -11,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "vegan", "glutenfree", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "41.93",
+                "kJoule": null,
+                "fat": "2.56",
+                "saturatedFattyAcids": "0.24",
+                "carbohydrates": "2.16",
+                "sugar": "1.93",
+                "fibers": "1.28",
+                "protein": "1.60",
+                "salt": "0.80"
+              },
+              "portionWeight": 80
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "spargel",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": null,
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "29"
+          },
+          {
+            "name": "Bio-Havelland-Rind",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "havelland-rind-600x400",
+            "price": {
+              "withVat": "4.95",
+              "withoutVat": "4.63",
+              "vat": "0.07",
+              "vatAmount": "0.32"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "lactosefree"
+            ],
+            "productTags": ["ingredient.premium", "addon.ingredient", "addon"],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "Bio-Havelland-Rind",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "roastbeef-bio",
+                  "tags": [
+                    "statistic.production.cut.0",
+                    "statistic.production.all"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "glutenfree"],
+                    "nutrients": {
+                      "energyKcal": "116.00",
+                      "kJoule": null,
+                      "fat": "3.00",
+                      "saturatedFattyAcids": "0.00",
+                      "carbohydrates": "0.00",
+                      "sugar": "0.00",
+                      "fibers": "0.00",
+                      "protein": "22.00",
+                      "salt": "1.00"
+                    },
+                    "portionWeight": 40,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 1,
+                  "packageSize": "1/6 150",
+                  "packageCharge": 1000,
+                  "weightLoss": 17,
+                  "packageSizePerStore": {},
+                  "id": "havelland-beef",
+                  "_id": {
+                    "timestamp": 1568886137,
+                    "date": "2019-09-19T11:42:17.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "40",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "glutenfree"],
+              "nutrients": {
+                "energyKcal": "46.40",
+                "kJoule": null,
+                "fat": "1.20",
+                "saturatedFattyAcids": "0.00",
+                "carbohydrates": "0.00",
+                "sugar": "0.00",
+                "fibers": "0.00",
+                "protein": "8.80",
+                "salt": "0.40"
+              },
+              "portionWeight": 40
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "roastbeef-bio",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          },
+          {
+            "name": "planted.chicken",
+            "byname": null,
+            "description": null,
+            "longDescription": null,
+            "type": null,
+            "locationBasedPrices": null,
+            "nutrients": null,
+            "allergens": null,
+            "image": "2023-3-planted-chicken",
+            "price": {
+              "withVat": "3.95",
+              "withoutVat": "3.69",
+              "vat": "0.07",
+              "vatAmount": "0.26"
+            },
+            "notes": null,
+            "tags": [
+              "ingredient.premium",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon",
+              "glutenfree",
+              "vegetarian",
+              "lactosefree",
+              "vegan"
+            ],
+            "productTags": [
+              "ingredient.premium",
+              "ingredient.configurator",
+              "addon.ingredient",
+              "addon"
+            ],
+            "parts": [
+              {
+                "count": 1,
+                "ingredient": {
+                  "name": "planted.chicken",
+                  "description": null,
+                  "longDescription": null,
+                  "nutrients": null,
+                  "allergens": null,
+                  "ingredients": null,
+                  "image": "2023-3-planted-chicken",
+                  "tags": [
+                    "statistic.production.all",
+                    "statistic.production.cook.0"
+                  ],
+                  "available": true,
+                  "dietaryInfo": {
+                    "allergens": [],
+                    "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+                    "nutrients": {
+                      "energyKcal": "228.70",
+                      "kJoule": null,
+                      "fat": "12.80",
+                      "saturatedFattyAcids": "1.30",
+                      "carbohydrates": "5.20",
+                      "sugar": "3.20",
+                      "fibers": "3.50",
+                      "protein": "19.00",
+                      "salt": "3.40"
+                    },
+                    "portionWeight": 80,
+                    "nutrientsOverridden": false
+                  },
+                  "shelfLifeDays": 2,
+                  "packageSize": null,
+                  "packageCharge": 0,
+                  "weightLoss": 0,
+                  "packageSizePerStore": {},
+                  "id": "planted-chicken",
+                  "_id": {
+                    "timestamp": 1684919237,
+                    "date": "2023-05-24T11:07:17.000+02:00"
+                  },
+                  "energyKcalPerUnit": "0",
+                  "portionSize": "80",
+                  "unit": "gram",
+                  "statisticsFactorLunch": "1",
+                  "statisticsFactorEvening": "1",
+                  "cos": null
+                }
+              }
+            ],
+            "includes": [],
+            "addons": [],
+            "available": true,
+            "sorting": 0,
+            "dietaryInfo": {
+              "allergens": [],
+              "tags": ["lactosefree", "glutenfree", "vegan", "vegetarian"],
+              "nutrients": {
+                "energyKcal": "182.96",
+                "kJoule": null,
+                "fat": "10.24",
+                "saturatedFattyAcids": "1.04",
+                "carbohydrates": "4.16",
+                "sugar": "2.56",
+                "fibers": "2.80",
+                "protein": "15.20",
+                "salt": "2.72"
+              },
+              "portionWeight": 80
+            },
+            "capacity": null,
+            "foodBusinessOperator": null,
+            "foodBusinessOperatorAddress": null,
+            "ingredientList": null,
+            "containerDepositInCent": null,
+            "id": "planted-chicken",
+            "_id": null,
+            "imageContainer": null,
+            "unavailabilityInfo": "",
+            "statisticsFactorLunch": "1",
+            "statisticsFactorEvening": "1",
+            "energyKcal": "0"
+          }
+        ],
+        "available": true,
+        "sorting": -30,
+        "dietaryInfo": {
+          "allergens": [
+            {
+              "id": "sesame_seeds",
+              "name": "Sesamsamen",
+              "examples": "Knabbergebäck, Falafel, Hummus, Sushi, …"
+            },
+            {
+              "id": "gluten_barley",
+              "name": "Gluten - Gerste",
+              "examples": "Gerste sowie daraus gewonnene Erzeugnisse"
+            },
+            {
+              "id": "soybeans",
+              "name": "Sojabohnen",
+              "examples": "Speisefette, Tofu, Suppen, Saucen, Käseimitate, …"
+            },
+            {
+              "id": "gluten_cereals",
+              "name": "glutenhaltige Getreide",
+              "examples": "Weizen, Roggen, Gerste, Hafer und Erzeugnisse daraus"
+            },
+            {
+              "id": "gluten_wheat",
+              "name": "Gluten - Weizen",
+              "examples": "Weizen sowie daraus gewonnene Erzeugnisse"
+            }
+          ],
+          "tags": ["lactosefree", "vegan", "vegetarian"],
+          "nutrients": {
+            "energyKcal": "403.01",
+            "kJoule": "0.00",
+            "fat": "16.89",
+            "saturatedFattyAcids": "1.62",
+            "carbohydrates": "48.95",
+            "sugar": "11.40",
+            "fibers": "7.16",
+            "protein": "13.42",
+            "salt": "3.05"
+          },
+          "portionWeight": 432
+        },
+        "capacity": null,
+        "foodBusinessOperator": null,
+        "foodBusinessOperatorAddress": null,
+        "ingredientList": null,
+        "containerDepositInCent": null,
+        "id": "mie-noodle-tofu",
+        "_id": null,
+        "imageContainer": null,
+        "unavailabilityInfo": "",
+        "statisticsFactorLunch": "1",
+        "statisticsFactorEvening": "1",
+        "energyKcal": "3.65"
+      }
+    ],
+    "deliveryPrice": {
+      "withVat": "0",
+      "withoutVat": "0.00",
+      "vat": "0.19",
+      "vatAmount": "0.00"
+    },
+    "freeDeliveryThreshold": "9999",
+    "estimatedDeliveryDuration": "PT15M",
+    "estimatedDeliveryDurationDistance": 1300,
+    "estimatedDeliveryDurationIncrement": "PT1M",
+    "estimatedDeliveryDurationIncrementDistance": 150,
+    "address": {
+      "street": "Große Theaterstraße 31-35",
+      "city": "Hamburg",
+      "zipCode": "20354",
+      "company": null
+    },
+    "images": {"storeTeaser": "store-hh"},
+    "paymentMethods": ["directpay", "paypal", "creditcard"],
+    "deliveryTypes": ["ONLINE_TAKEOUT", "OFFLINE_TAKEOUT", "ONLINE_EATIN"],
+    "reusablePackagingEnabled": true,
+    "businessDay": {
+      "end": "2023-08-18T18:30:00Z",
+      "notes": [],
+      "businessHours": [
+        {
+          "openingTime": "2023-08-18T09:00:00Z",
+          "closingTime": "2023-08-18T18:15:00Z",
+          "deliveryAreaId": "default"
+        }
+      ],
+      "deliveryGroupId": "hamburg",
+      "storeBusinessHours": {},
+      "id": "2023-08-18",
+      "_id": null
+    },
+    "nextBusinessDays": [
+      {
+        "end": "2023-08-18T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-18T09:00:00Z",
+            "closingTime": "2023-08-18T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-18",
+        "_id": null
+      },
+      {
+        "end": "2023-08-19T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-19T10:00:00Z",
+            "closingTime": "2023-08-19T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-19",
+        "_id": null
+      },
+      {
+        "end": "2023-08-20T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-20T10:00:00Z",
+            "closingTime": "2023-08-20T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-20",
+        "_id": null
+      },
+      {
+        "end": "2023-08-21T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-21T09:00:00Z",
+            "closingTime": "2023-08-21T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-21",
+        "_id": null
+      },
+      {
+        "end": "2023-08-22T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-22T09:00:00Z",
+            "closingTime": "2023-08-22T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-22",
+        "_id": null
+      },
+      {
+        "end": "2023-08-23T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-23T09:00:00Z",
+            "closingTime": "2023-08-23T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-23",
+        "_id": null
+      },
+      {
+        "end": "2023-08-24T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-24T09:00:00Z",
+            "closingTime": "2023-08-24T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-24",
+        "_id": null
+      },
+      {
+        "end": "2023-08-25T18:30:00Z",
+        "notes": [],
+        "businessHours": [
+          {
+            "openingTime": "2023-08-25T09:00:00Z",
+            "closingTime": "2023-08-25T18:15:00Z",
+            "deliveryAreaId": "default"
+          }
+        ],
+        "deliveryGroupId": "hamburg",
+        "storeBusinessHours": {},
+        "id": "2023-08-25",
+        "_id": null
+      }
+    ],
+    "deliveryGroup": "hamburg",
+    "alert": {
+      "enabled": false,
+      "message": "<span style=\"display: inline-block;\"></span>",
+      "severity": "INFO"
+    }
+  }

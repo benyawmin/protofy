@@ -1,23 +1,23 @@
 import 'package:protofy/core/error/exceptions.dart';
 import 'package:protofy/features/order_pickup/data/datasources/api_provider.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 
 abstract class RemoteDataSource {
   /// Call the Api endpoint
   /// Throw exception [ServerException] for all error codes
-  Future<List> getOrderData();
+  Future<StadtSalatModel> getSaladData();
 }
 
 /// Call the server to get the [StadtSalatModel]
 class RemoteDataSourceImpl implements RemoteDataSource {
-  RemoteDataSourceImpl();
+  ApiProvider apiProvider;
+  RemoteDataSourceImpl({required this.apiProvider});
   @override
-  // Calling the API with the api address and sending the orderID
-  Future<List> getOrderData() => _orderDataApiRequest();
+  // Calling the API with the api address
+  Future<StadtSalatModel> getSaladData() => _saladListDataApiRequest();
 
-  Future<List> _orderDataApiRequest() async {
-    final apiProvider = ApiProvider();
-    final saladList = await apiProvider.getOrderDataFromApi();
-
-    return saladList;
+  Future<StadtSalatModel> _saladListDataApiRequest() async {
+    final saladList = await apiProvider.getSaladData();
+    return StadtSalatModel.fromJson(saladList);
   }
 }

@@ -10,6 +10,4 @@ class ServerFailure extends Failure {}
 
 class CacheFailure extends Failure {}
 
-class InvalidInputFailure extends Failure {}
-
 class NoInternetConnection extends Failure{}
