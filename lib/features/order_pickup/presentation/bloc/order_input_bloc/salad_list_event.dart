@@ -1,13 +1,14 @@
 part of 'salad_list_bloc.dart';
 
-abstract class OrderInputEvent extends Equatable {
-  const OrderInputEvent();
+abstract class SaladListEvent extends Equatable {
+  const SaladListEvent();
 
   @override
   List<Object> get props => [];
 }
 
-class LoadSaladList extends OrderInputEvent {
+// Load the salad list based on the api data
+class LoadSaladList extends SaladListEvent {
   @override
   List<Object> get props => [];
 }

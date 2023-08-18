@@ -1,11 +1,12 @@
 ﻿import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/presentation/pages/details_page.dart';
-import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_card.dart';
+import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_lists.dart';
 import 'package:sizer/sizer.dart';
 
 class SaladCategoryList extends StatelessWidget {
-  final List<dynamic> saladCatList;
+  final List<Product> saladCatList;
   final String title;
   const SaladCategoryList(
       {super.key, required this.saladCatList, required this.title});
@@ -33,7 +34,7 @@ class SaladCategoryList extends StatelessWidget {
                     children: [
                       OpenContainer(
                         transitionDuration: const Duration(milliseconds: 500),
-                        closedBuilder: (context, action) => SaladCard(
+                        closedBuilder: (context, action) => SaladListScreen(
                           saladCatList: saladCatList,
                           index: index,
                         ),

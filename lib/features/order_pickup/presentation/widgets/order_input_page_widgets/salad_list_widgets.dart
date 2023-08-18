@@ -1,5 +1,5 @@
 export 'loading.dart';
-export 'salad_card.dart';
+export 'salad_lists.dart';
 export 'salad_category_list.dart';
 export 'salad_description.dart';
 export 'salad_image.dart';

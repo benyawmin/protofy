@@ -10,9 +10,9 @@ import 'package:protofy/core/error/failures.dart' as _i6;
 import 'package:protofy/core/util/input_converter.dart' as _i8;
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart'
     as _i7;
-import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart'
+import 'package:protofy/features/order_pickup/domain/repositories/salad_repository.dart'
     as _i2;
-import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart'
+import 'package:protofy/features/order_pickup/domain/usecases/get_salad_list_data.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -28,7 +28,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeOrderRepository_0 extends _i1.SmartFake
-    implements _i2.OrderRepository {
+    implements _i2.SaladRepository {
   _FakeOrderRepository_0(
     Object parent,
     Invocation parentInvocation,
@@ -51,19 +51,19 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
 /// A class which mocks [GetOrderData].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetOrderData extends _i1.Mock implements _i4.GetOrderData {
+class MockGetOrderData extends _i1.Mock implements _i4.GetSaladListData {
   MockGetOrderData() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.OrderRepository get repository => (super.noSuchMethod(
+  _i2.SaladRepository get repository => (super.noSuchMethod(
         Invocation.getter(#repository),
         returnValue: _FakeOrderRepository_0(
           this,
           Invocation.getter(#repository),
         ),
-      ) as _i2.OrderRepository);
+      ) as _i2.SaladRepository);
   @override
   _i5.Future<_i3.Either<_i6.Failure, _i7.StadtSalatModel>> call(
           _i4.Params? params) =>

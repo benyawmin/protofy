@@ -1,7 +1,7 @@
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/util/input_converter.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
-import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
+import 'package:protofy/features/order_pickup/domain/usecases/get_salad_list_data.dart';
 import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc/salad_list_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 
 import 'login_bloc_test.mocks.dart';
 
-@GenerateMocks([GetOrderData, InputOrderIDValidation])
+@GenerateMocks([GetSaladListData, InputOrderIDValidation])
 void main() {
   group('LoginBloc', () {
     final List<int> dishes = [0, 2, 6];
@@ -23,7 +23,7 @@ void main() {
       mockGetAuthToken = MockGetOrderData();
       mockInputOrderIDValidation = MockInputOrderIDValidation();
       loginBloc = SaladListBloc(
-        getOrderData: mockGetAuthToken,
+        getSaladListData: mockGetAuthToken,
         inputOderIdValidation: mockInputOrderIDValidation,
       );
     });

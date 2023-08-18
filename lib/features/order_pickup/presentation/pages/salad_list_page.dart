@@ -42,7 +42,7 @@ class SaladListPage extends StatelessWidget {
                                 FadeTransition(opacity: a, child: c),
                             transitionDuration: const Duration(seconds: 1),
                             pageBuilder: (_, __, ___) => SaladList(
-                                  saladList: state.saladList,
+                                  saladList: state.saladList.products,
                                 )),
                       );
                     });

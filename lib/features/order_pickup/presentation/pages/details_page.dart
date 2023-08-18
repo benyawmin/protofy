@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_description.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_image.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_name.dart';
@@ -6,7 +7,7 @@ import 'package:protofy/features/order_pickup/presentation/widgets/order_input_p
 import 'package:sizer/sizer.dart';
 
 class Details extends StatelessWidget {
-  final List saladCatList;
+  final List<Product> saladCatList;
   final int index;
 
   const Details({super.key, required this.saladCatList, required this.index});
@@ -32,7 +33,7 @@ class Details extends StatelessWidget {
             ),
 
             //****** Name ******/
-            SaladName(saladCatList: saladCatList, index: index, fontSize: 12,),
+            SaladName(saladCatList: saladCatList, index: index, fontSize: 16,),
 
             SizedBox(
               height: 1.h,
@@ -40,12 +41,12 @@ class Details extends StatelessWidget {
 
             //****** Description ******/
             SaladDescription(
-                saladCatList: saladCatList, index: index, fontSize: 8),
+                saladCatList: saladCatList, index: index, fontSize: 14),
             SizedBox(
               height: 1.h,
             ),
             //****** Price ******/
-            SaladPrice(saladCatList: saladCatList, index: index, fontSize: 10)
+            SaladPrice(saladCatList: saladCatList, index: index, fontSize: 16)
             // flutter run -d chrome --web-renderer html
           ],
         ),

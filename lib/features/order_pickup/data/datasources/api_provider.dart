@@ -6,7 +6,7 @@ import 'package:protofy/core/error/exceptions.dart';
 class ApiProvider {
   final baseUrl = 'api.stadtsalat.de';
 
-  getOrderDataFromApi() async {
+  getSaladData() async {
     final uri = Uri.https(baseUrl, '/shop/grosse-theaterstrasse-store');
 
     http.Response response = await http.get(uri);

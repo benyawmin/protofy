@@ -3,10 +3,10 @@ import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/network/network_info.dart';
 import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/data/repositories/repository_impl.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
-import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/salad_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:dartz/dartz.dart';
@@ -16,7 +16,7 @@ import 'repository_impl_test.mocks.dart';
 
 @GenerateMocks([RemoteDataSource, LocalDataSource, NetworkInfo])
 void main() {
-  late OrderRepository repository;
+  late SaladRepository repository;
   late MockRemoteDataSource mockRemoteDataSource;
   late MockLocalDataSource mockLocalDataSource;
   late MockNetworkInfo mockNetworkInfo;
@@ -44,7 +44,7 @@ void main() {
           StadtSalatModel(orderID: orderID, dishes: dishes);
       final remoteToken = StadtSalatModel(orderId: orderID, dishes: dishes);
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockRemoteDataSource.getOrderData(orderID))
+      when(mockRemoteDataSource.getSaladData(orderID))
           .thenAnswer((_) async => remoteToken);
       when(mockLocalDataSource.cacheOrderData(remoteToken))
           .thenAnswer((_) async {});
@@ -56,7 +56,7 @@ void main() {
 
       // assert
       expect(result, Right(expectedUserAuth));
-      verify(mockRemoteDataSource.getOrderData(orderID)).called(1);
+      verify(mockRemoteDataSource.getSaladData(orderID)).called(1);
       verify(mockLocalDataSource.cacheOrderData(remoteToken)).called(1);
       verifyNoMoreInteractions(mockRemoteDataSource);
       verifyNoMoreInteractions(mockLocalDataSource);
@@ -67,7 +67,7 @@ void main() {
         () async {
       // arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockRemoteDataSource.getOrderData(orderID))
+      when(mockRemoteDataSource.getSaladData(orderID))
           .thenThrow(ServerException());
 
       // act
@@ -75,7 +75,7 @@ void main() {
 
       // assert
       expect(result, equals(Left(ServerFailure())));
-      verify(mockRemoteDataSource.getOrderData(orderID)).called(1);
+      verify(mockRemoteDataSource.getSaladData(orderID)).called(1);
       verifyZeroInteractions(mockLocalDataSource);
     });
 

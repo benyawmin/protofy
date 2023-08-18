@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 
 class SaladName extends StatelessWidget {
   const SaladName({
@@ -9,7 +9,7 @@ class SaladName extends StatelessWidget {
     required this.fontSize,
   });
 
-  final List saladCatList;
+  final List<Product> saladCatList;
   final int index;
   final double fontSize;
 
@@ -18,8 +18,8 @@ class SaladName extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Text(
-        saladCatList[index]['name'],
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize.sp),
+        saladCatList[index].name,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
       ),
     );
   }

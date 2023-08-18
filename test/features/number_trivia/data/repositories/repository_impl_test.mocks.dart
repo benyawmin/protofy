@@ -10,7 +10,7 @@ import 'package:protofy/features/order_pickup/data/datasources/local_data_source
     as _i5;
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart'
     as _i3;
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart'
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -45,7 +45,7 @@ class MockRemoteDataSource extends _i1.Mock implements _i3.RemoteDataSource {
   }
 
   @override
-  _i4.Future<_i2.StadtSalatModel> getOrderData(String? orderId) =>
+  _i4.Future<_i2.StadtSalatModel> getSaladData(String? orderId) =>
       (super.noSuchMethod(
         Invocation.method(
           #getOrderData,

@@ -7,13 +7,13 @@ abstract class SaladListState extends Equatable {
   List<Object> get props => [];
 }
 
-// Initial state of the order id page
+// Initial state
 class SaladListStateInitial extends SaladListState {}
 
-// In progress state of the order id page (after clicking the button show loadig)
+// Emit if progress state of the salad list page
 class SaladListStateLoading extends SaladListState {}
 
-// If the order ID was correct and everything went ok emit this state
+// Emit if the salad list page is loaded
 class SaladListStateLoaded extends SaladListState {
   final StadtSalatModel saladList;
 
@@ -23,7 +23,7 @@ class SaladListStateLoaded extends SaladListState {
   List<Object> get props => [saladList];
 }
 
-// Emit this state if an error happend during the Order ID Authentication process
+// Emit if an error happened
 class SaladListStateError extends SaladListState {
   final String message;
 

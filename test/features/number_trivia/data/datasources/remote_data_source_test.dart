@@ -1,6 +1,6 @@
 import 'package:protofy/core/error/exceptions.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -19,7 +19,7 @@ void main() {
       final expectedToken = StadtSalatModel(orderId: orderID, dishes: dishes);
 
       // Act
-      final result = await remoteDataSource.getOrderData(correctOrderID);
+      final result = await remoteDataSource.getSaladData(correctOrderID);
 
       // Assert
       expect(result, isNotNull);
@@ -33,7 +33,7 @@ void main() {
       const wrongOrderID = 'benyaminn';
 
       // Act
-      final call = remoteDataSource.getOrderData(wrongOrderID);
+      final call = remoteDataSource.getSaladData(wrongOrderID);
 
       // Assert
       expect(call, throwsA(isA<ServerException>()));

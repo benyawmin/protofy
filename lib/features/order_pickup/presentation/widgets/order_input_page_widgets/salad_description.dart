@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 
 class SaladDescription extends StatelessWidget {
-  final List saladCatList;
+  final List<Product> saladCatList;
   final int index;
   final double fontSize;
 
@@ -21,8 +21,8 @@ class SaladDescription extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: SingleChildScrollView(
         child: Text(
-          utf8.decode(saladCatList[index]['description'].codeUnits),
-          style: GoogleFonts.openSans(fontSize: fontSize.sp),
+          utf8.decode(saladCatList[index].description.codeUnits),
+          style: GoogleFonts.openSans(fontSize: fontSize),
           overflow: TextOverflow.clip,
         ),
       ),

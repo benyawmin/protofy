@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:protofy/core/error/exceptions.dart';
 import 'package:protofy/features/order_pickup/data/datasources/local_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

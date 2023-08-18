@@ -7,20 +7,20 @@ import 'package:protofy/features/order_pickup/presentation/bloc/order_input_bloc
 import 'core/network/network_info.dart';
 import 'features/order_pickup/data/datasources/remote_data_source.dart';
 import 'features/order_pickup/data/repositories/repository_impl.dart';
-import 'features/order_pickup/domain/repositories/order_repository.dart';
-import 'features/order_pickup/domain/usecases/get_order_data.dart';
+import 'features/order_pickup/domain/repositories/salad_repository.dart';
+import 'features/order_pickup/domain/usecases/get_salad_list_data.dart';
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
   //! Features - Protofy
-  sl.registerFactory(() => SaladListBloc(getOrderData: sl()));
+  sl.registerFactory(() => SaladListBloc(getSaladListData: sl()));
 
   //* Use cases
-  sl.registerLazySingleton(() => GetOrderData(sl()));
+  sl.registerLazySingleton(() => GetSaladListData(sl()));
 
   //* Repository
-  sl.registerLazySingleton<OrderRepository>(() => RepositoryImpl(
+  sl.registerLazySingleton<SaladRepository>(() => RepositoryImpl(
       remoteDataSource: sl(),
       //  localDataSource: sl(),
       networkInfo: sl()));

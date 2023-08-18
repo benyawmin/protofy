@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 
 class SaladPrice extends StatelessWidget {
-  final List saladCatList;
+  final List<Product> saladCatList;
   final int index;
   final double fontSize;
 
@@ -17,8 +17,8 @@ class SaladPrice extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Text(
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize.sp),
-          '${saladCatList[index]['price']['withVat']}€'),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
+          '${saladCatList[index].price.withVat}€'),
     );
   }
 }

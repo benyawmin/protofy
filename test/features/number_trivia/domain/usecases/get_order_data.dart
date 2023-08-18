@@ -1,7 +1,7 @@
 import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/features/order_pickup/domain/entities/order_data.dart';
-import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
-import 'package:protofy/features/order_pickup/domain/usecases/get_order_data.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/salad_repository.dart';
+import 'package:protofy/features/order_pickup/domain/usecases/get_salad_list_data.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -9,14 +9,14 @@ import 'package:mockito/mockito.dart';
 
 import 'get_order_data.mocks.dart';
 
-@GenerateMocks([OrderRepository])
+@GenerateMocks([SaladRepository])
 void main() {
-  late GetOrderData usecase;
+  late GetSaladListData usecase;
   late MockOrderRepository mockAuthRepository;
 
   setUp(() {
     mockAuthRepository = MockOrderRepository();
-    usecase = GetOrderData(mockAuthRepository);
+    usecase = GetSaladListData(mockAuthRepository);
   });
 
   group('call', () {

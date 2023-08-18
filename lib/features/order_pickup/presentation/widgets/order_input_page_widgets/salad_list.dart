@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_category_list.dart';
 import 'package:sizer/sizer.dart';
 
 class SaladList extends StatefulWidget {
-  final StadtSalatModel saladList;
+  final List<Product> saladList;
   const SaladList({super.key, required this.saladList});
 
   @override
@@ -12,30 +12,28 @@ class SaladList extends StatefulWidget {
 }
 
 class _SaladListState extends State<SaladList> {
-  List noMeats = [];
-  List meats = [];
-  List sides = [];
-  List deserts = [];
-  List popular = [];
-  List drinks = [];
+  List<Product> noMeats = [];
+  List<Product> meats = [];
+  List<Product> sides = [];
+  List<Product> deserts = [];
+  List<Product> popular = [];
+  List<Product> drinks = [];
   @override
   void initState() {
     super.initState();
-    for (var orderItem in widget.saladList.products) {
-      if (orderItem.tags != null) {
-        if (orderItem.tags!.contains('category.nomeat')) {
-          noMeats.add(orderItem);
-        } else if (orderItem.tags!.contains('category.meat')) {
-          meats.add(orderItem);
-        } else if (orderItem.tags!.contains('category.drink')) {
-          drinks.add(orderItem);
-        } else if (orderItem.tags!.contains('category.top-seller')) {
-          popular.add(orderItem);
-        } else if (orderItem.tags!.contains('category.dessert')) {
-          deserts.add(orderItem);
-        } else if (orderItem.tags!.contains('category.side')) {
-          sides.add(orderItem);
-        }
+    for (var orderItem in widget.saladList) {
+      if (orderItem.tags.contains('category.nomeat')) {
+        noMeats.add(orderItem);
+      } else if (orderItem.tags.contains('category.meat')) {
+        meats.add(orderItem);
+      } else if (orderItem.tags.contains('category.drink')) {
+        drinks.add(orderItem);
+      } else if (orderItem.tags.contains('category.top-seller')) {
+        popular.add(orderItem);
+      } else if (orderItem.tags.contains('category.dessert')) {
+        deserts.add(orderItem);
+      } else if (orderItem.tags.contains('category.side')) {
+        sides.add(orderItem);
       }
     }
   }

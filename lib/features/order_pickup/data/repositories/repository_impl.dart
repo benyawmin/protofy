@@ -3,13 +3,13 @@ import 'package:protofy/core/error/failures.dart';
 import 'package:protofy/core/network/network_info.dart';
 import 'package:protofy/core/usecases/usecase.dart';
 import 'package:protofy/features/order_pickup/data/datasources/remote_data_source.dart';
-import 'package:protofy/features/order_pickup/data/models/order_data_model.dart';
-import 'package:protofy/features/order_pickup/domain/repositories/order_repository.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
+import 'package:protofy/features/order_pickup/domain/repositories/salad_repository.dart';
 import 'package:dartz/dartz.dart';
 
 typedef _TokenPicker = Future<StadtSalatModel> Function();
 
-class RepositoryImpl implements OrderRepository {
+class RepositoryImpl implements SaladRepository {
   final RemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;
 
@@ -21,13 +21,13 @@ class RepositoryImpl implements OrderRepository {
   // Returns Either a Failure or the OrderData
   @override
   Future<Either<Failure, StadtSalatModel>> checkOrderID() async {
-    return await _getDataOfOrder(() {
-      return remoteDataSource.getOrderData();
+    return await _getDataOfSaladList(() {
+      return remoteDataSource.getSaladData();
     }, NoParams());
   }
 
   // Try to get the data of the order
-  Future<Either<Failure, StadtSalatModel>> _getDataOfOrder(
+  Future<Either<Failure, StadtSalatModel>> _getDataOfSaladList(
       _TokenPicker tokenPicker, async) async {
     // Check if network is connected send the request
     if (await networkInfo.isConnected) {

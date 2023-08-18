@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:protofy/features/order_pickup/data/models/stadt_salat_model.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_description.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_image.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_name.dart';
 import 'package:protofy/features/order_pickup/presentation/widgets/order_input_page_widgets/salad_price.dart';
 import 'package:sizer/sizer.dart';
 
-class SaladCard extends StatelessWidget {
+class SaladListScreen extends StatelessWidget {
   final int index;
-  final List saladCatList;
-  const SaladCard({super.key, required this.index, required this.saladCatList});
+  final List<Product> saladCatList;
+  const SaladListScreen(
+      {super.key, required this.index, required this.saladCatList});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class SaladCard extends StatelessWidget {
           SizedBox(
             width: 20.w,
             child: SaladName(
-                saladCatList: saladCatList, index: index, fontSize: 8),
+                saladCatList: saladCatList, index: index, fontSize: 14),
           ),
           SizedBox(
             height: 1.h,
@@ -38,7 +40,7 @@ class SaladCard extends StatelessWidget {
                 child: SaladDescription(
                   saladCatList: saladCatList,
                   index: index,
-                  fontSize: 6,
+                  fontSize: 12,
                 )),
           ),
           SizedBox(
@@ -51,7 +53,7 @@ class SaladCard extends StatelessWidget {
             child: SaladPrice(
               saladCatList: saladCatList,
               index: index,
-              fontSize: 8,
+              fontSize: 14,
             ),
           ),
           // flutter run -d chrome --web-renderer html
