@@ -14,6 +14,7 @@ class SaladImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Cache image for next entries to app
     return CachedNetworkImage(
       imageUrl:
           'https://static.stadtsalat.de/shop/image/${saladCatList[index].image}',

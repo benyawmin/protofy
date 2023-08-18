@@ -13,11 +13,10 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   ApiProvider apiProvider;
   RemoteDataSourceImpl({required this.apiProvider});
   @override
-  // Calling the API with the api address and sending the orderID
+  // Calling the API with the api address
   Future<StadtSalatModel> getSaladData() => _saladListDataApiRequest();
 
   Future<StadtSalatModel> _saladListDataApiRequest() async {
-    
     final saladList = await apiProvider.getSaladData();
     return StadtSalatModel.fromJson(saladList);
   }

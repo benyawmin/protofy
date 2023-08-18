@@ -48,7 +48,6 @@ class Details extends StatelessWidget {
             ),
             //****** Price ******/
             SaladPrice(saladCatList: saladCatList, index: index, fontSize: 16)
-            // flutter run -d chrome --web-renderer html
           ],
         ),
       ),

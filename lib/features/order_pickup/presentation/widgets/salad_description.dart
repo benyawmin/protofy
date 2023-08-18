@@ -21,6 +21,7 @@ class SaladDescription extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: SingleChildScrollView(
         child: Text(
+          // utf8 decoding To show German umlauts and special characters
           utf8.decode(saladCatList[index].description.codeUnits),
           style: GoogleFonts.openSans(fontSize: fontSize),
           overflow: TextOverflow.clip,

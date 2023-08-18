@@ -26,13 +26,15 @@ class SaladCategoryList extends StatelessWidget {
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               )),
+
+          // Building the list of salads
           Expanded(
             child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(saladCatList.length, (index) {
                   return Row(
                     children: [
-                      // Hero animation from ---> to
+                      // Hero animation from (closedBuilder) ---> to (openBuilder)
                       OpenContainer(
                         transitionDuration: const Duration(milliseconds: 500),
                         closedBuilder: (context, action) => SaladListScreen(
